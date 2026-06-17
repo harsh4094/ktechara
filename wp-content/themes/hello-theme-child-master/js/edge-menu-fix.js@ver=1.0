@@ -1,30 +1,577 @@
-(function() {
-  const isEdge = navigator.userAgent.includes("Edg");
-  if (!isEdge) return;
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. DESKTOP MEGA-MENU — universal hover fix (all browsers)
+   Elementor Pro adds .e-active to show dropdowns; this guarantees hover works
+   even when Elementor JS fails to initialise on inner pages.
+═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  var header, menuItems;
 
-  document.querySelectorAll('.e-n-menu-item').forEach((item) => {
-    const content = item.querySelector('.e-n-menu-content');
-    if (!content) return;
+  function closeAll(except) {
+    menuItems.forEach(function (other) {
+      if (other === except) return;
+      var oc = other.querySelector('.e-n-menu-content');
+      var op = oc && oc.querySelector('.e-con');
+      if (oc) oc.classList.remove('e-active');
+      if (op) op.classList.remove('e-active');
+      var btn = other.querySelector('.e-n-menu-dropdown-icon');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
 
-    let timeout;
+  function initDesktopMenu() {
+    header    = document.querySelector('.darknav');
+    menuItems = document.querySelectorAll('.darknav .e-n-menu-item');
+    if (!menuItems.length) return;
 
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(timeout);
-      content.style.display = 'block';
+    /* ── Fix full-width + correct vertical position ──────────────────────
+       Elementor's .e-n-menu has position:relative, so its child
+       .e-n-menu-content uses top:100% relative to .e-n-menu — NOT relative
+       to the full header. This places the dropdown INSIDE the header instead
+       of below it. We fix this by:
+         1. Setting --stretch-left/right/width so it spans the full viewport.
+         2. Setting --ktm-top = header.bottom - nMenu.top (px), so the
+            dropdown starts at the exact bottom of the sticky header.
+    */
+    var nMenu = document.querySelector('.darknav .e-n-menu');
+
+    function fixLayout() {
+      if (!nMenu || !header) return;
+      var r = nMenu.getBoundingClientRect();
+      var h = header.getBoundingClientRect();
+      nMenu.style.setProperty('--stretch-left',  (-r.left) + 'px');
+      nMenu.style.setProperty('--stretch-right', (-(window.innerWidth - r.right)) + 'px');
+      nMenu.style.setProperty('--stretch-width', '100vw');
+      /* top value that places dropdown flush with header bottom */
+      nMenu.style.setProperty('--ktm-top', Math.round(h.bottom - r.top) + 'px');
+    }
+    fixLayout();
+    window.addEventListener('resize', fixLayout);
+    window.addEventListener('scroll', fixLayout, { passive: true });
+
+    var s = document.createElement('style');
+    s.textContent =
+      '.darknav .e-n-menu:not([data-layout=dropdown]) .e-active.e-n-menu-content{' +
+        'top:var(--ktm-top,100%)!important;' +
+        'padding-block-start:0!important;' +
+      '}' +
+      '.darknav .e-n-menu-content>.e-con{' +
+        'width:100%!important;max-width:100%!important;' +
+      '}';
+    document.head.appendChild(s);
+
+    /* ── Hover handlers ───────────────────────────────────────────────── */
+    menuItems.forEach(function (item) {
+      var content = item.querySelector('.e-n-menu-content');
+      if (!content) return;
+      var panel = content.querySelector('.e-con');
+      if (!panel) return;
+
+      var timer;
+
+      function show() {
+        clearTimeout(timer);
+        closeAll(item);
+        content.classList.add('e-active');
+        panel.classList.add('e-active');
+        var btn = item.querySelector('.e-n-menu-dropdown-icon');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      }
+
+      function hide() {
+        timer = setTimeout(function () {
+          content.classList.remove('e-active');
+          panel.classList.remove('e-active');
+          var btn = item.querySelector('.e-n-menu-dropdown-icon');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }, 150);
+      }
+
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      content.addEventListener('mouseenter', function () { clearTimeout(timer); });
+      content.addEventListener('mouseleave', hide);
     });
 
-    item.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        content.style.display = 'none';
-      }, 150);
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.darknav .e-n-menu-item')) {
+        closeAll(null);
+      }
     });
+  }
 
-    content.addEventListener('mouseenter', () => {
-      clearTimeout(timeout);
-    });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDesktopMenu);
+  } else {
+    initDesktopMenu();
+  }
+})();
 
-    content.addEventListener('mouseleave', () => {
-      content.style.display = 'none';
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. MOBILE OFF-CANVAS MENU
+   Slides from the right, accordion sections, matches the Advania design.
+═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+
+  /* ── Menu data (matches desktop navigation) ─────────────────────────── */
+  var MENU = [
+    {
+      label: 'WHAT WE DO',
+      heading: 'What We Do',
+      headingUrl: '/our-solutions.html',
+      items: [
+        { text: 'Technology Sourcing',               url: '/technology-sourcing.1.html' },
+        { text: 'Data Centre & Networking',           url: '/technology-sourcing/data-centre-and-networking.1.html' },
+        { text: 'AV & Collaboration',                url: '/our-solutions/av-collaboration/index.html' },
+        { text: 'Devices & Management',              url: '/our-solutions/devices-and-management/index.html' },
+        { text: 'Print & Office Solutions',          url: '/technology-sourcing/print-and-office-solutions.1.html' },
+        { text: 'Software & Licensing',              url: '/technology-sourcing/software-licensing.html' },
+        { text: 'Solutions',                         url: '/our-solutions.html' },
+        { text: 'AI Transformation',                 url: '/our-services/data-and-ai-transformation/index.html' },
+        { text: 'Cloud, Platform & Network',         url: '/our-solutions/cloud-platform-network.1.html' },
+        { text: 'Cyber Resilience',                  url: '/our-services/cyber-security-and-compliance-services/index.html' },
+        { text: 'Data',                              url: '/our-solutions/data.1.html' },
+        { text: 'Digital Employee Experience',       url: '/our-services/modern-work/index.html' },
+        { text: 'High-Performance Computing',        url: '/solutions/high-performance-compute/index.html' },
+        { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications.1.html' },
+        { text: 'Unified Communications',            url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' },
+        { text: 'Services',                          url: '/our-services.html' },
+        { text: 'Managed IT Services',               url: '/our-services/managed-services/index.html' },
+        { text: 'IT Consulting Services',            url: '/our-services/professional-services.1.html' },
+        { text: 'IT Services for SMBs',              url: '/our-services/it-services-for-smb/index.html' }
+      ],
+      viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
+    },
+    {
+      label: 'SECTORS',
+      heading: 'Sectors',
+      headingUrl: '/solutions-by-sector.html',
+      items: [
+        { text: 'Finance',               url: '/solutions-by-sector/finance/index.html' },
+        { text: 'Insurance',             url: '/solutions-by-industry/insurance/index.html' },
+        { text: 'Legal & Professional',  url: '/solutions-by-sector/legal-and-professional/index.html' },
+        { text: 'Public Sector',         url: '/solutions-by-sector/public-sector/index.html' },
+        { text: 'Leisure & Hospitality', url: '/solutions-by-sector/leisure-and-hospitality/index.html' },
+        { text: 'Not For Profit',        url: '/solutions-by-sector/not-for-profit/index.html' },
+        { text: 'Retail',               url: '/solutions-by-sector/retail/index.html' }
+      ],
+      viewAll: { text: 'VIEW ALL SECTORS', url: '/solutions-by-sector.html' }
+    },
+    {
+      label: 'PARTNERS',
+      heading: 'Partners',
+      headingUrl: '/about-us/ecosystem-and-partners/index.html',
+      items: [
+        { text: 'Apple',             url: '/partners/apple.1.html' },
+        { text: 'Cisco',             url: '/partners/cisco/index.html' },
+        { text: 'Dell',              url: '/partners/dell/index.html' },
+        { text: 'HP',               url: '/partners/hp/index.html' },
+        { text: 'HPE',              url: '/partners/hpe/index.html' },
+        { text: 'Lenovo',           url: '/partners/lenovo/index.html' },
+        { text: 'Microsoft',        url: '/about-us/microsoft-partnership.1.html' },
+        { text: 'Microsoft Surface', url: '/partners/microsoft-surface/index.html' }
+      ],
+      viewAll: { text: 'VIEW ALL PARTNERS', url: '/about-us/ecosystem-and-partners/index.html' }
+    },
+    {
+      label: 'INSIGHTS',
+      heading: 'Insights',
+      headingUrl: '/insights.1.html',
+      items: [
+        { text: 'Blog',                 url: '/blog/index.html' },
+        { text: 'News',                 url: '/news/index.html' },
+        { text: 'Events',               url: '/events/index.html' },
+        { text: 'Podcast',              url: '/insights/podcast/index.html' },
+        { text: 'Webinars',             url: '/webinars/index.html' },
+        { text: 'Workshops',            url: '/workshops/index.html' },
+        { text: 'Microsoft Workshops',  url: '/microsoft-workshops/index.html' },
+        { text: 'Reports & Research',   url: '/reports-research/index.html' },
+        { text: 'eBooks',              url: '/e-books/index.html' }
+      ],
+      viewAll: { text: 'VIEW ALL INSIGHTS', url: '/insights.1.html' }
+    },
+    {
+      label: 'ABOUT US',
+      heading: 'About Us',
+      headingUrl: '/about-us.1.html',
+      items: [
+        { text: 'About KTechara',               url: '/about-us.1.html' },
+        { text: 'Case Studies',                 url: '/about-us/case-studies/index.html' },
+        { text: 'People, Culture & Careers',    url: '/about-us/people-culture-and-careers/index.html' },
+        { text: 'Sustainability & Social Value', url: '/sustainability/index.html' },
+        { text: 'Frameworks',                   url: '/about-us/frameworks/index.html' },
+        { text: 'Leadership',                   url: '/about-us/leadership/index.html' },
+        { text: 'Financing Options',            url: '/about-us/financing/index.html' }
+      ],
+      viewAll: { text: 'VIEW ABOUT US', url: '/about-us.1.html' }
+    }
+  ];
+
+  /* ── Inject CSS ─────────────────────────────────────────────────────── */
+  var style = document.createElement('style');
+  style.textContent = [
+    /* Overlay */
+    '.ktm-ov{',
+    '  display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);',
+    '  z-index:99998;opacity:0;transition:opacity .3s;',
+    '}',
+    '.ktm-ov.ktm-ov--open{display:block;}',
+    '.ktm-ov.ktm-ov--vis{opacity:1;}',
+
+    /* Panel */
+    '.ktm-p{',
+    '  position:fixed;top:0;right:-100%;width:100%;max-width:430px;height:100%;',
+    '  background:#fff;z-index:99999;',
+    '  display:flex;flex-direction:column;',
+    '  transition:right .32s cubic-bezier(.4,0,.2,1);',
+    '  overflow:hidden;box-shadow:-4px 0 24px rgba(0,0,0,.12);',
+    '}',
+    '.ktm-p.ktm-p--open{right:0;}',
+
+    /* Head */
+    '.ktm-hd{',
+    '  display:flex;align-items:center;justify-content:space-between;',
+    '  padding:0 20px;height:64px;',
+    '  border-bottom:1px solid #e5e5e5;flex-shrink:0;',
+    '}',
+    '.ktm-hd__logo{display:flex;align-items:center;text-decoration:none;}',
+    '.ktm-hd__logo img{height:34px;width:auto;display:block;}',
+    '.ktm-hd__close{',
+    '  background:none!important;background-color:transparent!important;',
+    '  border:none!important;cursor:pointer;padding:6px;',
+    '  color:#1a1a1a;line-height:1;font-size:22px;font-weight:300;',
+    '  display:flex;align-items:center;justify-content:center;',
+    '  border-radius:4px;transition:color .2s;box-shadow:none!important;',
+    '}',
+    '.ktm-hd__close:hover{color:#D76AB3;}',
+    '.ktm-hd__close:focus-visible{outline:2px solid #D76AB3;outline-offset:2px;}',
+
+    /* Scrollable nav area */
+    '.ktm-nav{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}',
+
+    /* Accordion item row */
+    '.ktm-row{border-bottom:1px solid #e5e5e5;}',
+    '.ktm-row__btn{',
+    '  display:flex;align-items:center;justify-content:space-between;',
+    '  width:100%;padding:0 20px;height:58px;',
+    '  background:none!important;background-color:transparent!important;',
+    '  background-image:none!important;',
+    '  border:none!important;border-radius:0!important;',
+    '  box-shadow:none!important;cursor:pointer;',
+    '  font-family:inherit;font-size:13px;font-weight:700;',
+    '  letter-spacing:.08em;color:#1a1a1a!important;text-transform:uppercase;',
+    '  text-align:left;',
+    '}',
+    '.ktm-row__btn:focus-visible{outline:2px solid #D76AB3;outline-offset:-2px;}',
+    '.ktm-row__chevron{',
+    '  flex-shrink:0;width:18px;height:18px;',
+    '  transition:transform .25s ease;',
+    '  display:flex;align-items:center;justify-content:center;',
+    '}',
+    '.ktm-row__chevron svg{width:14px;height:14px;stroke:currentColor;}',
+    '.ktm-row.is-open .ktm-row__chevron{transform:rotate(180deg);}',
+
+    /* Dropdown panel */
+    '.ktm-drop{',
+    '  overflow:hidden;max-height:0;',
+    '  transition:max-height .32s ease;',
+    '  border-top:2px solid #D76AB3;',
+    '}',
+    '.ktm-row.is-open .ktm-drop{max-height:1800px;}',
+
+    /* Section heading inside dropdown */
+    '.ktm-drop__hd{',
+    '  display:block;padding:16px 20px 8px;',
+    '  font-size:16px;font-weight:600;color:#2B2B2B;',
+    '  text-decoration:none;letter-spacing:0;',
+    '}',
+    '.ktm-drop__hd:hover{color:#D76AB3;}',
+
+    /* Sub-links */
+    '.ktm-drop__list{list-style:none;margin:0;padding:0 0 4px;}',
+    '.ktm-drop__list li a{',
+    '  display:block;padding:9px 20px;',
+    '  font-size:14px;color:#555;text-decoration:none;letter-spacing:0;',
+    '}',
+    '.ktm-drop__list li a:hover{color:#D76AB3;}',
+
+    /* VIEW ALL link */
+    '.ktm-drop__all{',
+    '  display:flex;align-items:center;gap:6px;',
+    '  padding:10px 20px 18px;',
+    '  font-size:13px;font-weight:600;color:#2B2B2B;text-decoration:none;',
+    '}',
+    '.ktm-drop__all:hover{color:#D76AB3;}',
+    '.ktm-drop__all svg{flex-shrink:0;width:14px;height:14px;stroke:currentColor;fill:none;}',
+
+    /* Contact Us row */
+    '.ktm-contact-row{',
+    '  border-bottom:1px solid #e5e5e5;',
+    '}',
+    '.ktm-contact-row a{',
+    '  display:flex;align-items:center;',
+    '  padding:0 20px;height:58px;',
+    '  font-size:13px;font-weight:700;letter-spacing:.08em;',
+    '  color:#2B2B2B;text-decoration:none;text-transform:uppercase;',
+    '}',
+    '.ktm-contact-row a:hover{color:#D76AB3;}',
+
+    /* CTA button */
+    '.ktm-cta{',
+    '  padding:20px;flex-shrink:0;',
+    '  border-top:1px solid #f0f0f0;background:#fff;',
+    '}',
+    '.ktm-cta a{',
+    '  display:block;width:100%;padding:16px 24px;',
+    '  background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%);',
+    '  border-radius:50px;text-align:center;',
+    '  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.1em;',
+    '  color:#fff;text-decoration:none;text-transform:uppercase;',
+    '  transition:opacity .2s,box-shadow .2s;',
+    '}',
+    '.ktm-cta a:hover{opacity:.9;box-shadow:0 4px 20px rgba(215,106,179,.4);}',
+
+    /* Body scroll lock */
+    'body.ktm-locked{overflow:hidden;}'
+  ].join('\n');
+  document.head.appendChild(style);
+
+  /* ── Build HTML ─────────────────────────────────────────────────────── */
+  var chevronDown = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function buildHTML() {
+    var rows = MENU.map(function (section, i) {
+      var dropId = 'ktm-drop-' + i;
+      var items = section.items.map(function (it) {
+        return '<li><a href="' + it.url + '">' + escHtml(it.text) + '</a></li>';
+      }).join('');
+      return (
+        '<div class="ktm-row">' +
+          '<button class="ktm-row__btn" aria-expanded="false" aria-controls="' + dropId + '">' +
+            '<span>' + escHtml(section.label) + '</span>' +
+            '<span class="ktm-row__chevron">' + chevronDown + '</span>' +
+          '</button>' +
+          '<div class="ktm-drop" id="' + dropId + '" role="region">' +
+            '<a class="ktm-drop__hd" href="' + section.headingUrl + '">' + escHtml(section.heading) + '</a>' +
+            '<ul class="ktm-drop__list">' + items + '</ul>' +
+            '<a class="ktm-drop__all" href="' + section.viewAll.url + '">' + escHtml(section.viewAll.text) + '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    return (
+      '<div class="ktm-ov" id="ktm-ov"></div>' +
+      '<div class="ktm-p" id="ktm-p" role="dialog" aria-modal="true" aria-label="Navigation menu">' +
+        '<div class="ktm-hd">' +
+          '<a class="ktm-hd__logo" href="/" aria-label="KTechara home">' +
+            '<img src="/wp-content/uploads/2023/09/main-logo.png" alt="KTechara" loading="lazy">' +
+          '</a>' +
+          '<button class="ktm-hd__close" id="ktm-close" aria-label="Close menu">&#x2715;</button>' +
+        '</div>' +
+        '<nav class="ktm-nav" aria-label="Main navigation">' +
+          rows +
+          '<div class="ktm-contact-row"><a href="/contact-us/index.html">CONTACT US</a></div>' +
+        '</nav>' +
+        '<div class="ktm-cta"><a href="/talk-to-an-expert.html">TALK TO AN EXPERT</a></div>' +
+      '</div>'
+    );
+  }
+
+  function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  /* ── State ──────────────────────────────────────────────────────────── */
+  var panel, overlay, focusables, prevFocus;
+
+  function open() {
+    overlay.classList.add('ktm-ov--open');
+    requestAnimationFrame(function () { overlay.classList.add('ktm-ov--vis'); });
+    panel.classList.add('ktm-p--open');
+    document.body.classList.add('ktm-locked');
+    document.getElementById('ktm-close').focus();
+    cacheFocusables();
+  }
+
+  function close() {
+    overlay.classList.remove('ktm-ov--vis');
+    panel.classList.remove('ktm-p--open');
+    document.body.classList.remove('ktm-locked');
+    setTimeout(function () { overlay.classList.remove('ktm-ov--open'); }, 340);
+    if (prevFocus) prevFocus.focus();
+    prevFocus = null;
+  }
+
+  function cacheFocusables() {
+    focusables = Array.prototype.slice.call(
+      panel.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')
+    );
+  }
+
+  /* ── Accordion ──────────────────────────────────────────────────────── */
+  function initAccordion() {
+    panel.querySelectorAll('.ktm-row__btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var row = btn.closest('.ktm-row');
+        var isOpen = row.classList.contains('is-open');
+
+        /* close all */
+        panel.querySelectorAll('.ktm-row.is-open').forEach(function (r) {
+          r.classList.remove('is-open');
+          r.querySelector('.ktm-row__btn').setAttribute('aria-expanded', 'false');
+        });
+
+        /* toggle current */
+        if (!isOpen) {
+          row.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
     });
+  }
+
+  /* ── Wire hamburger ─────────────────────────────────────────────────── */
+  function wireHamburger() {
+    var burger = document.querySelector('.mobile-nav .elementor-icon');
+    if (!burger) return;
+
+    burger.removeAttribute('href');
+    burger.setAttribute('role', 'button');
+    burger.setAttribute('tabindex', '0');
+    burger.setAttribute('aria-label', 'Open navigation menu');
+    burger.setAttribute('aria-haspopup', 'dialog');
+    burger.setAttribute('aria-expanded', 'false');
+
+    function doOpen(e) {
+      e.preventDefault();
+      prevFocus = burger;
+      burger.setAttribute('aria-expanded', 'true');
+      open();
+    }
+
+    burger.addEventListener('click', doOpen);
+    burger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') doOpen(e);
+    });
+  }
+
+  /* ── Keyboard ───────────────────────────────────────────────────────── */
+  document.addEventListener('keydown', function (e) {
+    if (!panel || !panel.classList.contains('ktm-p--open')) return;
+
+    if (e.key === 'Escape') { close(); return; }
+
+    if (e.key === 'Tab' && focusables && focusables.length) {
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
   });
+
+  /* ── Close on aria-expanded reset ──────────────────────────────────── */
+  function resetBurger() {
+    var burger = document.querySelector('.mobile-nav .elementor-icon');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+  }
+
+  /* ── Init ───────────────────────────────────────────────────────────── */
+  function init() {
+    var wrap = document.createElement('div');
+    wrap.innerHTML = buildHTML();
+    document.body.appendChild(wrap);
+
+    panel   = document.getElementById('ktm-p');
+    overlay = document.getElementById('ktm-ov');
+
+    overlay.addEventListener('click', close);
+    document.getElementById('ktm-close').addEventListener('click', function () {
+      resetBurger();
+      close();
+    });
+
+    initAccordion();
+    wireHamburger();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. ELEMENTOR PRO CONFIG — INNER PAGES
+   Inner pages are missing the ElementorProFrontendConfig inline script that
+   the home page has. Without it, Elementor Pro's sticky module never runs.
+   Define it here (before elementor-pro/assets/js/frontend.min.js loads) so
+   Elementor Pro handles the sticky exactly the same way on every page.
+   The home page already defines this inline so it won't be overwritten there.
+═══════════════════════════════════════════════════════════════════════════ */
+if (typeof ElementorProFrontendConfig === 'undefined') {
+  var ElementorProFrontendConfig = {
+    ajaxurl: '/wp-admin/admin-ajax.php',
+    nonce: '',
+    urls: {
+      assets: '/wp-content/plugins/elementor-pro/assets/',
+      rest: '/wp-json/'
+    },
+    settings: { lazy_load_background_images: true },
+    popup: { hasPopUps: false },
+    shareButtonsNetworks: {},
+    facebook_sdk: { lang: 'en_GB', app_id: '' },
+    lottie: {
+      defaultAnimationUrl: '/wp-content/plugins/elementor-pro/modules/lottie/assets/animations/default.json'
+    }
+  };
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. DIDOMI COOKIE POPUP — KTECHARA BRANDING
+   Replace the Advania logo and match colours to the KTechara brand.
+═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+
+  /* CSS overrides for Didomi popup colours */
+  var s = document.createElement('style');
+  s.textContent =
+    '#didomi-notice-agree-button{background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%)!important;border:none!important;color:#fff!important;border-radius:50px!important;}' +
+    '#didomi-notice-learn-more-button{border:2px solid #D76AB3!important;color:#D76AB3!important;background:transparent!important;border-radius:50px!important;}' +
+    '#didomi-notice,#didomi-popup{border-radius:12px!important;border:2px solid #D76AB3!important;}';
+  document.head.appendChild(s);
+
+  /* Swap any Advania logo image inside the Didomi popup */
+  function swapLogo() {
+    var swapped = false;
+    document.querySelectorAll('#didomi-popup img, #didomi-notice img').forEach(function (img) {
+      if (img.src.indexOf('advania') !== -1 || img.alt.toLowerCase().indexOf('advania') !== -1 || img.closest('.didomi-notice-logo-container')) {
+        img.src = '/wp-content/uploads/2023/09/main-logo.png';
+        img.alt = 'KTechara';
+        img.style.maxHeight = '48px';
+        img.style.width = 'auto';
+        swapped = true;
+      }
+    });
+    return swapped;
+  }
+
+  /* Watch for Didomi to inject the popup into the DOM */
+  var obs = new MutationObserver(function () {
+    swapLogo();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  /* Also try on window load as final fallback */
+  window.addEventListener('load', function () {
+    swapLogo();
+    setTimeout(swapLogo, 1500);
+  });
+
 })();
