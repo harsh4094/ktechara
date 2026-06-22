@@ -117,35 +117,46 @@
   var MENU = [
     {
       label: 'WHAT WE DO',
-      heading: 'What We Do',
-      headingUrl: '/our-solutions.html',
-      items: [
-        { text: 'Technology Sourcing',               url: '/technology-sourcing.1.html' },
-        { text: 'Data Centre & Networking',           url: '/technology-sourcing/data-centre-and-networking.1.html' },
-        { text: 'AV & Collaboration',                url: '/our-solutions/av-collaboration/index.html' },
-        { text: 'Devices & Management',              url: '/our-solutions/devices-and-management/index.html' },
-        { text: 'Print & Office Solutions',          url: '/technology-sourcing/print-and-office-solutions.1.html' },
-        { text: 'Software & Licensing',              url: '/technology-sourcing/software-licensing.html' },
-        { text: 'Solutions',                         url: '/our-solutions.html' },
-        { text: 'AI Transformation',                 url: '/our-services/data-and-ai-transformation/index.html' },
-        { text: 'Cloud, Platform & Network',         url: '/our-solutions/cloud-platform-network.1.html' },
-        { text: 'Cyber Resilience',                  url: '/our-services/cyber-security-and-compliance-services/index.html' },
-        { text: 'Data',                              url: '/our-solutions/data.1.html' },
-        { text: 'Digital Employee Experience',       url: '/our-services/modern-work/index.html' },
-        { text: 'High-Performance Computing',        url: '/solutions/high-performance-compute/index.html' },
-        { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications.1.html' },
-        { text: 'Unified Communications',            url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' },
-        { text: 'Services',                          url: '/our-services.html' },
-        { text: 'Managed IT Services',               url: '/our-services/managed-services/index.html' },
-        { text: 'IT Consulting Services',            url: '/our-services/professional-services.1.html' },
-        { text: 'IT Services for SMBs',              url: '/our-services/it-services-for-smb/index.html' }
-      ],
-      viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
+      subsections: [
+        {
+          heading: 'Technology sourcing',
+          items: [
+            { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking.1.html' },
+            { text: 'AV & Collaboration',        url: '/our-solutions/av-collaboration/index.html' },
+            { text: 'Devices & Management',      url: '/our-solutions/devices-and-management/index.html' },
+            { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions.1.html' },
+            { text: 'Software & Licensing',      url: '/technology-sourcing/software-licensing.html' }
+          ],
+          viewAll: { text: 'VIEW TECHNOLOGY SOURCING', url: '/technology-sourcing.1.html' }
+        },
+        {
+          heading: 'Solutions',
+          items: [
+            { text: 'AI Transformation',                              url: '/our-services/data-and-ai-transformation/index.html' },
+            { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network.1.html' },
+            { text: 'Cyber Resilience',                               url: '/our-services/cyber-security-and-compliance-services/index.html' },
+            { text: 'Data',                                           url: '/our-solutions/data.1.html' },
+            { text: 'Digital Employee Experience',                    url: '/our-services/modern-work/index.html' },
+            { text: 'High-Performance Computing',                     url: '/solutions/high-performance-compute/index.html' },
+            { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications.1.html' },
+            { text: 'Unified Communications',                         url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' }
+          ],
+          viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
+        },
+        {
+          heading: 'Services',
+          items: [
+            { text: 'Managed IT Services',    url: '/our-services/managed-services/index.html' },
+            { text: 'IT Consulting Services', url: '/our-services/professional-services.1.html' },
+            { text: 'IT Services for SMBs',   url: '/our-services/it-services-for-smb/index.html' }
+          ],
+          viewAll: { text: 'VIEW ALL SERVICES', url: '/our-services.html' }
+        }
+      ]
     },
     {
       label: 'SECTORS',
       heading: 'Sectors',
-      headingUrl: '/solutions-by-sector.html',
       items: [
         { text: 'Finance',               url: '/solutions-by-sector/finance/index.html' },
         { text: 'Insurance',             url: '/solutions-by-industry/insurance/index.html' },
@@ -153,49 +164,46 @@
         { text: 'Public Sector',         url: '/solutions-by-sector/public-sector/index.html' },
         { text: 'Leisure & Hospitality', url: '/solutions-by-sector/leisure-and-hospitality/index.html' },
         { text: 'Not For Profit',        url: '/solutions-by-sector/not-for-profit/index.html' },
-        { text: 'Retail',               url: '/solutions-by-sector/retail/index.html' }
+        { text: 'Retail',                url: '/solutions-by-sector/retail/index.html' }
       ],
       viewAll: { text: 'VIEW ALL SECTORS', url: '/solutions-by-sector.html' }
     },
     {
       label: 'PARTNERS',
       heading: 'Partners',
-      headingUrl: '/about-us/ecosystem-and-partners/index.html',
       items: [
         { text: 'Apple',             url: '/partners/apple.1.html' },
         { text: 'Cisco',             url: '/partners/cisco/index.html' },
         { text: 'Dell',              url: '/partners/dell/index.html' },
-        { text: 'HP',               url: '/partners/hp/index.html' },
-        { text: 'HPE',              url: '/partners/hpe/index.html' },
-        { text: 'Lenovo',           url: '/partners/lenovo/index.html' },
-        { text: 'Microsoft',        url: '/about-us/microsoft-partnership.1.html' },
+        { text: 'HP',                url: '/partners/hp/index.html' },
+        { text: 'HPE',               url: '/partners/hpe/index.html' },
+        { text: 'Lenovo',            url: '/partners/lenovo/index.html' },
+        { text: 'Microsoft',         url: '/about-us/microsoft-partnership.1.html' },
         { text: 'Microsoft Surface', url: '/partners/microsoft-surface/index.html' }
       ],
       viewAll: { text: 'VIEW ALL PARTNERS', url: '/about-us/ecosystem-and-partners/index.html' }
     },
     {
       label: 'INSIGHTS',
-      heading: 'Insights',
-      headingUrl: '/insights.1.html',
+      heading: 'Insights by Type',
       items: [
-        { text: 'Blog',                 url: '/blog/index.html' },
-        { text: 'News',                 url: '/news/index.html' },
-        { text: 'Events',               url: '/events/index.html' },
-        { text: 'Podcast',              url: '/insights/podcast/index.html' },
-        { text: 'Webinars',             url: '/webinars/index.html' },
-        { text: 'Workshops',            url: '/workshops/index.html' },
-        { text: 'Microsoft Workshops',  url: '/microsoft-workshops/index.html' },
-        { text: 'Reports & Research',   url: '/reports-research/index.html' },
-        { text: 'eBooks',              url: '/e-books/index.html' }
+        { text: 'Blog',               url: '/blog/index.html' },
+        { text: 'News',               url: '/news/index.html' },
+        { text: 'Events',             url: '/events/index.html' },
+        { text: 'Podcast',            url: '/insights/podcast/index.html' },
+        { text: 'Webinars',           url: '/webinars/index.html' },
+        { text: 'Workshops',          url: '/workshops/index.html' },
+        { text: 'Microsoft Workshops', url: '/microsoft-workshops/index.html' },
+        { text: 'Reports & Research', url: '/reports-research/index.html' },
+        { text: 'eBooks',             url: '/e-books/index.html' }
       ],
-      viewAll: { text: 'VIEW ALL INSIGHTS', url: '/insights.1.html' }
+      viewAll: { text: 'See all insights', url: '/insights.1.html' }
     },
     {
       label: 'ABOUT US',
       heading: 'About Us',
-      headingUrl: '/about-us.1.html',
       items: [
-        { text: 'About KTechara',               url: '/about-us.1.html' },
+        { text: 'About K Techara',               url: '/about-us.1.html' },
         { text: 'Case Studies',                 url: '/about-us/case-studies/index.html' },
         { text: 'People, Culture & Careers',    url: '/about-us/people-culture-and-careers/index.html' },
         { text: 'Sustainability & Social Value', url: '/sustainability/index.html' },
@@ -203,7 +211,6 @@
         { text: 'Leadership',                   url: '/about-us/leadership/index.html' },
         { text: 'Financing Options',            url: '/about-us/financing/index.html' }
       ],
-      viewAll: { text: 'VIEW ABOUT US', url: '/about-us.1.html' }
     }
   ];
 
@@ -212,7 +219,7 @@
   style.textContent = [
     /* Overlay */
     '.ktm-ov{',
-    '  display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);',
+    '  display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);',
     '  z-index:99998;opacity:0;transition:opacity .3s;',
     '}',
     '.ktm-ov.ktm-ov--open{display:block;}',
@@ -224,7 +231,7 @@
     '  background:#fff;z-index:99999;',
     '  display:flex;flex-direction:column;',
     '  transition:right .32s cubic-bezier(.4,0,.2,1);',
-    '  overflow:hidden;box-shadow:-4px 0 24px rgba(0,0,0,.12);',
+    '  overflow:hidden;',
     '}',
     '.ktm-p.ktm-p--open{right:0;}',
 
@@ -250,7 +257,7 @@
     '.ktm-nav{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}',
 
     /* Accordion item row */
-    '.ktm-row{border-bottom:1px solid #e5e5e5;}',
+    '.ktm-row{border-bottom:1px solid #e5e5e5!important;border-left:none!important;border-right:none!important;border-top:none!important;}',
     '.ktm-row__btn{',
     '  display:flex;align-items:center;justify-content:space-between;',
     '  width:100%;padding:0 20px;height:58px;',
@@ -268,59 +275,58 @@
     '  transition:transform .25s ease;',
     '  display:flex;align-items:center;justify-content:center;',
     '}',
-    '.ktm-row__chevron svg{width:14px;height:14px;stroke:currentColor;}',
+    '.ktm-row__chevron svg{width:14px;height:14px;stroke:currentColor;border:none!important;outline:none!important;}',
     '.ktm-row.is-open .ktm-row__chevron{transform:rotate(180deg);}',
 
-    /* Dropdown panel */
-    '.ktm-drop{',
-    '  overflow:hidden;max-height:0;',
-    '  transition:max-height .32s ease;',
-    '  border-top:2px solid #D76AB3;',
+    /* Dropdown panel — gradient top line via ::before pseudo-element */
+    '.ktm-drop{overflow:hidden;max-height:0;transition:max-height .35s ease;border:none!important;position:relative;}',
+    '.ktm-row.is-open .ktm-drop{max-height:2400px;}',
+    '.ktm-row.is-open .ktm-drop::before{',
+    '  content:"";display:block;height:2px;',
+    '  background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%);',
     '}',
-    '.ktm-row.is-open .ktm-drop{max-height:1800px;}',
 
-    /* Section heading inside dropdown */
-    '.ktm-drop__hd{',
-    '  display:block;padding:16px 20px 8px;',
-    '  font-size:16px;font-weight:600;color:#2B2B2B;',
-    '  text-decoration:none;letter-spacing:0;',
+    /* Sub-section heading inside dropdown */
+    '.ktm-subsec__hd{',
+    '  display:block;padding:20px 28px 8px;',
+    '  font-size:17px;font-weight:500;color:#1a1a1a;',
+    '  letter-spacing:0;border:none!important;',
     '}',
-    '.ktm-drop__hd:hover{color:#D76AB3;}',
+
+    /* Separator between sub-sections */
+    '.ktm-subsec-sep{height:1px;background:#e5e5e5;margin:6px 20px;border:none!important;}',
 
     /* Sub-links */
-    '.ktm-drop__list{list-style:none;margin:0;padding:0 0 4px;}',
+    '.ktm-drop__list{list-style:none!important;margin:0!important;padding:0 0 2px!important;}',
+    '.ktm-drop__list li{list-style:none!important;padding:0!important;margin:0!important;border:none!important;}',
     '.ktm-drop__list li a{',
-    '  display:block;padding:9px 20px;',
-    '  font-size:14px;color:#555;text-decoration:none;letter-spacing:0;',
+    '  display:block;padding:9px 28px!important;',
+    '  font-size:14px;color:#555;text-decoration:none;letter-spacing:0;border:none!important;',
     '}',
     '.ktm-drop__list li a:hover{color:#D76AB3;}',
 
     /* VIEW ALL link */
     '.ktm-drop__all{',
     '  display:flex;align-items:center;gap:6px;',
-    '  padding:10px 20px 18px;',
-    '  font-size:13px;font-weight:600;color:#2B2B2B;text-decoration:none;',
+    '  padding:10px 28px 18px!important;',
+    '  font-size:13px;font-weight:600;color:#1a1a1a;text-decoration:none;',
+    '  letter-spacing:.04em;border:none!important;outline:none!important;',
     '}',
     '.ktm-drop__all:hover{color:#D76AB3;}',
-    '.ktm-drop__all svg{flex-shrink:0;width:14px;height:14px;stroke:currentColor;fill:none;}',
+    '.ktm-drop__all svg{flex-shrink:0;width:14px;height:14px;stroke:#D76AB3;fill:none;border:none!important;outline:none!important;display:block;}',
 
     /* Contact Us row */
-    '.ktm-contact-row{',
-    '  border-bottom:1px solid #e5e5e5;',
-    '}',
+    '.ktm-contact-row{border-bottom:1px solid #e5e5e5;}',
     '.ktm-contact-row a{',
     '  display:flex;align-items:center;',
-    '  padding:0 20px;height:58px;',
+    '  padding:15px 32px 15px 32px;height:58px;',
     '  font-size:13px;font-weight:700;letter-spacing:.08em;',
-    '  color:#2B2B2B;text-decoration:none;text-transform:uppercase;',
+    '  color:#1a1a1a;text-decoration:none;text-transform:uppercase;',
     '}',
     '.ktm-contact-row a:hover{color:#D76AB3;}',
 
     /* CTA button */
-    '.ktm-cta{',
-    '  padding:20px;flex-shrink:0;',
-    '  border-top:1px solid #f0f0f0;background:#fff;',
-    '}',
+    '.ktm-cta{padding:20px;flex-shrink:0;background:#fff;}',
     '.ktm-cta a{',
     '  display:block;width:100%;padding:16px 24px;',
     '  background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%);',
@@ -338,13 +344,40 @@
 
   /* ── Build HTML ─────────────────────────────────────────────────────── */
   var chevronDown = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var arrowRight  = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
+
+  function buildSubsection(sub, isFirst) {
+    var items = sub.items.map(function (it) {
+      return '<li><a href="' + it.url + '">' + escHtml(it.text) + '</a></li>';
+    }).join('');
+    return (
+      (isFirst ? '' : '<div class="ktm-subsec-sep"></div>') +
+      '<span class="ktm-subsec__hd">' + escHtml(sub.heading) + '</span>' +
+      '<ul class="ktm-drop__list">' + items + '</ul>' +
+      '<a class="ktm-drop__all" href="' + sub.viewAll.url + '">' + escHtml(sub.viewAll.text) + arrowRight + '</a>'
+    );
+  }
 
   function buildHTML() {
     var rows = MENU.map(function (section, i) {
       var dropId = 'ktm-drop-' + i;
-      var items = section.items.map(function (it) {
-        return '<li><a href="' + it.url + '">' + escHtml(it.text) + '</a></li>';
-      }).join('');
+      var content;
+
+      if (section.subsections) {
+        content = section.subsections.map(function (sub, j) {
+          return buildSubsection(sub, j === 0);
+        }).join('');
+      } else {
+        var items = section.items.map(function (it) {
+          return '<li><a href="' + it.url + '">' + escHtml(it.text) + '</a></li>';
+        }).join('');
+        content = (
+          '<span class="ktm-subsec__hd">' + escHtml(section.heading) + '</span>' +
+          '<ul class="ktm-drop__list">' + items + '</ul>' +
+          (section.viewAll ? '<a class="ktm-drop__all" href="' + section.viewAll.url + '">' + escHtml(section.viewAll.text) + arrowRight + '</a>' : '')
+        );
+      }
+
       return (
         '<div class="ktm-row">' +
           '<button class="ktm-row__btn" aria-expanded="false" aria-controls="' + dropId + '">' +
@@ -352,9 +385,7 @@
             '<span class="ktm-row__chevron">' + chevronDown + '</span>' +
           '</button>' +
           '<div class="ktm-drop" id="' + dropId + '" role="region">' +
-            '<a class="ktm-drop__hd" href="' + section.headingUrl + '">' + escHtml(section.heading) + '</a>' +
-            '<ul class="ktm-drop__list">' + items + '</ul>' +
-            '<a class="ktm-drop__all" href="' + section.viewAll.url + '">' + escHtml(section.viewAll.text) + '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>' +
+            content +
           '</div>' +
         '</div>'
       );
@@ -364,8 +395,8 @@
       '<div class="ktm-ov" id="ktm-ov"></div>' +
       '<div class="ktm-p" id="ktm-p" role="dialog" aria-modal="true" aria-label="Navigation menu">' +
         '<div class="ktm-hd">' +
-          '<a class="ktm-hd__logo" href="/" aria-label="KTechara home">' +
-            '<img src="/wp-content/uploads/2023/09/main-logo.png" alt="KTechara" loading="lazy">' +
+          '<a class="ktm-hd__logo" href="/" aria-label="K Techara home">' +
+            '<img src="/wp-content/uploads/2023/09/main-logo.png" alt="K Techara" loading="lazy">' +
           '</a>' +
           '<button class="ktm-hd__close" id="ktm-close" aria-label="Close menu">&#x2715;</button>' +
         '</div>' +
@@ -534,8 +565,8 @@ if (typeof ElementorProFrontendConfig === 'undefined') {
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   4. DIDOMI COOKIE POPUP — KTECHARA BRANDING
-   Replace the Advania logo and match colours to the KTechara brand.
+   4. DIDOMI COOKIE POPUP — K TECHARA BRANDING
+   Replace the Advania logo and match colours to the K Techara brand.
 ═══════════════════════════════════════════════════════════════════════════ */
 (function () {
 
@@ -553,7 +584,7 @@ if (typeof ElementorProFrontendConfig === 'undefined') {
     document.querySelectorAll('#didomi-popup img, #didomi-notice img').forEach(function (img) {
       if (img.src.indexOf('advania') !== -1 || img.alt.toLowerCase().indexOf('advania') !== -1 || img.closest('.didomi-notice-logo-container')) {
         img.src = '/wp-content/uploads/2023/09/main-logo.png';
-        img.alt = 'KTechara';
+        img.alt = 'K Techara';
         img.style.maxHeight = '48px';
         img.style.width = 'auto';
         swapped = true;
