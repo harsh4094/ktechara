@@ -1830,3 +1830,42 @@ body.is-light-header header.darknav:not(.elementor-sticky--effects):not(.menu-ho
 [style*="background-color:#45b649"] {
   background-color: #C8E86A !important;
 }
+
+/* ============================================================
+   MOBILE MENU CLOSE BUTTON — reset Elementor kit button styles
+   ============================================================ */
+.ktm-hd__close,
+#ktm-close,
+button.ktm-hd__close {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+.ktm-hd__close:hover,
+.ktm-hd__close:focus,
+#ktm-close:hover,
+#ktm-close:focus {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  outline: none !important;
+}
+
+@media (max-width: 1024px) {
+  .ktm-hd {
+    padding: 0 32px !important;
+  }
+}
+
+/* Hide Elementor sticky spacer for desktop header on mobile/tablet — prevents top gap */
+@media (max-width: 1023px) {
+  .elementor-sticky__spacer {
+    display: none !important;
+    height: 0 !important;
+  }
+}
