@@ -1,4 +1,4 @@
-# START YOAST BLOCK
+﻿# START YOAST BLOCK
 # ---------------------------
 User-agent: *
 Disallow: /wp-admin/
@@ -7,6 +7,6 @@ Disallow: /wp-login.php
 Disallow: *sf_paged=*
 Disallow: /*lai_vid
 
-Sitemap: https://www.advania.co.uk/sitemap_index.xml
+Sitemap: https://ktechara.co.uk/sitemap_index.xml
 # ---------------------------
 # END YOAST BLOCK

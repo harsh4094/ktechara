@@ -1,18 +1,18 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
- * Final pass: remove ALL remaining https://www.advania.co.uk/ references from HTML files.
+ * Final pass: remove ALL remaining https://ktechara.co.uk/ references from HTML files.
  *
  * Handles:
  *  1. og:url / og:image / msapplication-TileImage content= meta tags → strip domain
- *  2. ajaxurl: "https://www.advania.co.uk/wp-admin/admin-ajax.php" → "/wp-admin/admin-ajax.php"
+ *  2. ajaxurl: "https://ktechara.co.uk/wp-admin/admin-ajax.php" → "/wp-admin/admin-ajax.php"
  *  3. href= Elementor CSS (wp-content/uploads/elementor/css/post-*.css) → depth-relative local path
  *  4. href= Premium Addons CSS (wp-content/uploads/premium-addons-elementor/pafe-*.css) → depth-relative
  *  5. CSS sourceURL comments → strip entirely
  *  6. href= navigation page links → strip domain, keep path root-relative
  *  7. ?post_type=insights&p=XXXXX draft preview URLs → /insights/
- *  8. content="https://www.advania.co.uk" bare domain in meta → "/"
- *  9. Any remaining https://www.advania.co.uk/wp-content/uploads/ in content= → strip domain
- * 10. Any remaining href="https://www.advania.co.uk/..." navigation links → strip domain
+ *  8. content="https://ktechara.co.uk" bare domain in meta → "/"
+ *  9. Any remaining https://ktechara.co.uk/wp-content/uploads/ in content= → strip domain
+ * 10. Any remaining href="https://ktechara.co.uk/..." navigation links → strip domain
  * 11. ajaxurl in WP inline scripts (all forms) → /wp-admin/admin-ajax.php
  * 12. CSS url() advania references inside <style> blocks → strip domain
  * 13. data-permalink / data-url advania attributes → strip domain
@@ -51,7 +51,7 @@ function processFile(filePath, content) {
   let c = content;
 
   // ── 1. og:url content= → strip domain, keep path ──────────────────────────
-  // <meta property="og:url" content="https://www.advania.co.uk/some/path/" />
+  // <meta property="og:url" content="https://ktechara.co.uk/some/path/" />
   if (c.includes('og:url') && c.includes('advania.co.uk')) {
     const before = c;
     c = c.replace(
@@ -110,7 +110,7 @@ function processFile(filePath, content) {
   }
 
   // ── 6. CSS sourceURL comments → remove ────────────────────────────────────
-  if (c.includes('sourceURL=https://www.advania.co.uk')) {
+  if (c.includes('sourceURL=https://ktechara.co.uk')) {
     const before = c;
     c = c.replace(/\/\*#\s*sourceURL=https?:\/\/(?:www\.)?advania\.co\.uk[^*]*\*\//g, '');
     if (c !== before) stats.sourceUrl++;
@@ -126,8 +126,8 @@ function processFile(filePath, content) {
     if (c !== before) stats.draftLinks++;
   }
 
-  // ── 8. bare content="https://www.advania.co.uk" → "/" ─────────────────────
-  if (c.includes('content="https://www.advania.co.uk"') || c.includes("content='https://www.advania.co.uk'")) {
+  // ── 8. bare content="https://ktechara.co.uk" → "/" ─────────────────────
+  if (c.includes('content="https://ktechara.co.uk"') || c.includes("content='https://ktechara.co.uk'")) {
     const before = c;
     c = c.replace(/content="https?:\/\/(?:www\.)?advania\.co\.uk"/g, 'content="/"');
     c = c.replace(/content='https?:\/\/(?:www\.)?advania\.co\.uk'/g, "content='/'");
@@ -151,10 +151,10 @@ function processFile(filePath, content) {
   }
 
   // ── 10. href= navigation links → strip domain, keep path root-relative ────
-  if (c.includes('href="https://www.advania.co.uk/') || c.includes("href='https://www.advania.co.uk/")) {
+  if (c.includes('href="https://ktechara.co.uk/') || c.includes("href='https://ktechara.co.uk/")) {
     const before = c;
-    // Strip domain from all href="https://www.advania.co.uk/PATH" links
-    // (NOT matching just "https://www.advania.co.uk" bare — those were handled above)
+    // Strip domain from all href="https://ktechara.co.uk/PATH" links
+    // (NOT matching just "https://ktechara.co.uk" bare — those were handled above)
     c = c.replace(
       /href="https?:\/\/(?:www\.)?advania\.co\.uk(\/[^"#?]*)(?:[^"]*)?"([^>]*>)/g,
       (m, urlPath, rest) => {

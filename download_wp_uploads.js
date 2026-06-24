@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Download all advania.co.uk/wp-content/uploads/* images that are missing locally,
  * then update HTML src= references to use local relative paths.
@@ -24,7 +24,7 @@ function fetchBuffer(fetchUrl, retries = 3) {
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0 Safari/537.36',
             'Accept': 'image/webp,image/avif,image/*,*/*;q=0.8',
-            'Referer': 'https://www.advania.co.uk/',
+            'Referer': 'https://ktechara.co.uk/',
           },
         }, (res) => {
           if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location)
@@ -122,11 +122,11 @@ async function main() {
   // ── Also download mediaelement CSS files ──────────────────────────────────
   const mediaCssFiles = [
     {
-      url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17',
+      url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17',
       local: 'wp-content/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css',
     },
     {
-      url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.9.4',
+      url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.9.4',
       local: 'wp-content/wp-includes/js/mediaelement/wp-mediaelement.min.css',
     },
   ];
