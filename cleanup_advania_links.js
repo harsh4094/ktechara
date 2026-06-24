@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Final cleanup: remove all remaining advania.co.uk references that are
  * external dependencies (not content hyperlinks to external pages).
@@ -102,7 +102,7 @@ async function main() {
   if (!fs.existsSync(wpBlockFullPath) || fs.statSync(wpBlockFullPath).size < 100) {
     console.log('Downloading wp-block-library CSS...');
     const data = await fetchBuffer(
-      'https://www.advania.co.uk/wp-includes/css/dist/block-library/style.min.css?ver=6.9.4'
+      'https://ktechara.co.uk/wp-includes/css/dist/block-library/style.min.css?ver=6.9.4'
     );
     if (data && data.length > 100) {
       fs.writeFileSync(wpBlockFullPath, data);
@@ -184,7 +184,7 @@ async function main() {
     if (content.includes('"https://advania.co.uk"')) {
       content = content.replace(/"https:\/\/advania\.co\.uk"/g, '"/"');
     }
-    if (content.includes('"https://www.advania.co.uk"')) {
+    if (content.includes('"https://ktechara.co.uk"')) {
       content = content.replace(/"https:\/\/www\.advania\.co\.uk"/g, '"/"');
     }
 

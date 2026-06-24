@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Phase 2 cleanup:
  *  1. Download all wp-includes/js/* files locally + update all HTML references
@@ -67,34 +67,34 @@ function relPath(filePath, localFromRoot) {
 
 // All wp-includes/js files to download
 const WP_JS_FILES = [
-  { url: 'https://www.advania.co.uk/wp-includes/js/jquery/jquery.min.js?ver=3.7.1',
+  { url: 'https://ktechara.co.uk/wp-includes/js/jquery/jquery.min.js?ver=3.7.1',
     local: 'wp-content/wp-includes/js/jquery/jquery.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/jquery\/jquery\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1',
+  { url: 'https://ktechara.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1',
     local: 'wp-content/wp-includes/js/jquery/jquery-migrate.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/jquery\/jquery-migrate\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3',
+  { url: 'https://ktechara.co.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3',
     local: 'wp-content/wp-includes/js/jquery/ui/core.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/jquery\/ui\/core\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1',
+  { url: 'https://ktechara.co.uk/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1',
     local: 'wp-content/wp-includes/js/dist/hooks.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/dist\/hooks\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375',
+  { url: 'https://ktechara.co.uk/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375',
     local: 'wp-content/wp-includes/js/dist/i18n.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/dist\/i18n\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/imagesloaded.min.js?ver=5.0.0',
+  { url: 'https://ktechara.co.uk/wp-includes/js/imagesloaded.min.js?ver=5.0.0',
     local: 'wp-content/wp-includes/js/imagesloaded.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/imagesloaded\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17',
+  { url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17',
     local: 'wp-content/wp-includes/js/mediaelement/mediaelement-and-player.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/mediaelement\/mediaelement-and-player\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.9.4',
+  { url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.9.4',
     local: 'wp-content/wp-includes/js/mediaelement/mediaelement-migrate.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/mediaelement\/mediaelement-migrate\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17',
+  { url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17',
     local: 'wp-content/wp-includes/js/mediaelement/renderers/vimeo.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/mediaelement\/renderers\/vimeo\.min\.js[^"']*/g },
-  { url: 'https://www.advania.co.uk/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.9.4',
+  { url: 'https://ktechara.co.uk/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.9.4',
     local: 'wp-content/wp-includes/js/mediaelement/wp-mediaelement.min.js',
     pattern: /https?:\/\/www\.advania\.co\.uk\/wp-includes\/js\/mediaelement\/wp-mediaelement\.min\.js[^"']*/g },
 ];
@@ -147,7 +147,7 @@ async function main() {
     }
 
     // Fix remaining cdn-cgi with data-cfemail attribute pattern:
-    // <a href="https://www.advania.co.uk/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="HASH">text</a>
+    // <a href="https://ktechara.co.uk/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="HASH">text</a>
     if (content.includes('cdn-cgi/l/email-protection') && content.includes('data-cfemail')) {
       const before = content;
       content = content.replace(
