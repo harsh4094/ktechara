@@ -50,12 +50,50 @@
 
     var s = document.createElement('style');
     s.textContent =
+      /* Position dropdown flush with header bottom */
       '.darknav .e-n-menu:not([data-layout=dropdown]) .e-active.e-n-menu-content{' +
         'top:var(--ktm-top,100%)!important;' +
         'padding-block-start:0!important;' +
       '}' +
       '.darknav .e-n-menu-content>.e-con{' +
         'width:100%!important;max-width:100%!important;' +
+      '}' +
+      /* ── Smooth open/close animation ──────────────────────────────────
+         The content wrapper is always in the DOM but hidden via
+         visibility+opacity+translateY rather than display:none, so CSS
+         transitions can play both ways. We layer this on top of whatever
+         Elementor does with .e-active so nothing breaks if Elementor
+         also sets display:block on .e-active. */
+      '.darknav .e-n-menu-content{' +
+        'opacity:0;' +
+        'transform:translateY(-10px);' +
+        'visibility:hidden;' +
+        'pointer-events:none;' +
+        'transition:opacity 0.25s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1), visibility 0s linear 0.25s;' +
+      '}' +
+      '.darknav .e-n-menu-content.e-active{' +
+        'opacity:1;' +
+        'transform:translateY(0);' +
+        'visibility:visible;' +
+        'pointer-events:all;' +
+        'transition:opacity 0.3s cubic-bezier(0.2,0,0,1), transform 0.3s cubic-bezier(0.2,0,0,1), visibility 0s linear 0s;' +
+      '}' +
+      /* ── Hover bridge ─────────────────────────────────────────────────
+         An invisible pseudo-element that extends 50 px above the mega
+         menu, filling any gap between the header nav-item hit-box and
+         the top edge of the dropdown.  While the cursor travels through
+         this zone it is still "inside" .e-n-menu-content, so mouseleave
+         does not fire and the hide timer is never started — preventing
+         the header from losing its active/opaque state mid-travel. */
+      '.darknav .e-n-menu-content.e-active::before{' +
+        'content:"";' +
+        'position:absolute;' +
+        'bottom:100%;' +
+        'left:0;right:0;' +
+        'height:50px;' +
+        'background:transparent;' +
+        'pointer-events:auto;' +
+        'display:block;' +
       '}';
     document.head.appendChild(s);
 
@@ -72,7 +110,7 @@
         clearTimeout(timer);
         closeAll(item);
         content.classList.add('e-active');
-        panel.classList.add('e-active');
+        if (panel) panel.classList.add('e-active');
         var btn = item.querySelector('.e-n-menu-dropdown-icon');
         if (btn) btn.setAttribute('aria-expanded', 'true');
       }
@@ -80,16 +118,41 @@
       function hide() {
         timer = setTimeout(function () {
           content.classList.remove('e-active');
-          panel.classList.remove('e-active');
+          if (panel) panel.classList.remove('e-active');
           var btn = item.querySelector('.e-n-menu-dropdown-icon');
           if (btn) btn.setAttribute('aria-expanded', 'false');
-        }, 150);
+        }, 350);
       }
 
+      /* When the cursor enters the nav item title, always show (and cancel
+         any in-flight hide timer for THIS item). */
       item.addEventListener('mouseenter', show);
-      item.addEventListener('mouseleave', hide);
-      content.addEventListener('mouseenter', function () { clearTimeout(timer); });
-      content.addEventListener('mouseleave', hide);
+
+      /* When the cursor leaves the nav item, schedule a hide — but only
+         execute it if the cursor did NOT immediately enter the content
+         panel (handled by the mouseenter on content below). */
+      item.addEventListener('mouseleave', function (e) {
+        /* If the cursor is moving INTO the content panel, don't hide. */
+        if (content.contains(e.relatedTarget)) return;
+        hide();
+      });
+
+      /* Keep the panel open while the cursor is inside it. */
+      content.addEventListener('mouseenter', function () {
+        clearTimeout(timer);
+      });
+
+      /* When the cursor leaves the content panel, hide — but if it's
+         moving back to the same e-n-menu-item, cancel immediately. */
+      content.addEventListener('mouseleave', function (e) {
+        /* relatedTarget is the element the cursor is moving INTO. */
+        if (item.contains(e.relatedTarget)) {
+          /* Moving back to the nav item title — keep open, cancel hide. */
+          clearTimeout(timer);
+          return;
+        }
+        hide();
+      });
     });
 
     document.addEventListener('click', function (e) {

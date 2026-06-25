@@ -11515,25 +11515,37 @@ footer .elementor-widget-theme-site-logo a,
     ></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const header = document.querySelector("header.darknav");
-        const triggers = document.querySelectorAll(".menu-hover-trigger");
+        var header = document.querySelector("header.darknav");
+        if (!header) return;
 
-        if (!header || triggers.length === 0) return;
+        /*
+         * Track menu-hovering on the HEADER element, not on .menu-hover-trigger.
+         *
+         * Why: The mega-menu content panels are absolutely positioned below the
+         * sticky header bar. They are DOM descendants of header.darknav, so
+         * moving the cursor from the nav bar into the mega menu does NOT fire
+         * mouseleave on header.darknav (the cursor stays within the DOM subtree).
+         * Moving from the mega menu back to the same nav item also stays within
+         * the DOM subtree, so no spurious mouseleave fires.
+         *
+         * Using .menu-hover-trigger caused the bug because that element's hit
+         * area only covers the visible nav strip; the absolutely-positioned
+         * mega menu is outside it, so moving into/out of the mega menu fired
+         * spurious mouseleave/mouseenter events, briefly removing menu-hovering
+         * and making the header flash/disappear.
+         */
+        header.addEventListener("mouseenter", function () {
+          header.classList.add("menu-hovering");
+        });
 
-        let hoverCount = 0;
-
-        triggers.forEach((el) => {
-          el.addEventListener("mouseenter", () => {
-            hoverCount++;
-            header.classList.add("menu-hovering");
-          });
-
-          el.addEventListener("mouseleave", () => {
-            hoverCount = Math.max(hoverCount - 1, 0);
-            if (hoverCount === 0) {
-              header.classList.remove("menu-hovering");
-            }
-          });
+        header.addEventListener("mouseleave", function (e) {
+          /*
+           * Extra guard: only remove menu-hovering if the cursor is genuinely
+           * leaving the entire header + mega-menu area. relatedTarget is null
+           * or an element outside .darknav.
+           */
+          if (e.relatedTarget && header.contains(e.relatedTarget)) return;
+          header.classList.remove("menu-hovering");
         });
       });
     </script>
