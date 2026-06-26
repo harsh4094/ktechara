@@ -247,22 +247,6 @@
       viewAll: { text: 'VIEW ALL PARTNERS', url: '/about-us/ecosystem-and-partners/index.html' }
     },
     {
-      label: 'INSIGHTS',
-      heading: 'Insights by Type',
-      items: [
-        { text: 'Blog',               url: '/blog/index.html' },
-        { text: 'News',               url: '/news/index.html' },
-        { text: 'Events',             url: '/events/index.html' },
-        { text: 'Podcast',            url: '/insights/podcast/index.html' },
-        { text: 'Webinars',           url: '/webinars/index.html' },
-        { text: 'Workshops',          url: '/workshops/index.html' },
-        { text: 'Microsoft Workshops', url: '/microsoft-workshops/index.html' },
-        { text: 'Reports & Research', url: '/reports-research/index.html' },
-        { text: 'eBooks',             url: '/e-books/index.html' }
-      ],
-      viewAll: { text: 'See all insights', url: '/insights.1.html' }
-    },
-    {
       label: 'ABOUT US',
       heading: 'About Us',
       items: [
@@ -465,6 +449,7 @@
         '</div>' +
         '<nav class="ktm-nav" aria-label="Main navigation">' +
           rows +
+          '<div class="ktm-contact-row"><a href="/blog/index.html">BLOG</a></div>' +
           '<div class="ktm-contact-row"><a href="/contact-us/index.html">CONTACT US</a></div>' +
         '</nav>' +
         '<div class="ktm-cta"><a href="/talk-to-an-expert.html">TALK TO AN EXPERT</a></div>' +
