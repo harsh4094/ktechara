@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════════════════════════════════════
    1. DESKTOP MEGA-MENU — universal hover fix (all browsers)
    Elementor Pro adds .e-active to show dropdowns; this guarantees hover works
    even when Elementor JS fails to initialise on inner pages.
@@ -184,11 +184,11 @@
         {
           heading: 'Technology sourcing',
           items: [
-            { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking.1.html' },
+            { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking/' },
             { text: 'AV & Collaboration',        url: '/our-solutions/av-collaboration/index.html' },
             { text: 'Devices & Management',      url: '/our-solutions/devices-and-management/index.html' },
-            { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions.1.html' },
-            { text: 'Software & Licensing',      url: '/technology-sourcing/software-licensing.html' }
+            { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions/' },
+            { text: 'Software & Licensing',      url: '/technology-sourcing/licensing/' }
           ],
           viewAll: { text: 'VIEW TECHNOLOGY SOURCING', url: '/technology-sourcing.1.html' }
         },
@@ -196,12 +196,12 @@
           heading: 'Solutions',
           items: [
             { text: 'AI Transformation',                              url: '/our-services/data-and-ai-transformation/index.html' },
-            { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network.1.html' },
+            { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network/' },
             { text: 'Cyber Resilience',                               url: '/our-services/cyber-security-and-compliance-services/index.html' },
-            { text: 'Data',                                           url: '/our-solutions/data.1.html' },
+            { text: 'Data',                                           url: '/our-solutions/data/' },
             { text: 'Digital Employee Experience',                    url: '/our-services/modern-work/index.html' },
-            { text: 'High-Performance Computing',                     url: '/solutions/high-performance-compute/index.html' },
-            { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications.1.html' },
+            { text: 'High-Performance Computing',                     url: '/our-solutions/high-performance-compute/index.html' },
+            { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications/' },
             { text: 'Unified Communications',                         url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' }
           ],
           viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
@@ -210,7 +210,7 @@
           heading: 'Services',
           items: [
             { text: 'Managed IT Services',    url: '/our-services/managed-services/index.html' },
-            { text: 'IT Consulting Services', url: '/our-services/professional-services.1.html' },
+            { text: 'IT Consulting Services', url: '/our-services/professional-services/' },
             { text: 'IT Services for SMBs',   url: '/our-services/it-services-for-smb/index.html' }
           ],
           viewAll: { text: 'VIEW ALL SERVICES', url: '/our-services.html' }
@@ -235,7 +235,7 @@
       label: 'PARTNERS',
       heading: 'Partners',
       items: [
-        { text: 'Apple',             url: '/partners/apple.1.html' },
+        { text: 'Apple',             url: '/partners/apple/' },
         { text: 'Cisco',             url: '/partners/cisco/index.html' },
         { text: 'Dell',              url: '/partners/dell/index.html' },
         { text: 'HP',                url: '/partners/hp/index.html' },
