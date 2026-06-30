@@ -97,23 +97,22 @@ AUDIT_JS = """
     }
     issues.fixed_width_elements = wideEls;
 
-    // 4. Images not constrained to viewport
+    // 4. Images actually rendered wider than the viewport
     const badImgs = [];
     for (const img of document.querySelectorAll('img')) {
         try {
             const r = img.getBoundingClientRect();
-            const cs = getComputedStyle(img);
-            const isWider = r.width > vw + 2;
-            const noMaxWidth = cs.maxWidth !== '100%' && cs.maxWidth !== 'none'
-                               && img.hasAttribute('width');
-            if (isWider || noMaxWidth) {
+            // Only flag images that are truly overflowing the viewport — skip
+            // zero-width (hidden) images and images that fit within the viewport.
+            if (r.width > vw + 2 && r.width > 0) {
+                const cs = getComputedStyle(img);
                 badImgs.push({
                     src: (img.getAttribute('src') || '').split('/').slice(-1)[0],
                     rendered_width_px: Math.round(r.width),
                     has_width_attr: img.hasAttribute('width'),
                     width_attr_value: img.getAttribute('width'),
                     max_width_computed: cs.maxWidth,
-                    wider_than_viewport: isWider,
+                    wider_than_viewport: true,
                 });
                 if (badImgs.length >= 8) break;
             }
