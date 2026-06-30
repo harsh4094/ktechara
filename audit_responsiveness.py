@@ -153,6 +153,13 @@ AUDIT_JS = """
             const parR = parent.getBoundingClientRect();
             const overflow = Math.round(elR.right - parR.right);
             if (overflow > 4) {
+                // Skip elements clipped by a parent with overflow:hidden/clip —
+                // the overflow is invisible to users (e.g. Elementor parallax layers).
+                const parentOvf = getComputedStyle(parent).overflow;
+                const parentOvfX = getComputedStyle(parent).overflowX;
+                const isClipped = parentOvf === 'hidden' || parentOvf === 'clip'
+                               || parentOvfX === 'hidden' || parentOvfX === 'clip';
+                if (isClipped) continue;
                 overflowingEls.push({
                     tag: el.tagName.toLowerCase(),
                     classes: Array.from(el.classList).slice(0, 6).join(' '),
