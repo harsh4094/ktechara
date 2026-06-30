@@ -45,14 +45,8 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
   --color-border: rgba(43, 43, 43, 0.12);
   --color-border-light: rgba(200, 154, 232, 0.25);
 
-  /* CTA gradient — used on all primary buttons */
-  --gradient-cta: linear-gradient(
-    135deg,
-    #d76ab3 0%,
-    #c89ae8 40%,
-    #7ec7e8 75%,
-    #f5b38a 100%
-  );
+  /* CTA colour — used on all primary buttons */
+  --gradient-cta: #d76ab3;
 
   /* Supporting gradients */
   --gradient-hero: linear-gradient(

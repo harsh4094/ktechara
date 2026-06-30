@@ -376,7 +376,7 @@
     '.ktm-cta{padding:20px;flex-shrink:0;background:#fff;}',
     '.ktm-cta a{',
     '  display:block;width:100%;padding:16px 24px;',
-    '  background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%);',
+    '  background:#D76AB3;',
     '  border-radius:50px;text-align:center;',
     '  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.1em;',
     '  color:#fff;text-decoration:none;text-transform:uppercase;',
@@ -632,7 +632,7 @@ if (typeof ElementorProFrontendConfig === 'undefined') {
   /* CSS overrides for Didomi popup colours */
   var s = document.createElement('style');
   s.textContent =
-    '#didomi-notice-agree-button{background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%)!important;border:none!important;color:#fff!important;border-radius:50px!important;}' +
+    '#didomi-notice-agree-button{background:#D76AB3!important;border:none!important;color:#fff!important;border-radius:50px!important;}' +
     '#didomi-notice-learn-more-button{border:2px solid #D76AB3!important;color:#D76AB3!important;background:transparent!important;border-radius:50px!important;}' +
     '#didomi-notice,#didomi-popup{border-radius:12px!important;border:2px solid #D76AB3!important;}';
   document.head.appendChild(s);
