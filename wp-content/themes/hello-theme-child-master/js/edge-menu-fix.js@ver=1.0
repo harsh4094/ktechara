@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════════════════════════════════════
    1. DESKTOP MEGA-MENU — universal hover fix (all browsers)
    Elementor Pro adds .e-active to show dropdowns; this guarantees hover works
    even when Elementor JS fails to initialise on inner pages.
@@ -11,8 +11,16 @@
       if (other === except) return;
       var oc = other.querySelector('.e-n-menu-content');
       var op = oc && oc.querySelector('.e-con');
-      if (oc) oc.classList.remove('e-active');
+      if (oc) {
+        /* Suppress transition so the outgoing panel disappears instantly.
+           This makes the switch feel like a single shared dropdown whose
+           content updates, rather than two separate panels cross-fading. */
+        oc.classList.add('e-no-anim');
+        oc.classList.remove('e-active');
+        requestAnimationFrame(function () { oc.classList.remove('e-no-anim'); });
+      }
       if (op) op.classList.remove('e-active');
+      other.classList.remove('ktm-open');
       var btn = other.querySelector('.e-n-menu-dropdown-icon');
       if (btn) btn.setAttribute('aria-expanded', 'false');
     });
@@ -41,8 +49,18 @@
       nMenu.style.setProperty('--stretch-left',  (-r.left) + 'px');
       nMenu.style.setProperty('--stretch-right', (-(window.innerWidth - r.right)) + 'px');
       nMenu.style.setProperty('--stretch-width', '100vw');
+      /* Own variables Elementor never writes to — used in our CSS override
+         below so Elementor's first-hover recalc of --stretch-left on the
+         child .e-n-menu-wrapper cannot shift the dropdown position. */
+      nMenu.style.setProperty('--ktm-left',  (-r.left) + 'px');
+      nMenu.style.setProperty('--ktm-right', (-(window.innerWidth - r.right)) + 'px');
       /* top value that places dropdown flush with header bottom */
-      nMenu.style.setProperty('--ktm-top', Math.round(h.bottom - r.top) + 'px');
+      var ktmTop = Math.round(h.bottom - r.top);
+      nMenu.style.setProperty('--ktm-top', ktmTop + 'px');
+      /* Stretch the menu heading to fill the header height so nav items
+         extend right to the dropdown top — eliminating the hover gap. */
+      var heading = nMenu.querySelector('.e-n-menu-heading');
+      if (heading) heading.style.height = ktmTop + 'px';
     }
     fixLayout();
     window.addEventListener('resize', fixLayout);
@@ -50,13 +68,84 @@
 
     var s = document.createElement('style');
     s.textContent =
+      /* Position dropdown flush with header bottom.
+         Use --ktm-left/right (set only by us, never by Elementor) so that
+         Elementor's first-hover recalc of --stretch-left on .e-n-menu-wrapper
+         cannot override our horizontal position and cause a shift. */
       '.darknav .e-n-menu:not([data-layout=dropdown]) .e-active.e-n-menu-content{' +
         'top:var(--ktm-top,100%)!important;' +
         'padding-block-start:0!important;' +
       '}' +
+      '.darknav .e-n-menu:not([data-layout=dropdown]) .e-n-menu-content{' +
+        'left:var(--ktm-left)!important;' +
+        'right:var(--ktm-right)!important;' +
+        'width:100vw!important;' +
+      '}' +
       '.darknav .e-n-menu-content>.e-con{' +
         'width:100%!important;max-width:100%!important;' +
-      '}';
+      '}' +
+      /* Stretch li items to fill the full heading height (Elementor overrides
+         align-items:center on the heading which prevents stretching) */
+      '.darknav .e-n-menu-heading{align-items:stretch!important;}' +
+      /* Stretch .e-n-menu-title to fill the full li height.
+         The title div itself already has align-items:center so the text
+         stays vertically centred inside it. */
+      '.darknav .e-n-menu-item{align-items:stretch!important;}' +
+      /* Suppress Elementor's border-bottom underline on the title — we
+         replace it with an ::after so we can position it flush under the
+         text rather than at the bottom of the (tall) title element. */
+      '.darknav .e-n-menu-title{' +
+        'position:relative;z-index:2147483621!important;' +
+        'border:none!important;' +
+      '}' +
+      /* ::after is already used by Elementor for inter-item dividers, so we
+         use ::before for the pink underline. Positioned 3px below the text
+         baseline using top:calc(50% + 11px) so it stays close to the text
+         regardless of how tall the title element is. */
+      '.darknav .e-n-menu-title::before{' +
+        'content:"";' +
+        'position:absolute;' +
+        'left:16px;right:16px;' +
+        'height:2px;' +
+        'top:calc(50% + 11px);' +
+        'background:transparent;' +
+        'transition:background 0.2s ease;' +
+        'pointer-events:none;' +
+      '}' +
+      /* Show on hover, on the current page, and while the dropdown is open */
+      '.darknav .e-n-menu-title:hover::before,' +
+      '.darknav .e-n-menu-title.e-current::before,' +
+      '.darknav .e-n-menu-item.ktm-open>.e-n-menu-title::before{' +
+        'background:#D76AB3!important;' +
+      '}' +
+      /* ── Show/hide animation ──────────────────────────────────────────
+         Pure opacity fade — no translateY so the panel feels like a fixed
+         shared surface rather than individual popups appearing from above.
+         Elementor also fires its own CSS animation on the inner .e-con
+         (open_animation: fadeIn); we suppress that so only our transition
+         runs and the two don't stack. */
+      '.darknav .e-n-menu-content{' +
+        'opacity:0;' +
+        'transform:translateY(-6px);' +
+        'visibility:hidden;' +
+        'pointer-events:none;' +
+        'transition:opacity 0.18s ease,transform 0.18s ease,visibility 0s linear 0.18s;' +
+      '}' +
+      '.darknav .e-n-menu-content.e-active{' +
+        'opacity:1;' +
+        'transform:translateY(0);' +
+        'visibility:visible;' +
+        'pointer-events:all;' +
+        'transition:opacity 0.22s ease,transform 0.22s ease,visibility 0s linear 0s;' +
+      '}' +
+      /* Instant hide when switching items (added/removed in closeAll) */
+      '.darknav .e-n-menu-content.e-no-anim{transition:none!important;}' +
+      /* Kill Elementor's own fadeIn CSS animation on the inner container */
+      '.darknav .e-n-menu-content>.e-con{animation:none!important;}' +
+      /* No ::before hover bridge needed — the nav items fill the full
+         header height (set in fixLayout), so their bottom edge is flush
+         with the dropdown top and there is no gap to bridge. */
+      '';
     document.head.appendChild(s);
 
     /* ── Hover handlers ───────────────────────────────────────────────── */
@@ -71,25 +160,52 @@
       function show() {
         clearTimeout(timer);
         closeAll(item);
+        item.classList.add('ktm-open');
         content.classList.add('e-active');
-        panel.classList.add('e-active');
+        if (panel) panel.classList.add('e-active');
         var btn = item.querySelector('.e-n-menu-dropdown-icon');
         if (btn) btn.setAttribute('aria-expanded', 'true');
       }
 
       function hide() {
         timer = setTimeout(function () {
+          item.classList.remove('ktm-open');
           content.classList.remove('e-active');
-          panel.classList.remove('e-active');
+          if (panel) panel.classList.remove('e-active');
           var btn = item.querySelector('.e-n-menu-dropdown-icon');
           if (btn) btn.setAttribute('aria-expanded', 'false');
-        }, 150);
+        }, 350);
       }
 
+      /* When the cursor enters the nav item title, always show (and cancel
+         any in-flight hide timer for THIS item). */
       item.addEventListener('mouseenter', show);
-      item.addEventListener('mouseleave', hide);
-      content.addEventListener('mouseenter', function () { clearTimeout(timer); });
-      content.addEventListener('mouseleave', hide);
+
+      /* When the cursor leaves the nav item, schedule a hide — but only
+         execute it if the cursor did NOT immediately enter the content
+         panel (handled by the mouseenter on content below). */
+      item.addEventListener('mouseleave', function (e) {
+        /* If the cursor is moving INTO the content panel, don't hide. */
+        if (content.contains(e.relatedTarget)) return;
+        hide();
+      });
+
+      /* Keep the panel open while the cursor is inside it. */
+      content.addEventListener('mouseenter', function () {
+        clearTimeout(timer);
+      });
+
+      /* When the cursor leaves the content panel, hide — but if it's
+         moving back to the same e-n-menu-item, cancel immediately. */
+      content.addEventListener('mouseleave', function (e) {
+        /* relatedTarget is the element the cursor is moving INTO. */
+        if (item.contains(e.relatedTarget)) {
+          /* Moving back to the nav item title — keep open, cancel hide. */
+          clearTimeout(timer);
+          return;
+        }
+        hide();
+      });
     });
 
     document.addEventListener('click', function (e) {
@@ -121,11 +237,11 @@
         {
           heading: 'Technology sourcing',
           items: [
-            { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking.1.html' },
+            { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking/' },
             { text: 'AV & Collaboration',        url: '/our-solutions/av-collaboration/index.html' },
             { text: 'Devices & Management',      url: '/our-solutions/devices-and-management/index.html' },
-            { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions.1.html' },
-            { text: 'Software & Licensing',      url: '/technology-sourcing/software-licensing.html' }
+            { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions/' },
+            { text: 'Software & Licensing',      url: '/technology-sourcing/licensing/' }
           ],
           viewAll: { text: 'VIEW TECHNOLOGY SOURCING', url: '/technology-sourcing.1.html' }
         },
@@ -133,12 +249,12 @@
           heading: 'Solutions',
           items: [
             { text: 'AI Transformation',                              url: '/our-services/data-and-ai-transformation/index.html' },
-            { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network.1.html' },
+            { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network/' },
             { text: 'Cyber Resilience',                               url: '/our-services/cyber-security-and-compliance-services/index.html' },
-            { text: 'Data',                                           url: '/our-solutions/data.1.html' },
+            { text: 'Data',                                           url: '/our-solutions/data/' },
             { text: 'Digital Employee Experience',                    url: '/our-services/modern-work/index.html' },
-            { text: 'High-Performance Computing',                     url: '/solutions/high-performance-compute/index.html' },
-            { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications.1.html' },
+            { text: 'High-Performance Computing',                     url: '/our-solutions/high-performance-compute/index.html' },
+            { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications/' },
             { text: 'Unified Communications',                         url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' }
           ],
           viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
@@ -147,7 +263,7 @@
           heading: 'Services',
           items: [
             { text: 'Managed IT Services',    url: '/our-services/managed-services/index.html' },
-            { text: 'IT Consulting Services', url: '/our-services/professional-services.1.html' },
+            { text: 'IT Consulting Services', url: '/our-services/professional-services/' },
             { text: 'IT Services for SMBs',   url: '/our-services/it-services-for-smb/index.html' }
           ],
           viewAll: { text: 'VIEW ALL SERVICES', url: '/our-services.html' }
@@ -172,7 +288,7 @@
       label: 'PARTNERS',
       heading: 'Partners',
       items: [
-        { text: 'Apple',             url: '/partners/apple.1.html' },
+        { text: 'Apple',             url: '/partners/apple/' },
         { text: 'Cisco',             url: '/partners/cisco/index.html' },
         { text: 'Dell',              url: '/partners/dell/index.html' },
         { text: 'HP',                url: '/partners/hp/index.html' },
@@ -182,22 +298,6 @@
         { text: 'Microsoft Surface', url: '/partners/microsoft-surface/index.html' }
       ],
       viewAll: { text: 'VIEW ALL PARTNERS', url: '/about-us/ecosystem-and-partners/index.html' }
-    },
-    {
-      label: 'INSIGHTS',
-      heading: 'Insights by Type',
-      items: [
-        { text: 'Blog',               url: '/blog/index.html' },
-        { text: 'News',               url: '/news/index.html' },
-        { text: 'Events',             url: '/events/index.html' },
-        { text: 'Podcast',            url: '/insights/podcast/index.html' },
-        { text: 'Webinars',           url: '/webinars/index.html' },
-        { text: 'Workshops',          url: '/workshops/index.html' },
-        { text: 'Microsoft Workshops', url: '/microsoft-workshops/index.html' },
-        { text: 'Reports & Research', url: '/reports-research/index.html' },
-        { text: 'eBooks',             url: '/e-books/index.html' }
-      ],
-      viewAll: { text: 'See all insights', url: '/insights.1.html' }
     },
     {
       label: 'ABOUT US',
@@ -329,7 +429,7 @@
     '.ktm-cta{padding:20px;flex-shrink:0;background:#fff;}',
     '.ktm-cta a{',
     '  display:block;width:100%;padding:16px 24px;',
-    '  background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%);',
+    '  background:#D76AB3;',
     '  border-radius:50px;text-align:center;',
     '  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.1em;',
     '  color:#fff;text-decoration:none;text-transform:uppercase;',
@@ -402,6 +502,7 @@
         '</div>' +
         '<nav class="ktm-nav" aria-label="Main navigation">' +
           rows +
+          '<div class="ktm-contact-row"><a href="/blog/index.html">BLOG</a></div>' +
           '<div class="ktm-contact-row"><a href="/contact-us/index.html">CONTACT US</a></div>' +
         '</nav>' +
         '<div class="ktm-cta"><a href="/talk-to-an-expert.html">TALK TO AN EXPERT</a></div>' +
@@ -584,7 +685,7 @@ if (typeof ElementorProFrontendConfig === 'undefined') {
   /* CSS overrides for Didomi popup colours */
   var s = document.createElement('style');
   s.textContent =
-    '#didomi-notice-agree-button{background:linear-gradient(135deg,#D76AB3 0%,#C89AE8 40%,#7EC7E8 75%,#F5B38A 100%)!important;border:none!important;color:#fff!important;border-radius:50px!important;}' +
+    '#didomi-notice-agree-button{background:#D76AB3!important;border:none!important;color:#fff!important;border-radius:50px!important;}' +
     '#didomi-notice-learn-more-button{border:2px solid #D76AB3!important;color:#D76AB3!important;background:transparent!important;border-radius:50px!important;}' +
     '#didomi-notice,#didomi-popup{border-radius:12px!important;border:2px solid #D76AB3!important;}';
   document.head.appendChild(s);
