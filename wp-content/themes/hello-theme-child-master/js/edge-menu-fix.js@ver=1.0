@@ -20,6 +20,7 @@
         requestAnimationFrame(function () { oc.classList.remove('e-no-anim'); });
       }
       if (op) op.classList.remove('e-active');
+      other.classList.remove('ktm-open');
       var btn = other.querySelector('.e-n-menu-dropdown-icon');
       if (btn) btn.setAttribute('aria-expanded', 'false');
     });
@@ -90,9 +91,33 @@
          The title div itself already has align-items:center so the text
          stays vertically centred inside it. */
       '.darknav .e-n-menu-item{align-items:stretch!important;}' +
-      /* Lift the nav title above the dropdown (z-index:2147483620) so its
-         pink active underline is never painted behind the open panel. */
-      '.darknav .e-n-menu-title{position:relative;z-index:2147483621!important;}' +
+      /* Suppress Elementor's border-bottom underline on the title — we
+         replace it with an ::after so we can position it flush under the
+         text rather than at the bottom of the (tall) title element. */
+      '.darknav .e-n-menu-title{' +
+        'position:relative;z-index:2147483621!important;' +
+        'border:none!important;' +
+      '}' +
+      /* ::after is already used by Elementor for inter-item dividers, so we
+         use ::before for the pink underline. Positioned 3px below the text
+         baseline using top:calc(50% + 11px) so it stays close to the text
+         regardless of how tall the title element is. */
+      '.darknav .e-n-menu-title::before{' +
+        'content:"";' +
+        'position:absolute;' +
+        'left:16px;right:16px;' +
+        'height:2px;' +
+        'top:calc(50% + 11px);' +
+        'background:transparent;' +
+        'transition:background 0.2s ease;' +
+        'pointer-events:none;' +
+      '}' +
+      /* Show on hover, on the current page, and while the dropdown is open */
+      '.darknav .e-n-menu-title:hover::before,' +
+      '.darknav .e-n-menu-title.e-current::before,' +
+      '.darknav .e-n-menu-item.ktm-open>.e-n-menu-title::before{' +
+        'background:#D76AB3!important;' +
+      '}' +
       /* ── Show/hide animation ──────────────────────────────────────────
          Pure opacity fade — no translateY so the panel feels like a fixed
          shared surface rather than individual popups appearing from above.
@@ -135,6 +160,7 @@
       function show() {
         clearTimeout(timer);
         closeAll(item);
+        item.classList.add('ktm-open');
         content.classList.add('e-active');
         if (panel) panel.classList.add('e-active');
         var btn = item.querySelector('.e-n-menu-dropdown-icon');
@@ -143,6 +169,7 @@
 
       function hide() {
         timer = setTimeout(function () {
+          item.classList.remove('ktm-open');
           content.classList.remove('e-active');
           if (panel) panel.classList.remove('e-active');
           var btn = item.querySelector('.e-n-menu-dropdown-icon');
