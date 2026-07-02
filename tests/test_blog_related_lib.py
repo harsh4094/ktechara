@@ -21,7 +21,7 @@ class CleanTitleTests(unittest.TestCase):
 
     def test_strips_k_techara_uk_suffix(self):
         self.assertEqual(
-            clean_title("Cyber security AI from Inspire's news - K Techara UK"),
+            clean_title("Cyber security AI from Inspire's news - K Techara Limited"),
             "Cyber security AI from Inspire's news",
         )
 

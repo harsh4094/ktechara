@@ -24,10 +24,12 @@
 ### Task 1: Title cleanup and post-data extraction
 
 **Files:**
+
 - Create: `blog_related_lib.py`
 - Test: `tests/test_blog_related_lib.py`
 
 **Interfaces:**
+
 - Produces: `clean_title(raw_title: str) -> str`
 - Produces: `extract_post_data(html_text: str) -> dict | None` — returns `{"id": int, "title": str, "image": str, "width": int, "height": int}` or `None` if required fields (`postid-<N>` body class, `<title>`, `og:image`) are missing.
 
@@ -36,6 +38,7 @@
 Create `tests/__init__.py` (empty file, so `tests` is importable as a package):
 
 ```python
+
 ```
 
 Create `tests/test_blog_related_lib.py`:
@@ -56,7 +59,7 @@ class CleanTitleTests(unittest.TestCase):
 
     def test_strips_k_techara_uk_suffix(self):
         self.assertEqual(
-            clean_title("Cyber security AI from Inspire’s news - K Techara UK"),
+            clean_title("Cyber security AI from Inspire’s news - K Techara Limited"),
             "Cyber security AI from Inspire’s news",
         )
 
@@ -183,10 +186,12 @@ git commit -m "feat(blog): add title cleanup and post-data extraction helpers"
 ### Task 2: Srcset discovery from on-disk image variants
 
 **Files:**
+
 - Modify: `blog_related_lib.py`
 - Test: `tests/test_blog_related_lib.py`
 
 **Interfaces:**
+
 - Consumes: nothing from Task 1 directly (independent function).
 - Produces: `find_srcset(image_path: str, width: int, project_root) -> str | None` — `image_path` is a root-relative path starting with `/` (e.g. `/wp-content/uploads/2024/03/pic.png`); `project_root` is a `pathlib.Path`. Returns a comma-separated `srcset` string (root-relative paths, each `"{path} {width}w"`, ascending by width, including the base image itself) or `None` if no resized sibling files exist on disk.
 
@@ -292,10 +297,12 @@ git commit -m "feat(blog): add srcset discovery for related-post images"
 ### Task 3: Card HTML generation
 
 **Files:**
+
 - Modify: `blog_related_lib.py`
 - Test: `tests/test_blog_related_lib.py`
 
 **Interfaces:**
+
 - Consumes: a post `dict` shaped like Task 1's `extract_post_data` output plus a `url: str` (root-relative, no leading slash, e.g. `"blog/agility/building-relationship-ai/index.html"`) and `srcset: str | None` (Task 2's `find_srcset` output).
 - Produces: `build_card_html(post: dict, prefix: str) -> str` — a single loop-item `<div>` block as a string, indented to match the existing page markup.
 
@@ -514,10 +521,12 @@ git commit -m "feat(blog): add related-post card HTML generation"
 ### Task 4: Section replacement (heading + 3 cards)
 
 **Files:**
+
 - Modify: `blog_related_lib.py`
 - Test: `tests/test_blog_related_lib.py`
 
 **Interfaces:**
+
 - Consumes: `cards_html: str` — expected to be 3 card blocks (as produced by Task 3's `build_card_html`, one per line-joined with `\n`).
 - Produces: `replace_related_section(html_text: str, cards_html: str) -> str`. Raises `ValueError` if the page has no "Other articles that might interest you" heading, or fewer than 3 `data-elementor-type="loop-item"` blocks.
 
@@ -673,9 +682,11 @@ git commit -m "feat(blog): add related-articles section replacement logic"
 ### Task 5: Driver script
 
 **Files:**
+
 - Create: `update_blog_related.py`
 
 **Interfaces:**
+
 - Consumes: `extract_post_data`, `find_srcset`, `build_card_html`, `replace_related_section` from `blog_related_lib.py` (Tasks 1-4).
 - Produces: `data/all-blog-posts.json` (list of post dicts with `id`, `title`, `image`, `width`, `height`, `url`, `srcset`); rewrites the 180 target HTML files in place.
 
@@ -779,6 +790,7 @@ git commit -m "feat(blog): add driver script for related-blogs conversion"
 ### Task 6: Run the conversion, verify, document, and finalize
 
 **Files:**
+
 - Modify: all 180 files under `blog/*/*/index.html` (excluding `blog/page/*`)
 - Create: `data/all-blog-posts.json`
 - Modify: `CLAUDE.md` (add script to the automation table)
@@ -828,6 +840,7 @@ Expected: `Checked, violations: 0`
 Run: `python server.py 5502` (in background/separate terminal)
 
 Open `http://127.0.0.1:5502/blog/agility/building-relationship-ai/index.html` and confirm:
+
 - The section heading now reads "Related blogs"
 - 3 cards are shown, each badged "Blog", none of them titled "How to build a relationship with an AI" (this page's own title)
 - Card layout/spacing matches the homepage's "Related blogs" section

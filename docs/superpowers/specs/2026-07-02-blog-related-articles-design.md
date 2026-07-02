@@ -24,7 +24,7 @@ Elementor loop-grid template (`template_id: 31654`), just populated with blog po
 
 A new script scans all 180 blog post pages and builds a database of every post:
 
-- `title` — from `<title>`, with trailing ` - K Techara`, ` – K Techara`, ` - K Techara UK`
+- `title` — from `<title>`, with trailing ` - K Techara`, ` – K Techara`, ` - K Techara Limited`
   style suffixes stripped (regex-based, must handle multi-line `<title>` tags).
 - `url` — the post's own path, relative to the project root, forward-slash form
   (e.g. `blog/agility/building-relationship-ai/index.html`).
@@ -72,6 +72,7 @@ are safe and don't compound.
 ## Verification
 
 After running:
+
 - Confirm all 180 target pages have the heading "Related blogs" and no page still contains
   "Other articles that might interest you".
 - Confirm no page's 3 related cards include a link back to that same page's own URL.
