@@ -1,10 +1,11 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from blog_related_lib import clean_title, extract_post_data
+from blog_related_lib import clean_title, extract_post_data, find_srcset
 
 
 class CleanTitleTests(unittest.TestCase):
@@ -79,6 +80,42 @@ class ExtractPostDataTests(unittest.TestCase):
     def test_returns_none_when_og_image_missing(self):
         html = self.make_html(og_image='')
         self.assertIsNone(extract_post_data(html))
+
+
+class FindSrcsetTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.img_dir = self.root / "wp-content" / "uploads" / "2024" / "03"
+        self.img_dir.mkdir(parents=True)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_returns_none_when_no_variants_exist(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        result = find_srcset("/wp-content/uploads/2024/03/pic.png", 1200, self.root)
+        self.assertIsNone(result)
+
+    def test_builds_srcset_from_variants_ascending_by_width(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        (self.img_dir / "pic-1024x512.png").write_bytes(b"x")
+        (self.img_dir / "pic-300x150.png").write_bytes(b"x")
+        (self.img_dir / "pic-768x384.png").write_bytes(b"x")
+        result = find_srcset("/wp-content/uploads/2024/03/pic.png", 1200, self.root)
+        self.assertEqual(
+            result,
+            "/wp-content/uploads/2024/03/pic-300x150.png 300w, "
+            "/wp-content/uploads/2024/03/pic-768x384.png 768w, "
+            "/wp-content/uploads/2024/03/pic-1024x512.png 1024w, "
+            "/wp-content/uploads/2024/03/pic.png 1200w",
+        )
+
+    def test_ignores_unrelated_files_in_same_directory(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        (self.img_dir / "other-picture-300x150.png").write_bytes(b"x")
+        result = find_srcset("/wp-content/uploads/2024/03/pic.png", 1200, self.root)
+        self.assertIsNone(result)
 
 
 if __name__ == "__main__":
