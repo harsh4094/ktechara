@@ -35,6 +35,30 @@ def extract_post_data(html_text: str) -> dict | None:
     }
 
 
+SOCIAL_SUFFIX_RE = re.compile(r"[-_]social$", re.IGNORECASE)
+
+
+def resolve_existing_image(image_path: str, project_root) -> str:
+    """Return image_path if it exists on disk; otherwise fall back to the
+    same filename with a trailing '-social'/'_social' crop suffix stripped
+    (WordPress's social-share image variant is often missing from the
+    static export, while the base image usually migrated fine). If neither
+    exists, the original path is returned unchanged."""
+    if (Path(project_root) / image_path.lstrip("/")).exists():
+        return image_path
+
+    base, _, ext = image_path.rpartition(".")
+    if not base:
+        return image_path
+    stripped_base = SOCIAL_SUFFIX_RE.sub("", base)
+    if stripped_base == base:
+        return image_path
+    candidate = f"{stripped_base}.{ext}"
+    if (Path(project_root) / candidate.lstrip("/")).exists():
+        return candidate
+    return image_path
+
+
 def find_srcset(image_path: str, width: int, project_root) -> str | None:
     rel = image_path.lstrip("/")
     full_path = Path(project_root) / rel
@@ -216,14 +240,16 @@ def _find_div_end(content: str, start: int) -> int:
 
 
 def replace_related_section(html_text: str, cards_html: str) -> str:
-    if HEADING_TEXT in html_text:
-        updated = html_text.replace(HEADING_TEXT, NEW_HEADING_TEXT, 1)
-    elif NEW_HEADING_TEXT in html_text:
-        updated = html_text
+    heading_idx = html_text.find(HEADING_TEXT)
+    if heading_idx != -1:
+        updated = html_text[:heading_idx] + NEW_HEADING_TEXT + html_text[heading_idx + len(HEADING_TEXT):]
     else:
-        raise ValueError(f"heading '{HEADING_TEXT}' not found")
+        heading_idx = html_text.find(NEW_HEADING_TEXT)
+        if heading_idx == -1:
+            raise ValueError(f"heading '{HEADING_TEXT}' not found")
+        updated = html_text
 
-    search_from = 0
+    search_from = heading_idx
     first_start = None
     end = 0
     for i in range(3):

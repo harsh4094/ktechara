@@ -11,6 +11,7 @@ from blog_related_lib import (
     find_srcset,
     build_card_html,
     replace_related_section,
+    resolve_existing_image,
 )
 
 
@@ -124,6 +125,36 @@ class FindSrcsetTests(unittest.TestCase):
         self.assertIsNone(result)
 
 
+class ResolveExistingImageTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.img_dir = self.root / "wp-content" / "uploads" / "2024" / "03"
+        self.img_dir.mkdir(parents=True)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_returns_path_unchanged_when_it_exists(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        result = resolve_existing_image("/wp-content/uploads/2024/03/pic.png", self.root)
+        self.assertEqual(result, "/wp-content/uploads/2024/03/pic.png")
+
+    def test_falls_back_to_base_when_social_suffix_missing(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        result = resolve_existing_image("/wp-content/uploads/2024/03/pic_social.png", self.root)
+        self.assertEqual(result, "/wp-content/uploads/2024/03/pic.png")
+
+    def test_falls_back_with_hyphen_social_suffix(self):
+        (self.img_dir / "pic.png").write_bytes(b"x")
+        result = resolve_existing_image("/wp-content/uploads/2024/03/pic-social.png", self.root)
+        self.assertEqual(result, "/wp-content/uploads/2024/03/pic.png")
+
+    def test_returns_original_when_neither_exists(self):
+        result = resolve_existing_image("/wp-content/uploads/2024/03/missing_social.png", self.root)
+        self.assertEqual(result, "/wp-content/uploads/2024/03/missing_social.png")
+
+
 class BuildCardHtmlTests(unittest.TestCase):
     def test_card_without_srcset(self):
         post = {
@@ -198,6 +229,53 @@ FIXTURE_PAGE = '''<!doctype html>
 </body></html>'''
 
 
+FIXTURE_PAGE_WITH_DECOY_WIDGET = '''<!doctype html>
+<html><body>
+<div class="page-content">Article body here.</div>
+<div class="elementor-element elementor-widget-loop-grid" data-settings="{&quot;template_id&quot;:&quot;30440&quot;}">
+  <div class="elementor-widget-container">
+    <div class="elementor-loop-container elementor-grid" role="list">
+      <style id="loop-30440">.elementor-30440 { color: blue; }</style>
+      <div data-elementor-type="loop-item" data-elementor-id="31654" class="decoy-card-1">
+        <div class="inner-1">Decoy card one</div>
+      </div>
+      <div data-elementor-type="loop-item" data-elementor-id="31654" class="decoy-card-2">
+        <div class="inner-2">Decoy card two</div>
+      </div>
+      <div data-elementor-type="loop-item" data-elementor-id="31654" class="decoy-card-3">
+        <div class="inner-3">Decoy card three</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="elementor-element elementor-element-541f7e1 e-con">
+  <div class="e-con-inner">
+    <div class="heading-wrap">
+      <h3 class="elementor-heading-title elementor-size-default">
+        Other articles that might interest you
+      </h3>
+    </div>
+    <div class="elementor-element elementor-element-4d017d1 elementor-widget-loop-grid">
+      <div class="elementor-widget-container">
+        <div class="elementor-loop-container elementor-grid" role="list">
+          <style id="loop-31654">.elementor-31654 { color: red; }</style>
+          <div data-elementor-type="loop-item" data-elementor-id="31654" class="old-card-1">
+            <div class="inner-1">News card one</div>
+          </div>
+          <div data-elementor-type="loop-item" data-elementor-id="31654" class="old-card-2">
+            <div class="inner-2">Event card two</div>
+          </div>
+          <div data-elementor-type="loop-item" data-elementor-id="31654" class="old-card-3">
+            <div class="inner-3">Event card three</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>'''
+
+
 class ReplaceRelatedSectionTests(unittest.TestCase):
     def test_replaces_heading_text(self):
         result = replace_related_section(FIXTURE_PAGE, "NEW_CARDS_PLACEHOLDER")
@@ -244,6 +322,19 @@ class ReplaceRelatedSectionTests(unittest.TestCase):
         self.assertNotIn("old-card-3", result)
         self.assertNotIn("News card one", result)
         self.assertEqual(result.count("SECOND_RUN_CARDS"), 1)
+
+    def test_ignores_earlier_decoy_loop_grid_widget(self):
+        result = replace_related_section(FIXTURE_PAGE_WITH_DECOY_WIDGET, "NEW_CARDS_PLACEHOLDER")
+        self.assertIn("decoy-card-1", result)
+        self.assertIn("decoy-card-2", result)
+        self.assertIn("decoy-card-3", result)
+        self.assertIn("Decoy card one", result)
+        self.assertNotIn("old-card-1", result)
+        self.assertNotIn("old-card-2", result)
+        self.assertNotIn("old-card-3", result)
+        self.assertNotIn("News card one", result)
+        self.assertEqual(result.count("NEW_CARDS_PLACEHOLDER"), 1)
+        self.assertIn("Related blogs", result)
 
 
 if __name__ == "__main__":

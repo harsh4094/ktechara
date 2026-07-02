@@ -10,6 +10,7 @@ from blog_related_lib import (
     extract_post_data,
     find_srcset,
     replace_related_section,
+    resolve_existing_image,
 )
 
 ROOT = Path(__file__).parent
@@ -35,6 +36,7 @@ def build_database(files):
             skipped.append(path)
             continue
         url = path.relative_to(ROOT).as_posix()
+        data["image"] = resolve_existing_image(data["image"], ROOT)
         srcset = find_srcset(data["image"], data["width"], ROOT)
         posts.append({**data, "url": url, "srcset": srcset})
     posts.sort(key=lambda p: p["id"])
