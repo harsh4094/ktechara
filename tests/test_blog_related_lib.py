@@ -232,6 +232,19 @@ class ReplaceRelatedSectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_related_section(broken, "X")
 
+    def test_second_run_with_already_new_heading_reshuffles_cards(self):
+        already_converted = FIXTURE_PAGE.replace(
+            "Other articles that might interest you", "Related blogs"
+        )
+        result = replace_related_section(already_converted, "SECOND_RUN_CARDS")
+        self.assertEqual(result.count("Related blogs"), 1)
+        self.assertNotIn("Other articles that might interest you", result)
+        self.assertNotIn("old-card-1", result)
+        self.assertNotIn("old-card-2", result)
+        self.assertNotIn("old-card-3", result)
+        self.assertNotIn("News card one", result)
+        self.assertEqual(result.count("SECOND_RUN_CARDS"), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

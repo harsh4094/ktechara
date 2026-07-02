@@ -216,10 +216,12 @@ def _find_div_end(content: str, start: int) -> int:
 
 
 def replace_related_section(html_text: str, cards_html: str) -> str:
-    if HEADING_TEXT not in html_text:
+    if HEADING_TEXT in html_text:
+        updated = html_text.replace(HEADING_TEXT, NEW_HEADING_TEXT, 1)
+    elif NEW_HEADING_TEXT in html_text:
+        updated = html_text
+    else:
         raise ValueError(f"heading '{HEADING_TEXT}' not found")
-
-    updated = html_text.replace(HEADING_TEXT, NEW_HEADING_TEXT, 1)
 
     search_from = 0
     first_start = None
