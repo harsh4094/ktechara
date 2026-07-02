@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from blog_related_lib import clean_title, extract_post_data, find_srcset
+from blog_related_lib import clean_title, extract_post_data, find_srcset, build_card_html
 
 
 class CleanTitleTests(unittest.TestCase):
@@ -116,6 +116,49 @@ class FindSrcsetTests(unittest.TestCase):
         (self.img_dir / "other-picture-300x150.png").write_bytes(b"x")
         result = find_srcset("/wp-content/uploads/2024/03/pic.png", 1200, self.root)
         self.assertIsNone(result)
+
+
+class BuildCardHtmlTests(unittest.TestCase):
+    def test_card_without_srcset(self):
+        post = {
+            "id": 28004,
+            "title": "How to build a relationship with an AI",
+            "url": "blog/agility/building-relationship-ai/index.html",
+            "image": "/wp-content/uploads/2024/03/pic.png",
+            "width": 1200,
+            "height": 600,
+            "srcset": None,
+        }
+        html = build_card_html(post, "../../../")
+        self.assertIn('e-loop-item-28004 post-28004', html)
+        self.assertIn('insights-type-blog', html)
+        self.assertIn('href="../../../blog/agility/building-relationship-ai/index.html"', html)
+        self.assertIn('>How to build a relationship with an AI<', html)
+        self.assertIn('href="../../../blog/index.html"', html)
+        self.assertIn('>Blog<', html)
+        self.assertIn('src="../../../wp-content/uploads/2024/03/pic.png"', html)
+        self.assertIn('width="1200"', html)
+        self.assertIn('height="600"', html)
+        self.assertNotIn('srcset=', html)
+
+    def test_card_with_srcset_prefixes_every_entry(self):
+        post = {
+            "id": 33690,
+            "title": "AI &amp; the enterprise",
+            "url": "blog/data/ai-and-the-enterprise/index.html",
+            "image": "/wp-content/uploads/2024/03/pic.png",
+            "width": 1200,
+            "height": 600,
+            "srcset": "/wp-content/uploads/2024/03/pic-300x150.png 300w, /wp-content/uploads/2024/03/pic.png 1200w",
+        }
+        html = build_card_html(post, "../../../")
+        self.assertIn(
+            'srcset="../../../wp-content/uploads/2024/03/pic-300x150.png 300w, '
+            '../../../wp-content/uploads/2024/03/pic.png 1200w"',
+            html,
+        )
+        self.assertIn('sizes="(max-width: 1200px) 100vw, 1200px"', html)
+        self.assertIn('>AI &amp; the enterprise<', html)
 
 
 if __name__ == "__main__":
