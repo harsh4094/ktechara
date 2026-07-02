@@ -2,7 +2,7 @@
 sections from hardcoded News/Event cards into randomized Blog cards."""
 import re
 
-TITLE_SUFFIX_RE = re.compile(r"\s*[-–]\s*K\s*Techara(\s*UK)?\s*$", re.IGNORECASE)
+TITLE_SUFFIX_RE = re.compile(r"\s*[-–|]\s*K\s*Techara(\s*UK)?\s*$", re.IGNORECASE)
 POSTID_RE = re.compile(r"postid-(\d+)")
 TITLE_TAG_RE = re.compile(r"<title>(.*?)</title>", re.DOTALL)
 OG_IMAGE_RE = re.compile(r'property="og:image"\s+content="([^"]+)"')

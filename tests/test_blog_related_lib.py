@@ -23,6 +23,12 @@ class CleanTitleTests(unittest.TestCase):
             "Which digital tools are best",
         )
 
+    def test_strips_pipe_suffix(self):
+        self.assertEqual(
+            clean_title("Empowering our colleagues through Women Rising | K Techara"),
+            "Empowering our colleagues through Women Rising",
+        )
+
     def test_no_suffix_is_left_unchanged(self):
         self.assertEqual(clean_title("Staff Turnover Risk"), "Staff Turnover Risk")
 
