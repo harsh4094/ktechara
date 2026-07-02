@@ -191,3 +191,47 @@ def build_card_html(post: dict, prefix: str) -> str:
                     </div>
                   </div>
                 </div>'''
+
+
+HEADING_TEXT = "Other articles that might interest you"
+NEW_HEADING_TEXT = "Related blogs"
+LOOP_ITEM_MARKER = 'data-elementor-type="loop-item"'
+
+
+def _find_div_end(content: str, start: int) -> int:
+    depth, i, n = 0, start, len(content)
+    while i < n:
+        if content.startswith("<div", i):
+            depth += 1
+            j = content.find(">", i)
+            i = (j + 1) if j != -1 else n
+        elif content.startswith("</div>", i):
+            depth -= 1
+            i += 6
+            if depth == 0:
+                return i
+        else:
+            i += 1
+    return n
+
+
+def replace_related_section(html_text: str, cards_html: str) -> str:
+    if HEADING_TEXT not in html_text:
+        raise ValueError(f"heading '{HEADING_TEXT}' not found")
+
+    updated = html_text.replace(HEADING_TEXT, NEW_HEADING_TEXT, 1)
+
+    search_from = 0
+    first_start = None
+    end = 0
+    for i in range(3):
+        marker_idx = updated.find(LOOP_ITEM_MARKER, search_from)
+        if marker_idx == -1:
+            raise ValueError(f"expected 3 loop-item cards, found {i}")
+        item_start = updated.rfind("<div", 0, marker_idx)
+        if first_start is None:
+            first_start = item_start
+        end = _find_div_end(updated, item_start)
+        search_from = end
+
+    return updated[:first_start] + cards_html + updated[end:]
