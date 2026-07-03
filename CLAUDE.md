@@ -105,6 +105,7 @@ Python `SimpleHTTPServer` wrapper with custom 404 handling. No build step needed
 | `update_related_blogs.py` | Auto-update blog cross-links |
 | `download_typekit_fonts.py` | Download Adobe fonts locally |
 | `replace_advania.py` | Replace old Advania domain references |
+| `update_blog_related.py` | Randomize "Related blogs" cards on all blog post pages, excluding each page's own post |
 
 ## Responsiveness Audit Artifacts
 

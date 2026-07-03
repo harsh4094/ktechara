@@ -1095,7 +1095,7 @@ li.sf-field-search input[type="text"] {
   font-weight: 700;
 }
 select {
-  padding: 0.5rem 1.5rem 0.5rem 0.25rem !important;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem !important;
 }
 .insight-filter select {
   color: var(--color-text-primary) !important;
