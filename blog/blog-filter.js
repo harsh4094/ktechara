@@ -51,6 +51,8 @@
   var loadMoreWrapper = null;
   var resultsEl = null;
   var countEl = null;
+  var shownCount = 0;
+  var LOAD_MORE_BATCH = 12;
 
   /* ── CSS injection ───────────────────────────────────────────────────────── */
   function injectStyles() {
@@ -318,6 +320,48 @@
     );
   }
 
+  /* ── Load more ───────────────────────────────────────────────────────────── */
+  function initLoadMore() {
+    /* allPosts is the full, globally-ordered post list starting at index 0,
+     * which only lines up with what's already on screen on the main listing
+     * page. The /blog/page/N/ fallback pages each render their own slice out
+     * of sequence, so appending via allPosts there would replay/skip posts. */
+    if (onPageN) return;
+    if (!mainLoop || !loadMoreWrapper) return;
+
+    var button = loadMoreWrapper.querySelector("a.elementor-button");
+    var widget = mainLoop.closest(".elementor-widget-loop-grid");
+    if (!button || !widget) return;
+
+    shownCount = mainLoop.querySelectorAll(":scope > .e-loop-item").length;
+
+    function updateEndState() {
+      if (shownCount >= allPosts.length) {
+        widget.classList.add("e-load-more-pagination-end");
+      }
+    }
+
+    updateEndState();
+
+    /* Capture phase + stopPropagation so this runs before, and blocks,
+     * Elementor Pro's own document-level delegated click handler for
+     * .e-loop__load-more (load-more.bundle.min.js), which still tries an
+     * admin-ajax.php request that 404s on this static export. */
+    button.addEventListener(
+      "click",
+      function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var next = allPosts.slice(shownCount, shownCount + LOAD_MORE_BATCH);
+        if (!next.length) return;
+        mainLoop.insertAdjacentHTML("beforeend", next.map(buildCard).join(""));
+        shownCount += next.length;
+        updateEndState();
+      },
+      true,
+    );
+  }
+
   /* ── Bootstrap ───────────────────────────────────────────────────────────── */
   function init() {
     injectStyles();
@@ -357,6 +401,7 @@
         suppressPluginUI();
         populateDropdowns(posts);
         attachEvents();
+        initLoadMore();
       })
       .catch(function (err) {
         console.warn("[blog-filter] Could not load posts JSON:", err);
