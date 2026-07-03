@@ -1009,42 +1009,69 @@ the challenges we’ve helped them solve."
       }
     </style>
     <style id="responsive-global">
-img { max-width: 100%; height: auto; }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
-/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
-@media (min-width: 1024px) and (max-width: 1200px) {
-  .elementor-element-6aa92ab4 {
-    --n-menu-title-space-between: 14px;
-    --n-menu-title-font-size: 12px;
-  }
-  .elementor-element-6aa92ab4 .e-con-inner {
-    gap: 0 8px;
-  }
-  .elementor-element-502e94aa .elementor-button {
-    font-size: 11px !important;
-    padding: 12px 18px !important;
-  }
-}
-</style>
-<style id="responsive-global">
-img { max-width: 100%; height: auto; }
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
+    <style id="responsive-global">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
-/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
-@media (min-width: 1024px) and (max-width: 1200px) {
-  .elementor-element-6aa92ab4 {
-    --n-menu-title-space-between: 14px;
-    --n-menu-title-font-size: 12px;
-  }
-  .elementor-element-6aa92ab4 .e-con-inner {
-    gap: 0 8px;
-  }
-  .elementor-element-502e94aa .elementor-button {
-    font-size: 11px !important;
-    padding: 12px 18px !important;
-  }
-}
-</style>
-<style id="responsive-global">
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
+    <style id="responsive-global">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
+    <style id="responsive-global">
 img { max-width: 100%; height: auto; }
 
 /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
@@ -1063,6 +1090,60 @@ img { max-width: 100%; height: auto; }
 }
 </style>
 <header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
+<style id="nav-links-disabled">
+/* TEMPORARY: all nav links disabled except Partners section */
+header a,
+footer a,
+.elementor-31866 a,
+.ktm-p a {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+/* Re-enable: logos, mobile bar controls, and all Partners links */
+header .header a,
+header .mobile-nav a,
+footer .elementor-widget-theme-site-logo a,
+.ktm-p .ktm-hd__logo,
+header a[href^="/partners/"],
+header a[href="/about-us/microsoft-partnership.1.html"],
+footer a[href^="/partners/"],
+footer a[href="/about-us/microsoft-partnership.1.html"],
+.ktm-p a[href^="/partners/"],
+.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+</style>
+<script id="nav-links-disabled-js">
+(function () {
+    function isPartnersLink(a) {
+        var href = a.getAttribute('href') || '';
+        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
+    }
+    function shouldDisable(a) {
+        var inHeader = !!a.closest('[data-elementor-type="header"]');
+        var inFooter = !!a.closest('[data-elementor-type="footer"]');
+        var inPopup = !!a.closest('.elementor-31866');
+        var inPanel = !!a.closest('.ktm-p');
+        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
+        if (isPartnersLink(a)) return false;
+        if (inHeader && a.closest('.header')) return false;
+        if (inHeader && a.closest('.mobile-nav')) return false;
+        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
+        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
+        return true;
+    }
+    function prevent(e) {
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (a && shouldDisable(a)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+    }
+    document.addEventListener('click', prevent, true);
+    document.addEventListener('touchend', prevent, { capture: true, passive: false });
+})();
+</script>
         <header class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent" data-id="6aa92ab4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;],&quot;sticky_effects_offset&quot;:110,&quot;sticky_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
             <div class="e-con-inner"><div class="elementor-element elementor-element-bb4f5f9 e-con-full e-flex e-con e-child" data-id="bb4f5f9" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-398d9867 e-con-full e-flex e-con e-child" data-id="398d9867" data-element_type="container" data-e-type="container">
@@ -1545,7 +1626,7 @@ img { max-width: 100%; height: auto; }
                                                                     <div class="elementor-element elementor-element-9a10ee5 e-con-full e-flex e-con e-child" data-id="9a10ee5" data-element_type="container" data-e-type="container">
                                                                         <div class="elementor-element elementor-element-94f7f81 elementor-widget elementor-widget-heading" data-id="94f7f81" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                             <p class="elementor-heading-title elementor-size-default">
-                                                                                <a href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">Partners</a>
+                                                                                <a href="/partners/index.html" data-wpel-link="internal">Partners</a>
                                                                             </p>
                                                                         </div>
                                                                         <div class="elementor-element elementor-element-6faf79a elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6faf79a" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1632,7 +1713,7 @@ img { max-width: 100%; height: auto; }
                                                                         </div>
                                                                     </div>
                                                                     <div class="elementor-element elementor-element-92f4695 cards-btn elementor-widget elementor-widget-button" data-id="92f4695" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/partners/index.html" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -2834,669 +2915,7 @@ img { max-width: 100%; height: auto; }
           </div>
         </div>
       </div>
-      <div
-        class="elementor-element elementor-element-163a74c e-flex e-con-boxed e-con e-parent"
-        data-id="163a74c"
-        data-element_type="container"
-        data-e-type="container"
-      >
-        <div class="e-con-inner">
-          <div
-            class="elementor-element elementor-element-9b570d2 elementor-widget elementor-widget-heading"
-            data-id="9b570d2"
-            data-element_type="widget"
-            data-e-type="widget"
-            data-widget_type="heading.default"
-          >
-            <h2 class="elementor-heading-title elementor-size-default">
-              Featured Case Studies
-            </h2>
-          </div>
-          <div
-            class="elementor-element elementor-element-35c8b57 elementor-arrows-position-outside elementor-widget-mobile__width-inherit elementor-pagination-type-bullets elementor-pagination-position-outside elementor-widget elementor-widget-loop-carousel"
-            data-id="35c8b57"
-            data-element_type="widget"
-            data-e-type="widget"
-            data-settings='{"template_id":"31656","slides_to_show":"1","slides_to_show_widescreen":"1","slides_to_show_laptop":"1","slides_to_show_tablet":"1","_skin":"post","slides_to_show_mobile":"1","slides_to_scroll":"1","edit_handle_selector":".elementor-loop-container","speed":500,"arrows":"yes","pagination":"bullets","image_spacing_custom":{"unit":"px","size":10,"sizes":[]},"image_spacing_custom_widescreen":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_laptop":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_tablet":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_mobile":{"unit":"px","size":"","sizes":[]}}'
-            data-widget_type="loop-carousel.post"
-          >
-            <div
-              class="swiper elementor-loop-container elementor-grid"
-              role="list"
-              dir="ltr"
-            >
-              <div class="swiper-wrapper" aria-live="polite">
-                <style id="loop-31656">
-                  .elementor-31656
-                    .elementor-element.elementor-element-3382c642 {
-                    --display: flex;
-                    --flex-direction: row;
-                    --container-widget-width: initial;
-                    --container-widget-height: 100%;
-                    --container-widget-flex-grow: 1;
-                    --container-widget-align-self: stretch;
-                    --flex-wrap-mobile: wrap;
-                    --gap: 0px 0px;
-                    --row-gap: 0px;
-                    --column-gap: 0px;
-                    --padding-top: 0px;
-                    --padding-bottom: 0px;
-                    --padding-left: 0px;
-                    --padding-right: 0px;
-                  }
 
-                  .elementor-31656
-                    .elementor-element.elementor-element-305c4799 {
-                    --display: flex;
-                    --flex-direction: column;
-                    --container-widget-width: calc(
-                      (1 - var(--container-widget-flex-grow)) * 100%
-                    );
-                    --container-widget-height: initial;
-                    --container-widget-flex-grow: 0;
-                    --container-widget-align-self: initial;
-                    --flex-wrap-mobile: wrap;
-                    --justify-content: center;
-                    --align-items: flex-start;
-                    --gap: 0px 0px;
-                    --row-gap: 0px;
-                    --column-gap: 0px;
-                    --padding-top: 0em;
-                    --padding-bottom: 0em;
-                    --padding-left: 0em;
-                    --padding-right: 6.25em;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-icon {
-                    width: 14px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-icon
-                    i {
-                    font-size: 14px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-icon
-                    svg {
-                    --e-icon-list-icon-size: 14px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-text,
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-text
-                    a {
-                    color: var(--e-global-color-secondary);
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-4327ee58
-                    .elementor-icon-list-item {
-                    font-family: "adelle-sans", Sans-serif;
-                    font-size: 14px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 0.27px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-8571ea3 {
-                    margin: 2em 0em calc(var(--kit-widget-spacing, 0px) + 1em)
-                      0em;
-                    padding: 0px 0px 0px 0px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-37ebb1bf {
-                    width: 100%;
-                    max-width: 100%;
-                    margin: 0px 0px calc(var(--kit-widget-spacing, 0px) + 0px)
-                      0px;
-                    text-align: start;
-                    font-size: 16px;
-                    line-height: 1.4em;
-                    letter-spacing: 0px;
-                    color: var(--e-global-color-c92bb7c);
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-37ebb1bf.elementor-element {
-                    --align-self: flex-start;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-136085a2 {
-                    margin: 2.5em 0em calc(var(--kit-widget-spacing, 0px) + 0em)
-                      0em;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-32d58c2f {
-                    --display: flex;
-                    --min-height: 500px;
-                    --overflow: hidden;
-                    --padding-top: 0px;
-                    --padding-bottom: 0px;
-                    --padding-left: 0px;
-                    --padding-right: 0px;
-                  }
-
-                  .elementor-31656
-                    .elementor-element.elementor-element-324e9551
-                    img {
-                    width: 600px;
-                    height: 500px;
-                    object-fit: cover;
-                    object-position: center center;
-                  }
-
-                  @media (max-width: 767px) {
-                    .elementor-31656
-                      .elementor-element.elementor-element-305c4799 {
-                      --padding-top: 0em;
-                      --padding-bottom: 0em;
-                      --padding-left: 0em;
-                      --padding-right: 0em;
-                    }
-                    .elementor-31656
-                      .elementor-element.elementor-element-37ebb1bf {
-                      margin: 0px 0px
-                        calc(var(--kit-widget-spacing, 0px) + 32px) 0px;
-                    }
-                    .elementor-31656
-                      .elementor-element.elementor-element-32d58c2f {
-                      --min-height: 322px;
-                      --margin-top: 40px;
-                      --margin-bottom: 0px;
-                      --margin-left: 0px;
-                      --margin-right: 0px;
-                    }
-                    .elementor-31656
-                      .elementor-element.elementor-element-324e9551
-                      img {
-                      width: 100%;
-                      height: 322px;
-                      object-fit: cover;
-                      object-position: center center;
-                    }
-                  }
-
-                  @media (min-width: 768px) {
-                    .elementor-31656
-                      .elementor-element.elementor-element-305c4799 {
-                      --content-width: 600px;
-                    }
-                    .elementor-31656
-                      .elementor-element.elementor-element-32d58c2f {
-                      --content-width: 600px;
-                    }
-                  }
-                </style>
-                <div
-                  data-elementor-type="loop-item"
-                  data-elementor-id="31656"
-                  class="elementor elementor-31656 swiper-slide e-loop-item e-loop-item-31537 post-31537 case-study type-case-study status-publish has-post-thumbnail hentry by-solution-digital-employee-experience industry-property-maintenance"
-                  data-elementor-post-type="elementor_library"
-                  role="group"
-                  aria-roledescription="slide"
-                  data-custom-edit-handle="1"
-                >
-                  <div
-                    class="elementor-element elementor-element-3382c642 e-con-full e-flex e-con e-parent"
-                    data-id="3382c642"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div
-                      class="elementor-element elementor-element-305c4799 e-flex e-con-boxed e-con e-child"
-                      data-id="305c4799"
-                      data-element_type="container"
-                      data-e-type="container"
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-4327ee58 elementor-align-left elementor-widget elementor-widget-post-info"
-                          data-id="4327ee58"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="post-info.default"
-                        >
-                          <ul
-                            class="elementor-inline-items elementor-icon-list-items elementor-post-info"
-                          >
-                            <li
-                              class="elementor-icon-list-item elementor-repeater-item-7166291 elementor-inline-item"
-                              itemprop="about"
-                            >
-                              <span
-                                class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms"
-                              >
-                                <span class="elementor-post-info__terms-list">
-                                  <a
-                                    href="by-solution/digital-employee-experience/index.html"
-                                    class="elementor-post-info__terms-list-item"
-                                    data-wpel-link="internal"
-                                    >Digital employee experience</a
-                                  >
-                                </span>
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-8571ea3 elementor-widget elementor-widget-heading"
-                          data-id="8571ea3"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="heading.default"
-                        >
-                          <h3
-                            class="elementor-heading-title elementor-size-default"
-                          >
-                            <a
-                              href="case-studies/domestic-general/index.html"
-                              data-wpel-link="internal"
-                              >Domestic &amp; General saves 25% on global device
-                              refresh</a
-                            >
-                          </h3>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-37ebb1bf elementor-widget__width-inherit elementor-widget elementor-widget-text-editor"
-                          data-id="37ebb1bf"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          K Techara solved compatibility issues and reduced
-                          costs across five countries, with an AMD-based
-                          refresh. &#8230;
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-136085a2 elementor-align-left elementor-widget elementor-widget-button"
-                          data-id="136085a2"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="button.default"
-                        >
-                          <a
-                            class="elementor-button elementor-button-link elementor-size-sm"
-                            href="case-studies/domestic-general/index.html"
-                            data-wpel-link="internal"
-                          >
-                            <span class="elementor-button-content-wrapper">
-                              <span class="elementor-button-text"
-                                >Read more</span
-                              >
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-32d58c2f e-flex e-con-boxed e-con e-child"
-                      data-id="32d58c2f"
-                      data-element_type="container"
-                      data-e-type="container"
-                      data-settings='{"background_background":"classic"}'
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-324e9551 elementor-widget elementor-widget-image"
-                          data-id="324e9551"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="image.default"
-                        >
-                          <img
-                            loading="lazy"
-                            decoding="async"
-                            width="1920"
-                            height="1282"
-                            src="../wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1.jpeg"
-                            class="elementor-animation-grow attachment-full size-full wp-image-31354"
-                            alt=""
-                            srcset="
-                              ../wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1.jpeg        1920w,
-                              wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1-300x200.jpeg    300w,
-                              wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1-1024x684.jpeg  1024w,
-                              wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1-768x513.jpeg    768w,
-                              wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1-1536x1026.jpeg 1536w
-                            "
-                            sizes="(max-width: 1920px) 100vw, 1920px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-elementor-type="loop-item"
-                  data-elementor-id="31656"
-                  class="elementor elementor-31656 swiper-slide e-loop-item e-loop-item-31530 post-31530 case-study type-case-study status-publish has-post-thumbnail hentry by-solution-digital-employee-experience industry-legal-professional"
-                  data-elementor-post-type="elementor_library"
-                  role="group"
-                  aria-roledescription="slide"
-                  data-custom-edit-handle="1"
-                >
-                  <div
-                    class="elementor-element elementor-element-3382c642 e-con-full e-flex e-con e-parent"
-                    data-id="3382c642"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div
-                      class="elementor-element elementor-element-305c4799 e-flex e-con-boxed e-con e-child"
-                      data-id="305c4799"
-                      data-element_type="container"
-                      data-e-type="container"
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-4327ee58 elementor-align-left elementor-widget elementor-widget-post-info"
-                          data-id="4327ee58"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="post-info.default"
-                        >
-                          <ul
-                            class="elementor-inline-items elementor-icon-list-items elementor-post-info"
-                          >
-                            <li
-                              class="elementor-icon-list-item elementor-repeater-item-7166291 elementor-inline-item"
-                              itemprop="about"
-                            >
-                              <span
-                                class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms"
-                              >
-                                <span class="elementor-post-info__terms-list">
-                                  <a
-                                    href="by-solution/digital-employee-experience/index.html"
-                                    class="elementor-post-info__terms-list-item"
-                                    data-wpel-link="internal"
-                                    >Digital employee experience</a
-                                  >
-                                </span>
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-8571ea3 elementor-widget elementor-widget-heading"
-                          data-id="8571ea3"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="heading.default"
-                        >
-                          <h3
-                            class="elementor-heading-title elementor-size-default"
-                          >
-                            <a
-                              href="case-studies/farrer-and-co/index.html"
-                              data-wpel-link="internal"
-                              >Farrer &amp; Co. upgrades communications for
-                              hybrid work</a
-                            >
-                          </h3>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-37ebb1bf elementor-widget__width-inherit elementor-widget elementor-widget-text-editor"
-                          data-id="37ebb1bf"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          K Techara helped Farrer &amp; Co. modernise
-                          communication with secure wireless headsets for
-                          confidential hybrid work. &#8230;
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-136085a2 elementor-align-left elementor-widget elementor-widget-button"
-                          data-id="136085a2"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="button.default"
-                        >
-                          <a
-                            class="elementor-button elementor-button-link elementor-size-sm"
-                            href="case-studies/farrer-and-co/index.html"
-                            data-wpel-link="internal"
-                          >
-                            <span class="elementor-button-content-wrapper">
-                              <span class="elementor-button-text"
-                                >Read more</span
-                              >
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-32d58c2f e-flex e-con-boxed e-con e-child"
-                      data-id="32d58c2f"
-                      data-element_type="container"
-                      data-e-type="container"
-                      data-settings='{"background_background":"classic"}'
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-324e9551 elementor-widget elementor-widget-image"
-                          data-id="324e9551"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="image.default"
-                        >
-                          <img
-                            loading="lazy"
-                            decoding="async"
-                            width="1920"
-                            height="1280"
-                            src="../wp-content/uploads/2025/07/Case-study-Farrar-Co-1.jpg"
-                            class="elementor-animation-grow attachment-full size-full wp-image-31305"
-                            alt=""
-                            srcset="
-                              ../wp-content/uploads/2025/07/Case-study-Farrar-Co-1.jpg        1920w,
-                              wp-content/uploads/2025/07/Case-study-Farrar-Co-1-300x200.jpg    300w,
-                              wp-content/uploads/2025/07/Case-study-Farrar-Co-1-1024x683.jpg  1024w,
-                              wp-content/uploads/2025/07/Case-study-Farrar-Co-1-768x512.jpg    768w,
-                              wp-content/uploads/2025/07/Case-study-Farrar-Co-1-1536x1024.jpg 1536w
-                            "
-                            sizes="(max-width: 1920px) 100vw, 1920px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-elementor-type="loop-item"
-                  data-elementor-id="31656"
-                  class="elementor elementor-31656 swiper-slide e-loop-item e-loop-item-31543 post-31543 case-study type-case-study status-publish has-post-thumbnail hentry by-solution-cloud-services industry-manufacturing"
-                  data-elementor-post-type="elementor_library"
-                  role="group"
-                  aria-roledescription="slide"
-                  data-custom-edit-handle="1"
-                >
-                  <div
-                    class="elementor-element elementor-element-3382c642 e-con-full e-flex e-con e-parent"
-                    data-id="3382c642"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div
-                      class="elementor-element elementor-element-305c4799 e-flex e-con-boxed e-con e-child"
-                      data-id="305c4799"
-                      data-element_type="container"
-                      data-e-type="container"
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-4327ee58 elementor-align-left elementor-widget elementor-widget-post-info"
-                          data-id="4327ee58"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="post-info.default"
-                        >
-                          <ul
-                            class="elementor-inline-items elementor-icon-list-items elementor-post-info"
-                          >
-                            <li
-                              class="elementor-icon-list-item elementor-repeater-item-7166291 elementor-inline-item"
-                              itemprop="about"
-                            >
-                              <span
-                                class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms"
-                              >
-                                <span class="elementor-post-info__terms-list">
-                                  <a
-                                    href="by-solution/cloud-services/index.html"
-                                    class="elementor-post-info__terms-list-item"
-                                    data-wpel-link="internal"
-                                    >Cloud services</a
-                                  >
-                                </span>
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-8571ea3 elementor-widget elementor-widget-heading"
-                          data-id="8571ea3"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="heading.default"
-                        >
-                          <h3
-                            class="elementor-heading-title elementor-size-default"
-                          >
-                            <a
-                              href="case-studies/fusion-group/index.html"
-                              data-wpel-link="internal"
-                              >Fusion Group drives global efficiency
-                            </a>
-                          </h3>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-37ebb1bf elementor-widget__width-inherit elementor-widget elementor-widget-text-editor"
-                          data-id="37ebb1bf"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          K Techara delivered tailored infrastructure and print
-                          solutions to help Fusion Group streamline global
-                          operations and boost efficiency. &#8230;
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-136085a2 elementor-align-left elementor-widget elementor-widget-button"
-                          data-id="136085a2"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="button.default"
-                        >
-                          <a
-                            class="elementor-button elementor-button-link elementor-size-sm"
-                            href="case-studies/fusion-group/index.html"
-                            data-wpel-link="internal"
-                          >
-                            <span class="elementor-button-content-wrapper">
-                              <span class="elementor-button-text"
-                                >Read more</span
-                              >
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-32d58c2f e-flex e-con-boxed e-con e-child"
-                      data-id="32d58c2f"
-                      data-element_type="container"
-                      data-e-type="container"
-                      data-settings='{"background_background":"classic"}'
-                    >
-                      <div class="e-con-inner">
-                        <div
-                          class="elementor-element elementor-element-324e9551 elementor-widget elementor-widget-image"
-                          data-id="324e9551"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="image.default"
-                        >
-                          <img
-                            loading="lazy"
-                            decoding="async"
-                            width="1920"
-                            height="1280"
-                            src="../wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1.jpg"
-                            class="elementor-animation-grow attachment-full size-full wp-image-31342"
-                            alt=""
-                            srcset="
-                              ../wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1.jpg        1920w,
-                              wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1-300x200.jpg    300w,
-                              wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1-1024x683.jpg  1024w,
-                              wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1-768x512.jpg    768w,
-                              wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1-1536x1024.jpg 1536w
-                            "
-                            sizes="(max-width: 1920px) 100vw, 1920px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="elementor-swiper-button elementor-swiper-button-prev"
-              role="button"
-              tabindex="0"
-              aria-label="Previous"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewbox="0 0 40 40"
-                fill="none"
-              >
-                <path
-                  d="M10.9375 18.9375L22.9375 7C23.5 6.375 24.4375 6.375 25.0625 7C25.625 7.5625 25.625 8.5 25.0625 9.0625L14.0625 20L25 31C25.625 31.5625 25.625 32.5 25 33.0625C24.4375 33.6875 23.5 33.6875 22.9375 33.0625L10.9375 21.0625C10.3125 20.5 10.3125 19.5625 10.9375 18.9375Z"
-                  fill="CurrentColor"
-                ></path>
-              </svg>
-            </div>
-            <div
-              class="elementor-swiper-button elementor-swiper-button-next"
-              role="button"
-              tabindex="0"
-              aria-label="Next"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewbox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M14.5312 9.46875C14.8125 9.78125 14.8125 10.25 14.5312 10.5312L8.53125 16.5312C8.21875 16.8438 7.75 16.8438 7.46875 16.5312C7.15625 16.25 7.15625 15.7812 7.46875 15.5L12.9375 10.0312L7.46875 4.53125C7.15625 4.25 7.15625 3.78125 7.46875 3.5C7.75 3.1875 8.21875 3.1875 8.5 3.5L14.5312 9.46875Z"
-                  fill="CurrentColor"
-                ></path>
-              </svg>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
       <div
         class="elementor-element elementor-element-20dc58f e-con-full e-flex e-con e-parent"
         data-id="20dc58f"
@@ -4147,7 +3566,7 @@ img { max-width: 100%; height: auto; }
               >
                 <h6 class="elementor-heading-title elementor-size-default">
                   <a
-                    href="/about-us/ecosystem-and-partners/index.html"
+                    href="/partners/index.html"
                     data-wpel-link="internal"
                     >Partners</a
                   >
@@ -6970,8 +6389,6 @@ img { max-width: 100%; height: auto; }
     </div>
   </div>
 </footer>
-
-
 
 
     <script
