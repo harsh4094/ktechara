@@ -1004,9 +1004,45 @@ img { max-width: 100%; height: auto; }
   }
 }
 </style>
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
+}
+</style>
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
+}
+</style>
 <header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
 <style id="nav-links-disabled">
-/* TEMPORARY: all navigation links disabled in header, footer, and mobile nav panel */
+/* TEMPORARY: all nav links disabled except Partners section */
 header a,
 footer a,
 .elementor-31866 a,
@@ -1014,23 +1050,34 @@ footer a,
     pointer-events: none !important;
     cursor: default !important;
 }
-/* Re-enable logo links and mobile nav bar controls (logo + hamburger trigger) */
+/* Re-enable: logos, mobile bar controls, and all Partners links */
 header .header a,
 header .mobile-nav a,
 footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo {
+.ktm-p .ktm-hd__logo,
+header a[href^="/partners/"],
+header a[href="/about-us/microsoft-partnership.1.html"],
+footer a[href^="/partners/"],
+footer a[href="/about-us/microsoft-partnership.1.html"],
+.ktm-p a[href^="/partners/"],
+.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
     pointer-events: auto !important;
     cursor: pointer !important;
 }
 </style>
 <script id="nav-links-disabled-js">
 (function () {
+    function isPartnersLink(a) {
+        var href = a.getAttribute('href') || '';
+        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
+    }
     function shouldDisable(a) {
         var inHeader = !!a.closest('[data-elementor-type="header"]');
         var inFooter = !!a.closest('[data-elementor-type="footer"]');
         var inPopup = !!a.closest('.elementor-31866');
         var inPanel = !!a.closest('.ktm-p');
         if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
+        if (isPartnersLink(a)) return false;
         if (inHeader && a.closest('.header')) return false;
         if (inHeader && a.closest('.mobile-nav')) return false;
         if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
@@ -1530,7 +1577,7 @@ footer .elementor-widget-theme-site-logo a,
                                                                     <div class="elementor-element elementor-element-9a10ee5 e-con-full e-flex e-con e-child" data-id="9a10ee5" data-element_type="container" data-e-type="container">
                                                                         <div class="elementor-element elementor-element-94f7f81 elementor-widget elementor-widget-heading" data-id="94f7f81" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                             <p class="elementor-heading-title elementor-size-default">
-                                                                                <a href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">Partners</a>
+                                                                                <a href="/partners/index.html" data-wpel-link="internal">Partners</a>
                                                                             </p>
                                                                         </div>
                                                                         <div class="elementor-element elementor-element-6faf79a elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6faf79a" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1617,7 +1664,7 @@ footer .elementor-widget-theme-site-logo a,
                                                                         </div>
                                                                     </div>
                                                                     <div class="elementor-element elementor-element-92f4695 cards-btn elementor-widget elementor-widget-button" data-id="92f4695" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/partners/index.html" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -2205,7 +2252,7 @@ footer .elementor-widget-theme-site-logo a,
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                       >
                         <a
-                          href="/set-up-a-meeting/ .1.html"
+                          href="/talk-to-an-expert.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Talk to an Expert</a
@@ -2246,7 +2293,7 @@ footer .elementor-widget-theme-site-logo a,
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                       >
                         <a
-                          href="/set-up-a-meeting/ .1.html"
+                          href="/talk-to-an-expert.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -2469,7 +2516,7 @@ footer .elementor-widget-theme-site-logo a,
               >
                 <h6 class="elementor-heading-title elementor-size-default">
                   <a
-                    href="/about-us/ecosystem-and-partners/index.html"
+                    href="/partners/index.html"
                     data-wpel-link="internal"
                     >Partners</a
                   >
@@ -4958,7 +5005,7 @@ footer .elementor-widget-theme-site-logo a,
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                         >
                           <a
-                            href="/set-up-a-meeting/ .1.html"
+                            href="/talk-to-an-expert.html"
                             class="elementor-item"
                             data-wpel-link="internal"
                             >Talk to an Expert</a
@@ -4999,7 +5046,7 @@ footer .elementor-widget-theme-site-logo a,
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                         >
                           <a
-                            href="/set-up-a-meeting/ .1.html"
+                            href="/talk-to-an-expert.html"
                             class="elementor-item"
                             tabindex="-1"
                             data-wpel-link="internal"
@@ -5292,6 +5339,8 @@ footer .elementor-widget-theme-site-logo a,
     </div>
   </div>
 </footer>
+
+
 
 
 
@@ -7339,7 +7388,7 @@ footer .elementor-widget-theme-site-logo a,
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="../../set-up-a-meeting/index.html"
+                          href="../../talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">
@@ -8875,7 +8924,7 @@ footer .elementor-widget-theme-site-logo a,
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="../../set-up-a-meeting/index.html"
+                          href="../../talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">
@@ -9337,7 +9386,7 @@ footer .elementor-widget-theme-site-logo a,
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="../../set-up-a-meeting/index.html"
+                          href="../../talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">

@@ -685,9 +685,45 @@ img { max-width: 100%; height: auto; }
   }
 }
 </style>
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
+}
+</style>
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
+}
+</style>
 <header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
 <style id="nav-links-disabled">
-/* TEMPORARY: all navigation links disabled in header, footer, and mobile nav panel */
+/* TEMPORARY: all nav links disabled except Partners section */
 header a,
 footer a,
 .elementor-31866 a,
@@ -695,23 +731,34 @@ footer a,
     pointer-events: none !important;
     cursor: default !important;
 }
-/* Re-enable logo links and mobile nav bar controls (logo + hamburger trigger) */
+/* Re-enable: logos, mobile bar controls, and all Partners links */
 header .header a,
 header .mobile-nav a,
 footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo {
+.ktm-p .ktm-hd__logo,
+header a[href^="/partners/"],
+header a[href="/about-us/microsoft-partnership.1.html"],
+footer a[href^="/partners/"],
+footer a[href="/about-us/microsoft-partnership.1.html"],
+.ktm-p a[href^="/partners/"],
+.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
     pointer-events: auto !important;
     cursor: pointer !important;
 }
 </style>
 <script id="nav-links-disabled-js">
 (function () {
+    function isPartnersLink(a) {
+        var href = a.getAttribute('href') || '';
+        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
+    }
     function shouldDisable(a) {
         var inHeader = !!a.closest('[data-elementor-type="header"]');
         var inFooter = !!a.closest('[data-elementor-type="footer"]');
         var inPopup = !!a.closest('.elementor-31866');
         var inPanel = !!a.closest('.ktm-p');
         if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
+        if (isPartnersLink(a)) return false;
         if (inHeader && a.closest('.header')) return false;
         if (inHeader && a.closest('.mobile-nav')) return false;
         if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
@@ -1211,7 +1258,7 @@ footer .elementor-widget-theme-site-logo a,
                                                                     <div class="elementor-element elementor-element-9a10ee5 e-con-full e-flex e-con e-child" data-id="9a10ee5" data-element_type="container" data-e-type="container">
                                                                         <div class="elementor-element elementor-element-94f7f81 elementor-widget elementor-widget-heading" data-id="94f7f81" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                             <p class="elementor-heading-title elementor-size-default">
-                                                                                <a href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">Partners</a>
+                                                                                <a href="/partners/index.html" data-wpel-link="internal">Partners</a>
                                                                             </p>
                                                                         </div>
                                                                         <div class="elementor-element elementor-element-6faf79a elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6faf79a" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1298,7 +1345,7 @@ footer .elementor-widget-theme-site-logo a,
                                                                         </div>
                                                                     </div>
                                                                     <div class="elementor-element elementor-element-92f4695 cards-btn elementor-widget elementor-widget-button" data-id="92f4695" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/about-us/ecosystem-and-partners/index.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/partners/index.html" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -1553,7 +1600,7 @@ footer .elementor-widget-theme-site-logo a,
                         </h2>
                     </div>
                     <div class="elementor-element elementor-element-db245e1 elementor-widget elementor-widget-button" data-id="db245e1" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                             <span class="elementor-button-content-wrapper">
                                 <span class="elementor-button-text">Talk to an Expert</span>
                             </span>
@@ -1711,7 +1758,7 @@ footer .elementor-widget-theme-site-logo a,
                                             <div class="elementor-element elementor-element-6128063 elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="6128063" data-element_type="container" data-e-type="container">
                                                 <div class="e-con-inner">
                                                     <div class="elementor-element elementor-element-5705c6c elementor-widget elementor-widget-button" data-id="5705c6c" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                                             <span class="elementor-button-content-wrapper">
                                                                 <span class="elementor-button-text">Talk to an
                                                                     Expert</span>
@@ -1748,7 +1795,7 @@ footer .elementor-widget-theme-site-logo a,
                                     <div class="elementor-element elementor-element-0663d59 elementor-widget elementor-widget-text-editor" data-id="0663d59" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
                                         Optimise your IT estate with a migration to Azure to transform your processes and how your people work. </div>
                                     <div class="elementor-element elementor-element-1273640 elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop elementor-widget elementor-widget-button" data-id="1273640" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/index.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-text">LET'S TALK</span>
                                             </span>
@@ -1782,7 +1829,7 @@ footer .elementor-widget-theme-site-logo a,
                                     <div class="elementor-element elementor-element-0b45e61 elementor-widget elementor-widget-text-editor" data-id="0b45e61" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
                                         With our support, you can realise new opportunities and capabilities with scalable cloud platforms and infrastructure. </div>
                                     <div class="elementor-element elementor-element-406efe2 elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop elementor-widget elementor-widget-button" data-id="406efe2" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-text">LET'S TALK</span>
                                             </span>
@@ -1817,7 +1864,7 @@ footer .elementor-widget-theme-site-logo a,
                                         <p>Modernise your apps to offer experiences that are more flexible, secure and available across all devices at all times, free from the constraints of traditional monolithic application architecture.</p>
                                     </div>
                                     <div class="elementor-element elementor-element-b7ef53a elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop elementor-widget elementor-widget-button" data-id="b7ef53a" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-text">LET'S TALK</span>
                                             </span>
@@ -1861,7 +1908,7 @@ footer .elementor-widget-theme-site-logo a,
                                         organisation.</span></p>
                             </div>
                             <div class="elementor-element elementor-element-a9680a0 elementor-widget elementor-widget-button" data-id="a9680a0" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                                <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-text">Talk to an Expert</span>
                                     </span>
@@ -1936,7 +1983,7 @@ footer .elementor-widget-theme-site-logo a,
                                 to get started.</p>
                         </div>
                         <div class="elementor-element elementor-element-0550717 elementor-widget elementor-widget-button" data-id="0550717" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                            <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../set-up-a-meeting/ .1.html" data-wpel-link="internal">
+                            <a class="elementor-button elementor-button-link elementor-size-sm" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                 <span class="elementor-button-content-wrapper">
                                     <span class="elementor-button-text">Let's Talk</span>
                                 </span>
@@ -2110,7 +2157,7 @@ footer .elementor-widget-theme-site-logo a,
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                       >
                         <a
-                          href="/set-up-a-meeting/ .1.html"
+                          href="/talk-to-an-expert.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Talk to an Expert</a
@@ -2151,7 +2198,7 @@ footer .elementor-widget-theme-site-logo a,
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                       >
                         <a
-                          href="/set-up-a-meeting/ .1.html"
+                          href="/talk-to-an-expert.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -2374,7 +2421,7 @@ footer .elementor-widget-theme-site-logo a,
               >
                 <h6 class="elementor-heading-title elementor-size-default">
                   <a
-                    href="/about-us/ecosystem-and-partners/index.html"
+                    href="/partners/index.html"
                     data-wpel-link="internal"
                     >Partners</a
                   >
@@ -4863,7 +4910,7 @@ footer .elementor-widget-theme-site-logo a,
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                         >
                           <a
-                            href="/set-up-a-meeting/ .1.html"
+                            href="/talk-to-an-expert.html"
                             class="elementor-item"
                             data-wpel-link="internal"
                             >Talk to an Expert</a
@@ -4904,7 +4951,7 @@ footer .elementor-widget-theme-site-logo a,
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32936"
                         >
                           <a
-                            href="/set-up-a-meeting/ .1.html"
+                            href="/talk-to-an-expert.html"
                             class="elementor-item"
                             tabindex="-1"
                             data-wpel-link="internal"
@@ -5197,6 +5244,8 @@ footer .elementor-widget-theme-site-logo a,
     </div>
   </div>
 </footer>
+
+
 
 
 
@@ -5864,7 +5913,7 @@ footer .elementor-widget-theme-site-logo a,
                                     <div class="elementor-element elementor-element-e75749f e-con-full e-flex e-con e-child" data-id="e75749f" data-element_type="container" data-e-type="container">
                                         <div class="elementor-element elementor-element-722d409 premium-lq__none elementor-widget elementor-widget-premium-addon-button" data-id="722d409" data-element_type="widget" data-e-type="widget" data-widget_type="premium-addon-button.default">
 
-                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../set-up-a-meeting/index.html" data-wpel-link="internal">
+                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                                 <div class="premium-button-text-icon-wrapper">
 
                                                     <span>
@@ -6430,7 +6479,7 @@ footer .elementor-widget-theme-site-logo a,
                                     <div class="elementor-element elementor-element-6e3a219 e-con-full e-flex e-con e-child" data-id="6e3a219" data-element_type="container" data-e-type="container">
                                         <div class="elementor-element elementor-element-628cded premium-lq__none elementor-widget elementor-widget-premium-addon-button" data-id="628cded" data-element_type="widget" data-e-type="widget" data-widget_type="premium-addon-button.default">
 
-                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../set-up-a-meeting/index.html" data-wpel-link="internal">
+                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                                 <div class="premium-button-text-icon-wrapper">
 
                                                     <span>
@@ -6622,7 +6671,7 @@ footer .elementor-widget-theme-site-logo a,
                                     <div class="elementor-element elementor-element-139ad4d e-con-full e-flex e-con e-child" data-id="139ad4d" data-element_type="container" data-e-type="container">
                                         <div class="elementor-element elementor-element-8e2c120 premium-lq__none elementor-widget elementor-widget-premium-addon-button" data-id="8e2c120" data-element_type="widget" data-e-type="widget" data-widget_type="premium-addon-button.default">
 
-                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../set-up-a-meeting/index.html" data-wpel-link="internal">
+                                            <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../../../talk-to-an-expert.html" data-wpel-link="internal">
                                                 <div class="premium-button-text-icon-wrapper">
 
                                                     <span>
