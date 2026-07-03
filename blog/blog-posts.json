@@ -1,25 +1,5 @@
 [
   {
-    "id": 33579,
-    "title": "Opening the door to technology for Salford College students",
-    "url": "/blog/sustainability/opening-the-door-to-technology-for-salford-college-students/index.html",
-    "image": "/wp-content/uploads/2026/05/Salford-College-Safari-1-1024x768.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "future-readiness",
-      "sustainability"
-    ],
-    "services": [
-      "strategy"
-    ],
-    "categories": [
-      "strategy",
-      "sustainability"
-    ]
-  },
-  {
     "id": 33615,
     "title": "The K Techara guide to Azure (part 4): Balancing resilience and cost in Azure",
     "url": "/blog/azure-and-cloud/the-advania-guide-to-azure-part-4-balancing-resilience-and-cost-in-azure/index.html",
@@ -770,27 +750,6 @@
     ]
   },
   {
-    "id": 30948,
-    "title": "Crawl, Walk, Run: where to start with FinOps in your Azure cloud environment",
-    "url": "/blog/strategy/azure-finops-crawl-walk-run/index.html",
-    "image": "/wp-content/uploads/2025/04/FinOps-Azure-blog-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "future-readiness"
-    ],
-    "services": [
-      "azure-cloud",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "strategy"
-    ]
-  },
-  {
     "id": 30949,
     "title": "The next stand-off: OneNote vs Microsoft Loop",
     "url": "/blog/modern-work/onenote-end-of-support-microsoft-loop/index.html",
@@ -809,30 +768,6 @@
     ],
     "categories": [
       "modern-work"
-    ]
-  },
-  {
-    "id": 30944,
-    "title": "Sustainable business value in Azure with an Expert Managed Services Provider",
-    "url": "/blog/efficiency/azure-value-managed-services/index.html",
-    "image": "/wp-content/uploads/2025/04/Azure-blog-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "efficiency",
-      "employee-experience",
-      "future-readiness",
-      "infrastructure"
-    ],
-    "services": [
-      "azure-cloud",
-      "managed-it-services",
-      "modern-work"
-    ],
-    "categories": [
-      "efficiency"
     ]
   },
   {
@@ -878,27 +813,6 @@
     ]
   },
   {
-    "id": 30919,
-    "title": "The Technology Boardroom: K Techara’s next-gen tech hit the Boardroom",
-    "url": "/blog/data/tech-career-trailblazers-experiences/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "data",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
     "id": 30918,
     "title": "The Technology Boardroom: How the tech workforce of the future will be different",
     "url": "/blog/efficiency/workforce-planning-with-technology/index.html",
@@ -918,29 +832,6 @@
     ],
     "categories": [
       "efficiency"
-    ]
-  },
-  {
-    "id": 30852,
-    "title": "Building a robust Azure cloud platform strategy",
-    "url": "/blog/strategy/azure-cloud-platform-strategy/index.html",
-    "image": "/wp-content/uploads/2025/03/Advania-blog-robust-Azure-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "future-readiness"
-    ],
-    "services": [
-      "azure-cloud",
-      "business-applications",
-      "data",
-      "managed-it-services",
-      "strategy"
-    ],
-    "categories": [
-      "strategy"
     ]
   },
   {
@@ -988,74 +879,6 @@
     ]
   },
   {
-    "id": 30838,
-    "title": "The Technology Boardroom: embracing change in the insurance industry",
-    "url": "/blog/data/the-technology-boardroom-insurance/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "azure-cloud",
-      "data",
-      "managed-it-services",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
-    "id": 30789,
-    "title": "Unlocking the power of data with Microsoft Purview Unified Data Catalog",
-    "url": "/blog/data/unlocking-the-power-of-data-with-microsoft-purview/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania-Purview-blog-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "infrastructure",
-      "security"
-    ],
-    "services": [
-      "business-applications",
-      "data",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
-    "id": 30778,
-    "title": "Neutralising cyber security threats with Microsoft Entra",
-    "url": "/blog/security/the-technology-boardroom-cyber-security-threats/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "infrastructure",
-      "security"
-    ],
-    "services": [
-      "ai-automation",
-      "azure-cloud",
-      "data",
-      "strategy"
-    ],
-    "categories": [
-      "security"
-    ]
-  },
-  {
     "id": 30726,
     "title": "Managing risk and compliance in UK insurance",
     "url": "/insights/blog/insurance-compliance-regulatory/index.html",
@@ -1074,93 +897,6 @@
     ],
     "categories": [
       "compliance"
-    ]
-  },
-  {
-    "id": 30724,
-    "title": "Data management in insurance: Is your firm up to standard?",
-    "url": "/insights/blog/data-management-insurance/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "compliance",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "data",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
-    "id": 30722,
-    "title": "AI in insurance – and how it’s reshaping the industry as we know it",
-    "url": "/insights/blog/ai-insurance-industry/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "efficiency"
-    ]
-  },
-  {
-    "id": 30717,
-    "title": "Copilot readiness: is your organisation prepared?",
-    "url": "/insights/blog/copilot-readiness/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania-Copilot-readiness-blog-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "efficiency"
-    ]
-  },
-  {
-    "id": 30641,
-    "title": "How to measure and maximise the benefits of AI for your organisation",
-    "url": "/insights/blog/measure-and-maximise-the-benefits-of-ai-for-your-organisation/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania-blog-measure-AI-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "strategy"
     ]
   },
   {
@@ -1205,52 +941,6 @@
     ],
     "categories": [
       "employee-experience"
-    ]
-  },
-  {
-    "id": 30690,
-    "title": "What’s changed in AI risk?",
-    "url": "/insights/blog/ai-risk-whats-changed/index.html",
-    "image": "/wp-content/uploads/2025/02/Advania-blog-AI-Risk-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "compliance",
-      "future-readiness",
-      "security"
-    ],
-    "services": [
-      "ai-automation",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "security"
-    ]
-  },
-  {
-    "id": 30658,
-    "title": "The Technology Boardroom explores the latest trends ERP technology",
-    "url": "/blog/efficiency/the-technology-boardroom-explores-the-latest-trends-erp-technology/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "employee-experience",
-      "future-readiness",
-      "infrastructure"
-    ],
-    "services": [
-      "ai-automation",
-      "business-applications",
-      "managed-it-services",
-      "strategy"
-    ],
-    "categories": [
-      "efficiency"
     ]
   },
   {
@@ -1341,35 +1031,6 @@
     ]
   },
   {
-    "id": 30559,
-    "title": "K Techara’s 2025 tech predictions",
-    "url": "/blog/security/advania-2025-tech-predictions/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "compliance",
-      "efficiency",
-      "employee-experience",
-      "future-readiness",
-      "infrastructure",
-      "security",
-      "sustainability"
-    ],
-    "services": [
-      "ai-automation",
-      "azure-cloud",
-      "managed-it-services",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "security"
-    ]
-  },
-  {
     "id": 30379,
     "title": "Collaboration with Microsoft Teams: new features to look out for",
     "url": "/blog/modern-work/microsoft-teams-collaboration-features/index.html",
@@ -1392,79 +1053,6 @@
     ],
     "categories": [
       "modern-work"
-    ]
-  },
-  {
-    "id": 30543,
-    "title": "The Technology Boardroom: the secrets behind K Techara’s Early Careers programme",
-    "url": "/blog/strategy/the-technology-boardroom-early-talent/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "strategy",
-      "unified-communications"
-    ],
-    "categories": [
-      "strategy"
-    ]
-  },
-  {
-    "id": 30358,
-    "title": "Azure VMware Solution: updates from Microsoft Ignite and Broadcom",
-    "url": "/blog/data/azure-vmware-solution-microsoft-ignite/index.html",
-    "image": "/wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience",
-      "infrastructure"
-    ],
-    "services": [
-      "data",
-      "managed-it-services",
-      "modern-work"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
-    "id": 30346,
-    "title": "The Technology Boardroom: reactions to Microsoft Ignite",
-    "url": "/blog/security/the-technology-boardroom-microsoft-ignite/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "compliance",
-      "efficiency",
-      "employee-experience",
-      "future-readiness",
-      "infrastructure",
-      "security",
-      "sustainability"
-    ],
-    "services": [
-      "ai-automation",
-      "azure-cloud",
-      "business-applications",
-      "data",
-      "managed-it-services",
-      "modern-work",
-      "strategy",
-      "unified-communications"
-    ],
-    "categories": [
-      "security"
     ]
   },
   {
@@ -1564,38 +1152,6 @@
     ]
   },
   {
-    "id": 30235,
-    "title": "Join the conversation with K Techara’s podcast: The Technology Boardroom",
-    "url": "/insights/blog/join-conversation-the-technology-boardroom/index.html",
-    "image": "/wp-content/uploads/2024/11/Website-card-3-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "compliance",
-      "efficiency",
-      "employee-experience",
-      "future-readiness",
-      "infrastructure",
-      "security",
-      "sustainability"
-    ],
-    "services": [
-      "ai-automation",
-      "azure-cloud",
-      "business-applications",
-      "data",
-      "managed-it-services",
-      "modern-work",
-      "strategy",
-      "unified-communications"
-    ],
-    "categories": [
-      "employee-experience"
-    ]
-  },
-  {
     "id": 30270,
     "title": "The value of Dynamics 365 Business Central for SMBs",
     "url": "/blog/infrastructure/the-value-of-dynamics-365-business-central-for-smbs/index.html",
@@ -1614,50 +1170,6 @@
     ],
     "categories": [
       "infrastructure"
-    ]
-  },
-  {
-    "id": 30147,
-    "title": "The future of VMware: navigating the shift to subscription licensing",
-    "url": "/insights/blog/vmware-licensing-subscription/index.html",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-VMware-changes-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "infrastructure",
-      "security"
-    ],
-    "services": [
-      "azure-cloud",
-      "data",
-      "managed-it-services",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
-    "id": 30221,
-    "title": "Which digital tools are the best fit for your communications strategy?",
-    "url": "/blog/strategy/which-digital-tools-are-the-best-fit-for-your-communications-strategy/index.html",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience",
-      "future-readiness"
-    ],
-    "services": [
-      "ai-automation",
-      "modern-work",
-      "strategy",
-      "unified-communications"
-    ],
-    "categories": [
-      "strategy"
     ]
   },
   {
@@ -1727,49 +1239,6 @@
     ]
   },
   {
-    "id": 30146,
-    "title": "Using Global Secure Access to ‘step up’ authentication to your premises",
-    "url": "/blog/security/using-global-secure-access-to-step-up-authentication/index.html",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-GSA-1-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "compliance",
-      "infrastructure",
-      "security"
-    ],
-    "services": [
-      "data",
-      "managed-it-services",
-      "strategy"
-    ],
-    "categories": [
-      "security"
-    ]
-  },
-  {
-    "id": 30053,
-    "title": "A day in the life of a Service Delivery Manager with Copilot",
-    "url": "/blog/data/a-day-in-the-life-of-a-service-delivery-manager-with-copilot/index.html",
-    "image": "/wp-content/uploads/2024/08/Advania-blog-DIL-Zach-Bruce-Copilot-headshot-5-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "future-readiness",
-      "infrastructure"
-    ],
-    "services": [
-      "ai-automation",
-      "data",
-      "strategy"
-    ],
-    "categories": [
-      "data"
-    ]
-  },
-  {
     "id": 30073,
     "title": "Not just Azure AD: Entra is Microsoft’s new identity and network access suite",
     "url": "/blog/security/microsoft-entra-identity-network-access-suite/index.html",
@@ -1784,28 +1253,6 @@
     "services": [
       "azure-cloud",
       "data"
-    ],
-    "categories": [
-      "security"
-    ]
-  },
-  {
-    "id": 29966,
-    "title": "How Global Secure Access changes our zero trust thinking",
-    "url": "/insights/blog/how-global-secure-access-changes-our-zero-trust-thinking.1.html",
-    "image": "/wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "compliance",
-      "infrastructure",
-      "security"
-    ],
-    "services": [
-      "ai-automation",
-      "data",
-      "strategy"
     ],
     "categories": [
       "security"
@@ -2036,22 +1483,6 @@
     ]
   },
   {
-    "id": 28405,
-    "title": "We&#8217;ve asked our women in tech how to #InspireInclusion this International Women&#8217;s Day",
-    "url": "/insights/blog/women-in-tech-questions-inspire-inclusion-iwd-2024/index.html",
-    "image": "/wp-content/uploads/2024/03/Advania-IWD-blog-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "employee-experience"
-    ],
-    "services": [],
-    "categories": [
-      "employee-experience"
-    ]
-  },
-  {
     "id": 28399,
     "title": "Microsoft End of Support – what you need to know",
     "url": "/blog/infrastructure/microsoft-end-of-support/index.html",
@@ -2113,27 +1544,6 @@
     ],
     "categories": [
       "efficiency"
-    ]
-  },
-  {
-    "id": 28286,
-    "title": "How Azure VMware Solution from Microsoft could solve your cloud infrastructure and VMware challenges",
-    "url": "/blog/strategy/vmware-modern-cloud-solution/index.html",
-    "image": "/wp-content/uploads/2024/02/Advania_blog_AzureVMware-announcement-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "future-readiness"
-    ],
-    "services": [
-      "azure-cloud",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "strategy"
     ]
   },
   {
@@ -2664,30 +2074,6 @@
     ],
     "categories": [
       "infrastructure"
-    ]
-  },
-  {
-    "id": 26994,
-    "title": "Simplifying Azure Virtual Desktop infrastructure for the modern workplace",
-    "url": "/insights/blog/azure-virtual-desktop-avd-modern-workplace/index.html",
-    "image": "/wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "efficiency",
-      "future-readiness",
-      "infrastructure",
-      "sustainability"
-    ],
-    "services": [
-      "azure-cloud",
-      "modern-work",
-      "strategy"
-    ],
-    "categories": [
-      "modern-work"
     ]
   },
   {
@@ -3402,26 +2788,6 @@
     ]
   },
   {
-    "id": 28278,
-    "title": "Cloud migration FAQs: moving your on-premises systems to the Cloud",
-    "url": "/blog/infrastructure/cloud-migration-faqs/index.html",
-    "image": "/wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "efficiency",
-      "infrastructure"
-    ],
-    "services": [
-      "azure-cloud",
-      "strategy"
-    ],
-    "categories": [
-      "infrastructure"
-    ]
-  },
-  {
     "id": 27946,
     "title": "Microsoft Teams: glossary of Teams terms",
     "url": "/insights/blog/glossary-of-microsoft-teams-terms/index.html",
@@ -3537,26 +2903,6 @@
     ],
     "categories": [
       "compliance"
-    ]
-  },
-  {
-    "id": 27997,
-    "title": "Microsoft Managed Desktop &#8211; what do you actually get?",
-    "url": "/blog/efficiency/microsoft-managed-desktop-what-do-you-actually-get/index.html",
-    "image": "/wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get-1024x512.png",
-    "insightTypes": [
-      "blog"
-    ],
-    "businessNeeds": [
-      "agility",
-      "efficiency",
-      "infrastructure"
-    ],
-    "services": [
-      "managed-it-services"
-    ],
-    "categories": [
-      "efficiency"
     ]
   },
   {

@@ -10,7 +10,7 @@
   },
   {
     "id": 26927,
-    "title": "Microsoft Teams Voice: make calling simple with VoIP",
+    "title": "Microsoft Teams Voice: make calling simple with VoIP - K Techara Limited",
     "image": "/wp-content/uploads/2023/07/Advania_Blog_MS-Teams-Voice_op2.png",
     "width": 1200,
     "height": 600,
@@ -19,7 +19,7 @@
   },
   {
     "id": 26937,
-    "title": "Cyber security AI from Microsoft: our take on Inspire’s news",
+    "title": "Cyber security AI from Microsoft: our take on Inspire’s news - K Techara Limited",
     "image": "/wp-content/uploads/2023/07/Advania_Blog_Cyber-Security-AI-from-Inspire.png",
     "width": 1200,
     "height": 600,
@@ -55,7 +55,7 @@
   },
   {
     "id": 26971,
-    "title": "Embracing cloud computing for a more sustainable future",
+    "title": "Embracing cloud computing for a more sustainable future - K Techara Limited",
     "image": "/wp-content/uploads/2023/04/Advania_Blog_Embracing-cloud-computing-sustainable-future.png",
     "width": 1200,
     "height": 600,
@@ -73,7 +73,7 @@
   },
   {
     "id": 26980,
-    "title": "Helping you defend against today’s cyber threats",
+    "title": "Helping you defend against today’s cyber threats - K Techara Limited",
     "image": "/wp-content/uploads/2023/03/Advania_Blog_Defend-against-Threats_op2.png",
     "width": 1200,
     "height": 600,
@@ -81,13 +81,13 @@
     "srcset": "/wp-content/uploads/2023/03/Advania_Blog_Defend-against-Threats_op2-300x150.png 300w, /wp-content/uploads/2023/03/Advania_Blog_Defend-against-Threats_op2-768x384.png 768w, /wp-content/uploads/2023/03/Advania_Blog_Defend-against-Threats_op2-1024x512.png 1024w, /wp-content/uploads/2023/03/Advania_Blog_Defend-against-Threats_op2.png 1200w"
   },
   {
-    "id": 26994,
-    "title": "Simplifying Azure Virtual Desktop infrastructure",
-    "image": "/wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure.png",
+    "id": 26991,
+    "title": "How managed services can help you tackle your IT challenges - K Techara Limited",
+    "image": "/wp-content/uploads/2023/02/Advania_Blog_Managed-Services-can-tackle-IT-challenges.png",
     "width": 1200,
     "height": 600,
-    "url": "blog/modern-work/azure-virtual-desktop-avd-modern-workplace/index.html",
-    "srcset": "/wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure-300x150.png 300w, /wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure-768x384.png 768w, /wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure-1024x512.png 1024w, /wp-content/uploads/2023/03/Advania_Blog_Simplifying-Azure-Virtual-Desktop-infrastructure.png 1200w"
+    "url": "blog/security/managed-services-tackle-challenges/index.html",
+    "srcset": "/wp-content/uploads/2023/02/Advania_Blog_Managed-Services-can-tackle-IT-challenges-300x150.png 300w, /wp-content/uploads/2023/02/Advania_Blog_Managed-Services-can-tackle-IT-challenges-768x384.png 768w, /wp-content/uploads/2023/02/Advania_Blog_Managed-Services-can-tackle-IT-challenges-1024x512.png 1024w, /wp-content/uploads/2023/02/Advania_Blog_Managed-Services-can-tackle-IT-challenges.png 1200w"
   },
   {
     "id": 27606,
@@ -468,15 +468,6 @@
     "srcset": "/wp-content/uploads/2021/12/Advania-Evolution-Cloud-MSP-300x150.png 300w, /wp-content/uploads/2021/12/Advania-Evolution-Cloud-MSP-768x384.png 768w, /wp-content/uploads/2021/12/Advania-Evolution-Cloud-MSP-1024x512.png 1024w, /wp-content/uploads/2021/12/Advania-Evolution-Cloud-MSP.png 1200w"
   },
   {
-    "id": 27997,
-    "title": "Microsoft Managed Desktop: what do you get?",
-    "image": "/wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/efficiency/microsoft-managed-desktop-what-do-you-actually-get/index.html",
-    "srcset": "/wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get-300x150.png 300w, /wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get-768x384.png 768w, /wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get-1024x512.png 1024w, /wp-content/uploads/2020/01/Advania-Microsoft-Managed-Desktop-what-do-you-get.png 1200w"
-  },
-  {
     "id": 27998,
     "title": "An expert view on the modern ransomware cyber attack",
     "image": "/wp-content/uploads/2022/07/Advania-modern-ransomware-attack.png",
@@ -828,24 +819,6 @@
     "srcset": "/wp-content/uploads/2024/01/Advania-Informed-data-protection-policy-300x150.png 300w, /wp-content/uploads/2024/01/Advania-Informed-data-protection-policy-768x384.png 768w, /wp-content/uploads/2024/01/Advania-Informed-data-protection-policy-1024x512.png 1024w, /wp-content/uploads/2024/01/Advania-Informed-data-protection-policy.png 1200w"
   },
   {
-    "id": 28278,
-    "title": "Cloud migration FAQs - Moving your on-premises systems to the Cloud",
-    "image": "/wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/infrastructure/cloud-migration-faqs/index.html",
-    "srcset": "/wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs-300x150.png 300w, /wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs-768x384.png 768w, /wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs-1024x512.png 1024w, /wp-content/uploads/2024/01/Advania-Cloud-Migration-FAQs.png 1200w"
-  },
-  {
-    "id": 28286,
-    "title": "Cloud modernisation with Azure VMware",
-    "image": "/wp-content/uploads/2024/02/Advania_blog_VMWare_social.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/strategy/vmware-modern-cloud-solution/index.html",
-    "srcset": null
-  },
-  {
     "id": 28305,
     "title": "Microsoft Copilot FAQ: your Copilot navigational guide",
     "image": "/wp-content/uploads/2024/02/Advania-blog-Copilot-FAQ.png",
@@ -861,15 +834,6 @@
     "width": 1200,
     "height": 600,
     "url": "blog/infrastructure/microsoft-end-of-support/index.html",
-    "srcset": null
-  },
-  {
-    "id": 28405,
-    "title": "Asking our women in tech how to #InspireInclusion",
-    "image": "/wp-content/uploads/2024/03/Advania_blog_social.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/employee-experience/women-in-tech-questions-inspire-inclusion-iwd-2024/index.html",
     "srcset": null
   },
   {
@@ -963,24 +927,6 @@
     "srcset": "/wp-content/uploads/2024/07/conceptions-zero-trust-e1721299593177-300x207.jpg 300w, /wp-content/uploads/2024/07/conceptions-zero-trust-e1721299593177-768x531.jpg 768w, /wp-content/uploads/2024/07/conceptions-zero-trust-e1721299593177.jpg 868w"
   },
   {
-    "id": 29966,
-    "title": "How Global Secure Access changes zero trust thinking",
-    "image": "/wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/security/how-global-secure-access-changes-our-zero-trust-thinking/index.html",
-    "srcset": "/wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking-300x150.png 300w, /wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking-768x384.png 768w, /wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking-1024x512.png 1024w, /wp-content/uploads/2024/08/Advania-Blog-Zero-trust-thinking.png 1200w"
-  },
-  {
-    "id": 30053,
-    "title": "A day in the life of a Microsoft 365 Copilot user",
-    "image": "/wp-content/uploads/2024/08/Advania-blog-DIL-Zach-Bruce-Copilot-social.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/a-day-in-the-life-of-a-service-delivery-manager-with-copilot/index.html",
-    "srcset": null
-  },
-  {
     "id": 30073,
     "title": "Entra is Microsoft’s new identity and network access suite",
     "image": "/wp-content/uploads/2024/08/Advania-blog-Microsoft-Entra.png",
@@ -988,24 +934,6 @@
     "height": 600,
     "url": "blog/security/microsoft-entra-identity-network-access-suite/index.html",
     "srcset": "/wp-content/uploads/2024/08/Advania-blog-Microsoft-Entra-300x150.png 300w, /wp-content/uploads/2024/08/Advania-blog-Microsoft-Entra-768x384.png 768w, /wp-content/uploads/2024/08/Advania-blog-Microsoft-Entra-1024x512.png 1024w, /wp-content/uploads/2024/08/Advania-blog-Microsoft-Entra.png 1200w"
-  },
-  {
-    "id": 30146,
-    "title": "Global Secure Access: stepping up security authentication",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-GSA-Social.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/security/using-global-secure-access-to-step-up-authentication/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30147,
-    "title": "Navigating the shift to VMware subscription licensing",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-VMware-changes.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/vmware-licensing-subscription/index.html",
-    "srcset": "/wp-content/uploads/2024/09/Advania-blog-VMware-changes-300x150.png 300w, /wp-content/uploads/2024/09/Advania-blog-VMware-changes-768x384.png 768w, /wp-content/uploads/2024/09/Advania-blog-VMware-changes-1024x512.png 1024w, /wp-content/uploads/2024/09/Advania-blog-VMware-changes.png 1200w"
   },
   {
     "id": 30182,
@@ -1024,15 +952,6 @@
     "height": 600,
     "url": "blog/employee-experience/the-role-of-technology-in-employee-experience/index.html",
     "srcset": "/wp-content/uploads/2024/09/Advania-blog-role-of-technology-UX-300x150.png 300w, /wp-content/uploads/2024/09/Advania-blog-role-of-technology-UX-768x384.png 768w, /wp-content/uploads/2024/09/Advania-blog-role-of-technology-UX-1024x512.png 1024w, /wp-content/uploads/2024/09/Advania-blog-role-of-technology-UX.png 1200w"
-  },
-  {
-    "id": 30221,
-    "title": "Which digital tools are the best for your communication strategy",
-    "image": "/wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/strategy/which-digital-tools-are-the-best-fit-for-your-communications-strategy/index.html",
-    "srcset": "/wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy-300x150.png 300w, /wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy-768x384.png 768w, /wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy-1024x512.png 1024w, /wp-content/uploads/2024/09/Advania-blog-digital-comms-strategy.png 1200w"
   },
   {
     "id": 30270,
@@ -1071,24 +990,6 @@
     "srcset": null
   },
   {
-    "id": 30346,
-    "title": "The K Techara team discuss key announcements from Microsoft Ignite",
-    "image": "/wp-content/uploads/2024/12/Episode-4-Ignite-reaction-Advanias-take-on-Microsofts-annual-tech-conference-Thumbnail.jpg",
-    "width": 1920,
-    "height": 1080,
-    "url": "blog/security/the-technology-boardroom-microsoft-ignite/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30358,
-    "title": "Azure VMware Solution: Microsoft Ignite updates",
-    "image": "/wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/azure-vmware-solution-microsoft-ignite/index.html",
-    "srcset": "/wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl-300x150.png 300w, /wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl-768x384.png 768w, /wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl-1024x512.png 1024w, /wp-content/uploads/2024/12/Advania-event-Azure-VMware-updatesl.png 1200w"
-  },
-  {
     "id": 30379,
     "title": "Microsoft Teams collaboration features coming soon",
     "image": "/wp-content/uploads/2024/12/Advania-blog-Microsoft-Teams.png",
@@ -1116,30 +1017,12 @@
     "srcset": "/wp-content/uploads/2025/02/Advania-blog-copilot-business-use-cases-300x150.png 300w, /wp-content/uploads/2025/02/Advania-blog-copilot-business-use-cases-768x384.png 768w, /wp-content/uploads/2025/02/Advania-blog-copilot-business-use-cases-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-blog-copilot-business-use-cases.png 1200w"
   },
   {
-    "id": 30543,
-    "title": "The making of the Early Talent Programme",
-    "image": "/wp-content/uploads/2024/12/Episode-4-Ignite-reaction-Advanias-take-on-Microsofts-annual-tech-conference-Thumbnail.jpg",
-    "width": 1920,
-    "height": 1080,
-    "url": "blog/strategy/the-technology-boardroom-early-talent/index.html",
-    "srcset": null
-  },
-  {
     "id": 30557,
     "title": "The AA&#039;s CISO in conversation on The Technology Boardroom",
     "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
     "width": 1200,
     "height": 600,
     "url": "blog/security/the-aa-ciso-shares-cyber-security-insights-with-the-technology-boardroom/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30559,
-    "title": "K Techara’s 2025 tech predictions",
-    "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/security/advania-2025-tech-predictions/index.html",
     "srcset": null
   },
   {
@@ -1170,87 +1053,6 @@
     "srcset": "/wp-content/uploads/2025/02/Advania-blog-delivering-value-organisation-AI-1-300x150.png 300w, /wp-content/uploads/2025/02/Advania-blog-delivering-value-organisation-AI-1-768x384.png 768w, /wp-content/uploads/2025/02/Advania-blog-delivering-value-organisation-AI-1-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-blog-delivering-value-organisation-AI-1.png 1200w"
   },
   {
-    "id": 30641,
-    "title": "How to measure and maximise the benefits of AI",
-    "image": "/wp-content/uploads/2025/02/Advania-blog-measure-AI.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/strategy/measure-and-maximise-the-benefits-of-ai-for-your-organisation/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania-blog-measure-AI-300x150.png 300w, /wp-content/uploads/2025/02/Advania-blog-measure-AI-768x384.png 768w, /wp-content/uploads/2025/02/Advania-blog-measure-AI-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-blog-measure-AI.png 1200w"
-  },
-  {
-    "id": 30658,
-    "title": "The Technology Boardroom explores ERP tech trends",
-    "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/efficiency/the-technology-boardroom-explores-the-latest-trends-erp-technology/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30690,
-    "title": "What&#039;s changed in AI risk? AI risk management",
-    "image": "/wp-content/uploads/2025/02/Advania-blog-AI-Risk.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/security/ai-risk-whats-changed/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania-blog-AI-Risk-300x150.png 300w, /wp-content/uploads/2025/02/Advania-blog-AI-Risk-768x384.png 768w, /wp-content/uploads/2025/02/Advania-blog-AI-Risk-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-blog-AI-Risk.png 1200w"
-  },
-  {
-    "id": 30717,
-    "title": "Copilot readiness guide for your organisation",
-    "image": "/wp-content/uploads/2025/02/Advania-Copilot-readiness-blog.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/efficiency/copilot-readiness/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania-Copilot-readiness-blog-300x150.png 300w, /wp-content/uploads/2025/02/Advania-Copilot-readiness-blog-768x384.png 768w, /wp-content/uploads/2025/02/Advania-Copilot-readiness-blog-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-Copilot-readiness-blog.png 1200w"
-  },
-  {
-    "id": 30722,
-    "title": "How AI in insurance is reshaping the industry",
-    "image": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/efficiency/ai-insurance-industry/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-300x150.png 300w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-768x384.png 768w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance.png 1200w"
-  },
-  {
-    "id": 30724,
-    "title": "Meeting the standard of data management in insurance",
-    "image": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/data-management-insurance/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management-300x150.png 300w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management-768x384.png 768w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania_blog-AI-in-insurance-data-management.png 1200w"
-  },
-  {
-    "id": 30778,
-    "title": "Microsoft Entra: neutralising cyber security threats",
-    "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/security/the-technology-boardroom-cyber-security-threats/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30789,
-    "title": "Unlocking the Power of Data with Microsoft Purview Unified Data Catalog",
-    "image": "/wp-content/uploads/2025/02/Advania-Purview-blog.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/unlocking-the-power-of-data-with-microsoft-purview/index.html",
-    "srcset": "/wp-content/uploads/2025/02/Advania-Purview-blog-300x150.png 300w, /wp-content/uploads/2025/02/Advania-Purview-blog-768x384.png 768w, /wp-content/uploads/2025/02/Advania-Purview-blog-1024x512.png 1024w, /wp-content/uploads/2025/02/Advania-Purview-blog.png 1200w"
-  },
-  {
-    "id": 30838,
-    "title": "Strategic Visionaries: Redefining technology in insurance",
-    "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/the-technology-boardroom-insurance/index.html",
-    "srcset": null
-  },
-  {
     "id": 30844,
     "title": "Microsoft cyber security for industry-leading protection",
     "image": "/wp-content/uploads/2025/03/Advania-blog-MS-Security-overview.png",
@@ -1260,30 +1062,12 @@
     "srcset": "/wp-content/uploads/2025/03/Advania-blog-MS-Security-overview-300x150.png 300w, /wp-content/uploads/2025/03/Advania-blog-MS-Security-overview-768x384.png 768w, /wp-content/uploads/2025/03/Advania-blog-MS-Security-overview-1024x512.png 1024w, /wp-content/uploads/2025/03/Advania-blog-MS-Security-overview.png 1200w"
   },
   {
-    "id": 30852,
-    "title": "Building a robust Azure cloud platform strategy",
-    "image": "/wp-content/uploads/2025/03/Advania-blog-robust-Azure.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/strategy/azure-cloud-platform-strategy/index.html",
-    "srcset": "/wp-content/uploads/2025/03/Advania-blog-robust-Azure-300x150.png 300w, /wp-content/uploads/2025/03/Advania-blog-robust-Azure-768x384.png 768w, /wp-content/uploads/2025/03/Advania-blog-robust-Azure-1024x512.png 1024w, /wp-content/uploads/2025/03/Advania-blog-robust-Azure.png 1200w"
-  },
-  {
     "id": 30918,
     "title": "How the tech workforce of the future will be different",
     "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
     "width": 1200,
     "height": 600,
     "url": "blog/efficiency/workforce-planning-with-technology/index.html",
-    "srcset": null
-  },
-  {
-    "id": 30919,
-    "title": "K Techara’s tech career trailblazers share experiences",
-    "image": "/wp-content/uploads/2024/11/Email-banner_Web-card.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/data/tech-career-trailblazers-experiences/index.html",
     "srcset": null
   },
   {
@@ -1303,24 +1087,6 @@
     "height": 600,
     "url": "blog/security/top-five-most-common-network-vulnerabilities/index.html",
     "srcset": "/wp-content/uploads/2016/10/Advania-Top-5-common-vulnerabilities-login-credentials-300x150.png 300w, /wp-content/uploads/2016/10/Advania-Top-5-common-vulnerabilities-login-credentials-768x384.png 768w, /wp-content/uploads/2016/10/Advania-Top-5-common-vulnerabilities-login-credentials-1024x512.png 1024w, /wp-content/uploads/2016/10/Advania-Top-5-common-vulnerabilities-login-credentials.png 1200w"
-  },
-  {
-    "id": 30944,
-    "title": "Value in Azure with an Expert Managed Services Provider",
-    "image": "/wp-content/uploads/2025/04/Azure-blog.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/efficiency/azure-value-managed-services/index.html",
-    "srcset": "/wp-content/uploads/2025/04/Azure-blog-300x150.png 300w, /wp-content/uploads/2025/04/Azure-blog-768x384.png 768w, /wp-content/uploads/2025/04/Azure-blog-1024x512.png 1024w, /wp-content/uploads/2025/04/Azure-blog.png 1200w"
-  },
-  {
-    "id": 30948,
-    "title": "Azure FinOps: where to start in your cloud environment",
-    "image": "/wp-content/uploads/2025/04/FinOps-Azure-blog.png",
-    "width": 1200,
-    "height": 600,
-    "url": "blog/strategy/azure-finops-crawl-walk-run/index.html",
-    "srcset": "/wp-content/uploads/2025/04/FinOps-Azure-blog-300x150.png 300w, /wp-content/uploads/2025/04/FinOps-Azure-blog-768x384.png 768w, /wp-content/uploads/2025/04/FinOps-Azure-blog-1024x512.png 1024w, /wp-content/uploads/2025/04/FinOps-Azure-blog.png 1200w"
   },
   {
     "id": 30949,
@@ -1582,15 +1348,6 @@
     "height": 1214,
     "url": "blog/azure-and-cloud/the-advania-guide-to-azure-part-1-optimising-your-environment/index.html",
     "srcset": null
-  },
-  {
-    "id": 33579,
-    "title": "Opening the door to technology for Salford College students",
-    "image": "/wp-content/uploads/2026/05/Salford-College-Safari-1.png",
-    "width": 1512,
-    "height": 1134,
-    "url": "blog/sustainability/opening-the-door-to-technology-for-salford-college-students/index.html",
-    "srcset": "/wp-content/uploads/2026/05/Salford-College-Safari-1-300x225.png 300w, /wp-content/uploads/2026/05/Salford-College-Safari-1-768x576.png 768w, /wp-content/uploads/2026/05/Salford-College-Safari-1-1024x768.png 1024w, /wp-content/uploads/2026/05/Salford-College-Safari-1.png 1512w"
   },
   {
     "id": 33609,
