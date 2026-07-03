@@ -687,50 +687,25 @@ img { max-width: 100%; height: auto; }
   }
 }
 </style>
-<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
-<style id="nav-links-disabled">
-/* TEMPORARY: all navigation links disabled in header, footer, and mobile nav panel */
-header a,
-footer a,
-.elementor-31866 a,
-.ktm-p a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-/* Re-enable logo links and mobile nav bar controls (logo + hamburger trigger) */
-header .header a,
-header .mobile-nav a,
-footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo {
-    pointer-events: auto !important;
-    cursor: pointer !important;
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
 }
 </style>
-<script id="nav-links-disabled-js">
-(function () {
-    function shouldDisable(a) {
-        var inHeader = !!a.closest('[data-elementor-type="header"]');
-        var inFooter = !!a.closest('[data-elementor-type="footer"]');
-        var inPopup = !!a.closest('.elementor-31866');
-        var inPanel = !!a.closest('.ktm-p');
-        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-        if (inHeader && a.closest('.header')) return false;
-        if (inHeader && a.closest('.mobile-nav')) return false;
-        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
-        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
-        return true;
-    }
-    function prevent(e) {
-        var a = e.target.closest ? e.target.closest('a') : null;
-        if (a && shouldDisable(a)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-    }
-    document.addEventListener('click', prevent, true);
-    document.addEventListener('touchend', prevent, { capture: true, passive: false });
-})();
-</script>
+<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
         <header class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent" data-id="6aa92ab4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;],&quot;sticky_effects_offset&quot;:110,&quot;sticky_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
             <div class="e-con-inner"><div class="elementor-element elementor-element-bb4f5f9 e-con-full e-flex e-con e-child" data-id="bb4f5f9" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-398d9867 e-con-full e-flex e-con e-child" data-id="398d9867" data-element_type="container" data-e-type="container">
@@ -5072,6 +5047,7 @@ footer .elementor-widget-theme-site-logo a,
     </div>
   </div>
 </footer>
+
 
 
 

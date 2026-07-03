@@ -627,17 +627,6 @@
 
     initAccordion();
     wireHamburger();
-
-    /* TEMPORARY: disable all nav links in mobile panel (logo excepted) */
-    function disablePanelLink(e) {
-      var a = e.target.closest ? e.target.closest('a') : null;
-      if (!a) return;
-      if (a.classList.contains('ktm-hd__logo')) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-    panel.addEventListener('click', disablePanelLink, true);
-    panel.addEventListener('touchend', disablePanelLink, { capture: true, passive: false });
   }
 
   if (document.readyState === 'loading') {
