@@ -1008,6 +1008,27 @@
         }
       }
     </style>
+    <style id="responsive-global">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
     <header
       data-elementor-type="header"
       data-elementor-id="31649"
@@ -6650,6 +6671,7 @@
         data-element_type="container"
         data-e-type="container"
         data-settings='{"background_background":"classic"}'
+        style="padding-top: 0px; padding-bottom: 0px"
       >
         <div
           class="elementor-element elementor-element-6500323 e-flex e-con-boxed e-con e-child"
@@ -8629,6 +8651,7 @@
         data-id="0f339de"
         data-element_type="container"
         data-e-type="container"
+        style="margin-top: 0px"
       >
         <div
           class="elementor-element elementor-element-56ad391 e-con-full e-flex e-con e-child"
@@ -8710,13 +8733,14 @@
           </div>
         </div>
       </div>
-      <div style="margin: 60px 0px"></div>
-      <!-- <div
+      <!-- <div style="margin: 60px 0px"></div> -->
+      <div
         class="elementor-element elementor-element-264db51 e-con-full e-flex e-con e-parent"
         data-id="264db51"
         data-element_type="container"
         data-e-type="container"
         data-settings='{"background_background":"classic"}'
+        style="padding-top: 0px; padding-bottom: 0px"
       >
         <div
           class="elementor-element elementor-element-9c373cd e-flex e-con-boxed e-con e-child"
@@ -8806,7 +8830,7 @@
                   data-e-type="widget"
                   data-widget_type="button.default"
                 >
-                  <a
+                  <!-- <a
                     class="elementor-button elementor-button-link elementor-size-sm"
                     href="https://belong.advania.co.uk"
                     target="_blank"
@@ -8816,13 +8840,13 @@
                     <span class="elementor-button-content-wrapper">
                       <span class="elementor-button-text">Join our team</span>
                     </span>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
     <footer
       data-elementor-type="footer"
@@ -11832,7 +11856,7 @@
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-48533fd4 e-con-full elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop elementor-hidden-tablet e-flex e-con e-child"
+            class="elementor-element elementor-element-48533fd4 e-con-full elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop e-flex e-con e-child"
             data-id="48533fd4"
             data-element_type="container"
             data-e-type="container"
@@ -11842,6 +11866,15 @@
               data-id="29006c26"
               data-element_type="container"
               data-e-type="container"
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+                gap: 6px;
+              "
             >
               <div
                 class="elementor-element elementor-element-6f7741b5 elementor-widget elementor-widget-image"
@@ -11849,6 +11882,7 @@
                 data-element_type="widget"
                 data-e-type="widget"
                 data-widget_type="image.default"
+                style="margin-bottom: 30px"
               >
                 <img
                   width="150"
@@ -11858,35 +11892,43 @@
                   alt=""
                 />
               </div>
-            </div>
-            <div
-              class="elementor-element elementor-element-6e950ef6 e-con-full e-flex e-con e-child"
-              data-id="6e950ef6"
-              data-element_type="container"
-              data-e-type="container"
-            >
               <div
-                class="elementor-element elementor-element-536ef43c elementor-widget elementor-widget-image"
-                data-id="536ef43c"
+                class="elementor-element elementor-element-60a3aec6 elementor-widget elementor-widget-heading"
+                data-id="60a3aec6"
                 data-element_type="widget"
                 data-e-type="widget"
-                aria-label="Follow Advania on Twitter"
-                data-widget_type="image.default"
+                data-widget_type="heading.default"
+                style="align-self: center"
               >
-                <a
-                  href="https://twitter.com/Advania_UK"
-                  target="_blank"
-                  rel="nofollow external noopener noreferrer"
-                  aria-label="Follow Advania UK on X (formerly Twitter)"
-                  data-wpel-link="external"
+                <h3
+                  class="elementor-heading-title elementor-size-default"
+                  style="white-space: nowrap"
                 >
-                  <img
-                    src="/wp-content/uploads/elementor/thumbs/twitter2_icon-rkb4kkyo75xlbxg3oniaedu2b3ogzzmkyens2cp4gs.png"
-                    title="twitter2_icon.png"
-                    alt="twitter2_icon.png"
-                    loading="lazy"
-                  />
-                </a>
+                  The tech company
+                </h3>
+              </div>
+              <div
+                class="elementor-element elementor-element-3293d300 elementor-widget elementor-widget-image"
+                data-id="3293d300"
+                data-element_type="widget"
+                data-e-type="widget"
+                aria="Advania: the tech company with people at heart"
+                data-widget_type="image.default"
+                style="margin: 0; align-self: center"
+              >
+                <img
+                  width="775"
+                  height="122"
+                  src="/wp-content/uploads/2026/03/with_people_at_heart.png"
+                  class="attachment-large size-large wp-image-33260"
+                  alt=""
+                  srcset="
+                    /wp-content/uploads/2026/03/with_people_at_heart.png         775w,
+                    /wp-content/uploads/2026/03/with_people_at_heart-300x47.png  300w,
+                    /wp-content/uploads/2026/03/with_people_at_heart-768x121.png 768w
+                  "
+                  sizes="(max-width: 775px) 100vw, 775px"
+                />
               </div>
             </div>
           </div>
@@ -15584,10 +15626,6 @@
                                     </div>
                                   </div>
                                 </div>
-
-                                
-
-                                
                               </div>
                             </div>
                           </div>
