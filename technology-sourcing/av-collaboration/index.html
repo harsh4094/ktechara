@@ -739,6 +739,16 @@
         .elementor-31766 .elementor-element.elementor-element-0a57da0 { --width: 55%; --padding-right: 1.5em; --padding-top: 2em; }
         .elementor-31766 .elementor-element.elementor-element-d644e0e { --width: 45%; min-width: 0; }
         .elementor-31766 .elementor-element.elementor-element-288d302 { --width: 100% !important; --margin-top: -10em; --margin-bottom: 0em; }
+        /* 4-cards → 2×2 grid */
+        .elementor-31766 .elementor-element.elementor-element-f33057a { --flex-wrap: wrap; flex-wrap: wrap; }
+        .elementor-31766 .elementor-element.elementor-element-92e63a7,
+        .elementor-31766 .elementor-element.elementor-element-e8a8f97,
+        .elementor-31766 .elementor-element.elementor-element-b318dee,
+        .elementor-31766 .elementor-element.elementor-element-94a1e46 {
+          --width: calc(50% - 12px); width: calc(50% - 12px);
+          --min-height: 220px; --padding-top: 2em; --padding-bottom: 2em;
+          --padding-left: 1.5em; --padding-right: 1.5em;
+        }
       }
       /* Mobile: stacked hero + section fixes (≤767px) */
       @media (max-width: 767px) {
@@ -747,6 +757,11 @@
         .elementor-31766 .elementor-element.elementor-element-0a57da0 { --width: 100%; --align-self: stretch; }
         .elementor-31766 .elementor-element.elementor-element-d644e0e { --width: 100%; }
         .elementor-31766 .elementor-element.elementor-element-288d302 { --width: 100% !important; }
+        .elementor-31766 .elementor-element.elementor-element-f33057a { --flex-wrap: wrap; flex-wrap: wrap; }
+        .elementor-31766 .elementor-element.elementor-element-92e63a7,
+        .elementor-31766 .elementor-element.elementor-element-e8a8f97,
+        .elementor-31766 .elementor-element.elementor-element-b318dee,
+        .elementor-31766 .elementor-element.elementor-element-94a1e46 { --width: 100%; width: 100%; }
         /* Future-ready-style bg-image section: prevent overflow */
         .elementor-31766 .elementor-element.elementor-element-984d8c5 { overflow: hidden; }
         .elementor-31766 .elementor-element.elementor-element-e4acf18 { --width: 100%; min-height: 250px; max-width: 100vw; }
@@ -2675,7 +2690,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                 >
                   <a
                     class="elementor-button elementor-button-link elementor-size-sm"
-                    href="../../about-us/microsoft-partnership.1.html"
+                    href="/partners/microsoft/index.html"
                     data-wpel-link="internal"
                   >
                     <span class="elementor-button-content-wrapper">

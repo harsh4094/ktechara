@@ -7,3 +7,9 @@
 ul.no-list.hs-error-msgs.inputs-list {
 margin-left: 0!important;
 }/* End custom CSS */
+/* Start custom CSS: tablet (768-1023px) hero row - keep image+text side by side at natural widths instead of clobbered 50/50 split */
+@media(max-width:1023px) and (min-width:768px){.elementor-31792 .elementor-element.elementor-element-72b7b42{--width:40%;}.elementor-31792 .elementor-element.elementor-element-f6d9fec{--width:60%;--padding-left:1.5em;--padding-right:1.5em;}}
+/* End custom CSS */
+/* Start custom CSS: tablet (768-1023px) financing options - 2 cards per row */
+@media(max-width:1023px) and (min-width:768px){.elementor-31792 .elementor-element.elementor-element-ede38c4{--flex-wrap:wrap;}.elementor-31792 .elementor-element.elementor-element-2752fee,.elementor-31792 .elementor-element.elementor-element-e5c7278,.elementor-31792 .elementor-element.elementor-element-0d486a5,.elementor-31792 .elementor-element.elementor-element-d59c8de{--width:calc(50% - 0.75em);}}
+/* End custom CSS */

@@ -7,3 +7,6 @@
 ul.no-list.hs-error-msgs.inputs-list {
 margin-left: 0!important;
 }/* End custom CSS */
+/* Start custom CSS: tablet (768-1023px) full-width fix for stacked columns clobbered by desktop min-width:768px rule */
+@media(max-width:1023px) and (min-width:768px){.elementor-31789 .elementor-element.elementor-element-d01426a,.elementor-31789 .elementor-element.elementor-element-cb0fefd,.elementor-31789 .elementor-element.elementor-element-3ac428e,.elementor-31789 .elementor-element.elementor-element-e7745da{--width:100%;}}
+/* End custom CSS */
