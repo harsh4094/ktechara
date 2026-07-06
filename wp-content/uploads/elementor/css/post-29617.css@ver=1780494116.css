@@ -30,3 +30,42 @@ padding: 0;
 ul.no-list.hs-error-msgs.inputs-list {
 margin-left: 0!important;
 }/* End custom CSS */
+/* Start custom CSS for container, class: .elementor-element-f369f0b */
+@media (max-width: 1023px) {
+  .elementor-29617 .elementor-element.elementor-element-f369f0b > .e-con-inner {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .elementor-29617 .elementor-element.elementor-element-64fc65d,
+  .elementor-29617 .elementor-element.elementor-element-4dc735a {
+    width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .elementor-29617 .elementor-element.elementor-element-f369f0b > .e-con-inner {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+  .elementor-29617 .elementor-element.elementor-element-64fc65d {
+    width: 50% !important;
+    flex-basis: 50% !important;
+    flex-shrink: 1 !important;
+  }
+  .elementor-29617 .elementor-element.elementor-element-4dc735a {
+    width: 50% !important;
+    flex-basis: 50% !important;
+    flex-shrink: 1 !important;
+  }
+}
+.elementor-29617 .elementor-element.elementor-element-fcc92ad img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.elementor-29617 .elementor-element.elementor-element-64fc65d.e-con {
+  order: 1 !important;
+}
+.elementor-29617 .elementor-element.elementor-element-4dc735a.e-con {
+  order: 2 !important;
+}
+/* End custom CSS */
