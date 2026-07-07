@@ -722,61 +722,25 @@ img { max-width: 100%; height: auto; }
   }
 }
 </style>
-<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
-<style id="nav-links-disabled">
-/* TEMPORARY: all nav links disabled except Partners section */
-header a,
-footer a,
-.elementor-31866 a,
-.ktm-p a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-/* Re-enable: logos, mobile bar controls, and all Partners links */
-header .header a,
-header .mobile-nav a,
-footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo,
-header a[href^="/partners/"],
-header a[href="/about-us/microsoft-partnership.1.html"],
-footer a[href^="/partners/"],
-footer a[href="/about-us/microsoft-partnership.1.html"],
-.ktm-p a[href^="/partners/"],
-.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
-    pointer-events: auto !important;
-    cursor: pointer !important;
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
 }
 </style>
-<script id="nav-links-disabled-js">
-(function () {
-    function isPartnersLink(a) {
-        var href = a.getAttribute('href') || '';
-        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
-    }
-    function shouldDisable(a) {
-        var inHeader = !!a.closest('[data-elementor-type="header"]');
-        var inFooter = !!a.closest('[data-elementor-type="footer"]');
-        var inPopup = !!a.closest('.elementor-31866');
-        var inPanel = !!a.closest('.ktm-p');
-        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-        if (isPartnersLink(a)) return false;
-        if (inHeader && a.closest('.header')) return false;
-        if (inHeader && a.closest('.mobile-nav')) return false;
-        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
-        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
-        return true;
-    }
-    function prevent(e) {
-        var a = e.target.closest ? e.target.closest('a') : null;
-        if (a && shouldDisable(a)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-    }
-    document.addEventListener('click', prevent, true);
-    document.addEventListener('touchend', prevent, { capture: true, passive: false });
-})();
-</script>
+<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
         <header class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent" data-id="6aa92ab4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;],&quot;sticky_effects_offset&quot;:110,&quot;sticky_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
             <div class="e-con-inner"><div class="elementor-element elementor-element-bb4f5f9 e-con-full e-flex e-con e-child" data-id="bb4f5f9" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-398d9867 e-con-full e-flex e-con e-child" data-id="398d9867" data-element_type="container" data-e-type="container">
@@ -1590,15 +1554,116 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                     <div class="elementor-element elementor-element-c0a4a6a e-flex e-con-boxed e-con e-child" data-id="c0a4a6a" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                         <div class="e-con-inner">
                             <div class="elementor-element elementor-element-2999886 contact-form elementor-widget-mobile__width-inherit elementor-widget elementor-widget-html" data-id="2999886" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
-                                <div style "center">
-                                    <script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script>
-                                    <script>
-                                        hbspt.forms.create({
-                                            portalId: "3017156",
-                                            formId: "4ab67848-62f3-41cd-a09d-7a201c55f1d5",
-                                            region: "eu1"
-                                        });
-                                    </script>
+                                <div style="text-align:center">
+                                    <!-- Static rebuild of the former HubSpot embed (portalId 3017156, formId 4ab67848-62f3-41cd-a09d-7a201c55f1d5).
+                                         Submit handling below is a front-end-only placeholder: it validates the form and shows a
+                                         confirmation message, but does not transmit data anywhere. Wire a real submission endpoint
+                                         (e.g. HubSpot Forms Submission API) before relying on this in production. -->
+                                    <form id="expert-form" class="expert-form" novalidate>
+                                        <div class="expert-form-row">
+                                            <div class="expert-form-field">
+                                                <label for="ef-first-name">First Name*</label>
+                                                <input type="text" id="ef-first-name" name="firstname" required>
+                                            </div>
+                                            <div class="expert-form-field">
+                                                <label for="ef-last-name">Last Name*</label>
+                                                <input type="text" id="ef-last-name" name="lastname" required>
+                                            </div>
+                                        </div>
+                                        <div class="expert-form-row">
+                                            <div class="expert-form-field">
+                                                <label for="ef-job-function">Job Function*</label>
+                                                <select id="ef-job-function" name="job_function" required>
+                                                    <option value="" selected disabled>Please Select</option>
+                                                    <option value="Customer Success / Service Delivery">Customer Success / Service Delivery</option>
+                                                    <option value="Finance">Finance</option>
+                                                    <option value="Human Resources / Internal Communications">Human Resources / Internal Communications</option>
+                                                    <option value="Legal and Compliance">Legal and Compliance</option>
+                                                    <option value="Marketing">Marketing</option>
+                                                    <option value="Operations">Operations</option>
+                                                    <option value="Procurement / Purchasing">Procurement / Purchasing</option>
+                                                    <option value="Product Management">Product Management</option>
+                                                    <option value="Project and Programme Management">Project and Programme Management</option>
+                                                    <option value="Quality Assurance">Quality Assurance</option>
+                                                    <option value="Research and Development">Research and Development</option>
+                                                    <option value="Sales: Pre-Sales / Business Development / Account Management">Sales: Pre-Sales / Business Development / Account Management</option>
+                                                    <option value="Strategy and Leadership">Strategy and Leadership</option>
+                                                    <option value="Technical / IT">Technical / IT</option>
+                                                </select>
+                                            </div>
+                                            <div class="expert-form-field">
+                                                <label for="ef-seniority">Seniority*</label>
+                                                <select id="ef-seniority" name="seniority" required>
+                                                    <option value="" selected disabled>Please Select</option>
+                                                    <option value="C Level">C Level</option>
+                                                    <option value="Senior">Senior</option>
+                                                    <option value="Mid Level">Mid Level</option>
+                                                    <option value="Junior">Junior</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="expert-form-row">
+                                            <div class="expert-form-field">
+                                                <label for="ef-email">Business Email*</label>
+                                                <input type="email" id="ef-email" name="email" required>
+                                            </div>
+                                            <div class="expert-form-field">
+                                                <label for="ef-company">Company Name*</label>
+                                                <input type="text" id="ef-company" name="company" required>
+                                            </div>
+                                        </div>
+                                        <div class="expert-form-field expert-form-field--full">
+                                            <span class="expert-form-group-label">Product/Service*</span>
+                                            <div class="expert-form-checkboxes" id="ef-product-service">
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Fresh Intranet"> Fresh Intranet</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Automation, Data &amp; AI Consulting"> Automation, Data &amp; AI Consulting (e.g. Power Platform, Microsoft Fabric, Microsoft Copilot, Agents)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Cyber Consulting"> Cyber Consulting (e.g. Penetration Testing, GRC, ISO, and Technology Implementation)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Managed Cyber Services"> Managed Cyber Services (e.g. SOC, NOC, MDR)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Managed IT Services and Support"> Managed IT Services and Support</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Software &amp; Licensing"> Software &amp; Licensing (e.g. Microsoft CSP, E5 and E7 licenses, cyber security software)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Technology Sourcing and Management"> Technology Sourcing and Management (e.g. Devices, Network, Infrastructure)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="D365 and Business Applications Consulting"> D365 and Business Applications Consulting</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Digital Employee Experience"> Digital Employee Experience (e.g. M365 and SharePoint migrations)</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Hybrid Cloud Consulting"> Hybrid Cloud Consulting</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Sovereign Cloud / Infrastructure as a Service"> Sovereign Cloud / Infrastructure as a Service</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Unified Communications"> Unified Communications</label>
+                                                <label class="expert-form-checkbox"><input type="checkbox" name="product_service" value="Other"> Other (please expand in "how can we help")</label>
+                                            </div>
+                                            <span class="expert-form-error" id="ef-product-service-error" hidden>Please select at least one option.</span>
+                                        </div>
+                                        <div class="expert-form-field expert-form-field--full">
+                                            <label for="ef-employees">Number of Employees*</label>
+                                            <select id="ef-employees" name="number_of_employees" required>
+                                                <option value="" selected disabled>Please Select</option>
+                                                <option value="Under 10">Under 10</option>
+                                                <option value="Below 150">Below 150</option>
+                                                <option value="Between 150 and 1500">Between 150 and 1500</option>
+                                                <option value="Between 1500-5000">Between 1500-5000</option>
+                                                <option value="Above 5000">Above 5000</option>
+                                            </select>
+                                        </div>
+                                        <div class="expert-form-row">
+                                            <div class="expert-form-field">
+                                                <label for="ef-help">How can we help?*</label>
+                                                <textarea id="ef-help" name="how_can_we_help" required></textarea>
+                                            </div>
+                                            <div class="expert-form-field">
+                                                <label for="ef-hear">How did you hear about us?*</label>
+                                                <textarea id="ef-hear" name="how_did_you_hear" required></textarea>
+                                            </div>
+                                        </div>
+                                        <p class="expert-form-consent-text">You can withdraw your consent at any time by clicking the Manage Preferences link in emails or emailing <a href="mailto:hello@advania.co.uk">hello@advania.co.uk</a>.</p>
+                                        <label class="expert-form-checkbox expert-form-checkbox--consent">
+                                            <input type="checkbox" name="marketing_consent">
+                                            I agree to receive marketing updates about Advania from the Advania UK group.
+                                        </label>
+                                        <p class="expert-form-legal-text">For more information, please see our <a href="/terms-of-use/index.html" data-wpel-link="internal">Terms of Use</a> and <a href="/privacy-policy/index.html" data-wpel-link="internal">Privacy Policy</a>.<br>
+                                        By clicking submit below, you consent to allow Advania to store and process the personal information submitted above to provide you the content requested.</p>
+                                        <button type="submit" class="expert-form-submit">Connect now</button>
+                                    </form>
+                                    <div id="expert-form-success" class="expert-form-success" hidden>
+                                        <p>Thanks for reaching out — a member of the team will be in touch shortly.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4974,6 +5039,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
     </div>
   </div>
 </footer>
+
 
 
 
