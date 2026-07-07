@@ -95,3 +95,15 @@
 /* Start custom CSS for nested-accordion, class: .elementor-element-d6c65dd */.custom-faq .e-n-accordion-item {
     box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1);
 }/* End custom CSS */
+/* Start custom responsive fix: tablet stacking for .how-we-support cards (e915f49) */
+@media (max-width: 992px) {
+  .elementor-element-e915f49 {
+    --flex-wrap: wrap;
+  }
+  .elementor-element-faf8bbd,
+  .elementor-element-072856b,
+  .elementor-element-4f6c2d8 {
+    --width: 100%;
+  }
+}
+/* End custom responsive fix */
