@@ -943,6 +943,75 @@
     />
     <link rel="alternate" hreflang="en-gb" href="/" />
     <link rel="alternate" hreflang="x-default" href="https://ktechara.co.uk/" />
+    <style id="expert-form-static-css">
+        .expert-form { max-width: 700px; margin: 0 auto; text-align: left; }
+        .expert-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 1.5em;
+        }
+        .expert-form-field { margin-bottom: 1.25em; display: flex; flex-direction: column; }
+        .expert-form-field--full { grid-column: 1 / -1; }
+        .expert-form-field label,
+        .expert-form-group-label {
+            font-weight: 700;
+            margin-bottom: 0.4em;
+            color: var(--e-global-color-text, #2B2B2B);
+        }
+        .expert-form-field input[type="text"],
+        .expert-form-field input[type="email"],
+        .expert-form-field select,
+        .expert-form-field textarea {
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 0.65em 0.75em;
+            font-family: inherit;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+        .expert-form-field textarea { min-height: 3em; resize: vertical; }
+        .expert-form-checkboxes { display: flex; flex-direction: column; gap: 0.75em; margin-top: 0.5em; }
+        .expert-form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6em;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .expert-form-checkbox input[type="checkbox"] { margin-top: 0.2em; flex-shrink: 0; }
+        .expert-form-checkbox--consent { margin: 1em 0; }
+        .expert-form-error {
+            display: block;
+            color: #c0392b;
+            font-size: 14px;
+            margin-top: 0.5em;
+        }
+        .expert-form-error[hidden] {
+            display: none;
+        }
+        .expert-form-consent-text,
+        .expert-form-legal-text {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+        .expert-form-submit {
+            margin-top: 0.5em;
+            border: none;
+            cursor: pointer;
+        }
+        .expert-form-success {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2em 0;
+        }
+        @media (max-width: 767px) {
+            .expert-form-row { grid-template-columns: 1fr; }
+        }
+    </style>
   </head>
 
   <body
@@ -1981,18 +2050,98 @@ img { max-width: 100%; height: auto; }
                   data-e-type="widget"
                   data-widget_type="html.default"
                 >
-                  <script
-                    charset="utf-8"
-                    type="text/javascript"
-                    src="https://js-eu1.hsforms.net/forms/embed/v2.js"
-                  ></script>
-                  <script>
-                    hbspt.forms.create({
-                      portalId: "3017156",
-                      formId: "994aa61c-0eab-4adc-a07f-888e43f3fada",
-                      region: "eu1",
-                    });
-                  </script>
+                  <!-- Static rebuild of the former HubSpot embed (portalId 3017156, formId 994aa61c-0eab-4adc-a07f-888e43f3fada).
+                       Submit handling below is a front-end-only placeholder: it validates the form and shows a
+                       confirmation message, but does not transmit data anywhere. Wire a real submission endpoint
+                       (e.g. HubSpot Forms Submission API) before relying on this in production. -->
+                  <form id="contact-form" class="expert-form" novalidate>
+                    <div class="expert-form-row">
+                      <div class="expert-form-field">
+                        <label for="cf-first-name">First Name*</label>
+                        <input type="text" id="cf-first-name" name="firstname" required>
+                      </div>
+                      <div class="expert-form-field">
+                        <label for="cf-last-name">Last Name*</label>
+                        <input type="text" id="cf-last-name" name="lastname" required>
+                      </div>
+                    </div>
+                    <div class="expert-form-row">
+                      <div class="expert-form-field">
+                        <label for="cf-job-function">Job Function*</label>
+                        <select id="cf-job-function" name="job_function" required>
+                          <option value="" selected disabled>Please Select</option>
+                          <option value="Customer Success / Service Delivery">Customer Success / Service Delivery</option>
+                          <option value="Finance">Finance</option>
+                          <option value="Human Resources / Internal Communications">Human Resources / Internal Communications</option>
+                          <option value="Legal and Compliance">Legal and Compliance</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="Operations">Operations</option>
+                          <option value="Procurement / Purchasing">Procurement / Purchasing</option>
+                          <option value="Product Management">Product Management</option>
+                          <option value="Project and Programme Management">Project and Programme Management</option>
+                          <option value="Quality Assurance">Quality Assurance</option>
+                          <option value="Research and Development">Research and Development</option>
+                          <option value="Sales: Pre-Sales / Business Development / Account Management">Sales: Pre-Sales / Business Development / Account Management</option>
+                          <option value="Strategy and Leadership">Strategy and Leadership</option>
+                          <option value="Technical / IT">Technical / IT</option>
+                        </select>
+                      </div>
+                      <div class="expert-form-field">
+                        <label for="cf-seniority">Seniority*</label>
+                        <select id="cf-seniority" name="seniority" required>
+                          <option value="" selected disabled>Please Select</option>
+                          <option value="C Level">C Level</option>
+                          <option value="Senior">Senior</option>
+                          <option value="Mid Level">Mid Level</option>
+                          <option value="Junior">Junior</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="expert-form-row">
+                      <div class="expert-form-field">
+                        <label for="cf-email">Business Email*</label>
+                        <input type="email" id="cf-email" name="email" required>
+                      </div>
+                      <div class="expert-form-field">
+                        <label for="cf-company">Company Name*</label>
+                        <input type="text" id="cf-company" name="company" required>
+                      </div>
+                    </div>
+                    <div class="expert-form-row">
+                      <div class="expert-form-field">
+                        <span class="expert-form-group-label">Reason for Contacting*</span>
+                        <div class="expert-form-checkboxes" id="cf-reason">
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Client-support/service ticket"> Client-support/service ticket</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Partnership Request"> Partnership Request</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Job Role"> Job Role</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Remittance"> Remittance</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Invoicing"> Invoicing</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Copy of Certificates"> Copy of Certificates</label>
+                          <label class="expert-form-checkbox"><input type="checkbox" name="reason_for_contacting" value="Product or service enquiry"> Product or service enquiry</label>
+                        </div>
+                        <span class="expert-form-error" id="cf-reason-error" hidden>Please select at least one option.</span>
+                      </div>
+                      <div class="expert-form-field">
+                        <label for="cf-help">How can we help?*</label>
+                        <textarea id="cf-help" name="how_can_we_help" required></textarea>
+                      </div>
+                    </div>
+                    <div class="expert-form-field expert-form-field--full">
+                      <label for="cf-hear">How did you hear about us?*</label>
+                      <textarea id="cf-hear" name="how_did_you_hear" required></textarea>
+                    </div>
+                    <p class="expert-form-consent-text">You can withdraw your consent at any time by clicking the Manage Preferences link in emails or emailing <a href="mailto:karen@ktechara.co.uk">karen@ktechara.co.uk</a>.</p>
+                    <label class="expert-form-checkbox expert-form-checkbox--consent">
+                      <input type="checkbox" name="marketing_consent">
+                      I agree to receive marketing updates about K Techara from K Techara Limited.
+                    </label>
+                    <p class="expert-form-legal-text">For more information, please see our <a href="/terms-of-use/index.html" data-wpel-link="internal">Terms of Use</a> and <a href="/privacy-policy/index.html" data-wpel-link="internal">Privacy Policy</a>.<br>
+                    By clicking submit below, you consent to allow K Techara to store and process the personal information submitted above to provide you the content requested.</p>
+                    <button type="submit" class="expert-form-submit">Connect now</button>
+                  </form>
+                  <div id="contact-form-success" class="expert-form-success" hidden>
+                    <p>Thanks for reaching out — a member of the team will be in touch shortly.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -16612,6 +16761,46 @@ img { max-width: 100%; height: auto; }
     </script>
     <script id="search-filter-dom-ready-body" type="text/javascript">
       window.searchAndFilterPage.body = document.body.outerHTML;
+    </script>
+    <script id="expert-form-static-js">
+        (function () {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+
+            var reasonGroup = document.getElementById('cf-reason');
+            var reasonError = document.getElementById('cf-reason-error');
+            var successMessage = document.getElementById('contact-form-success');
+
+            function hasReasonSelected() {
+                return reasonGroup.querySelectorAll('input[type="checkbox"]:checked').length > 0;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var nativeValid = form.checkValidity();
+                var groupValid = hasReasonSelected();
+
+                reasonError.hidden = groupValid;
+
+                if (!nativeValid) {
+                    form.reportValidity();
+                    return;
+                }
+                if (!groupValid) {
+                    return;
+                }
+
+                form.hidden = true;
+                successMessage.hidden = false;
+            });
+
+            reasonGroup.addEventListener('change', function () {
+                if (hasReasonSelected()) {
+                    reasonError.hidden = true;
+                }
+            });
+        })();
     </script>
   </body>
 </html>

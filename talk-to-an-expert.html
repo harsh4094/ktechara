@@ -664,6 +664,9 @@
             font-size: 14px;
             margin-top: 0.5em;
         }
+        .expert-form-error[hidden] {
+            display: none;
+        }
         .expert-form-consent-text,
         .expert-form-legal-text {
             font-size: 14px;
@@ -1604,7 +1607,7 @@ img { max-width: 100%; height: auto; }
                         <h1 class="elementor-heading-title elementor-size-default">Talk to an expert</h1>
                     </div>
                     <div class="elementor-element elementor-element-afff31f elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="afff31f" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-                        <p>Thank you for your interest in Advania. </p>
+                        <p>Thank you for your interest in K Techara. </p>
                         <p>Please take a few moments to complete this form, and we will respond to you as soon as possible.
                         </p>
                         <p><span data-teams="true">If your query is not about our solutions and services, please use our
@@ -1718,13 +1721,13 @@ img { max-width: 100%; height: auto; }
                                                 <textarea id="ef-hear" name="how_did_you_hear" required></textarea>
                                             </div>
                                         </div>
-                                        <p class="expert-form-consent-text">You can withdraw your consent at any time by clicking the Manage Preferences link in emails or emailing <a href="mailto:hello@advania.co.uk">hello@advania.co.uk</a>.</p>
+                                        <p class="expert-form-consent-text">You can withdraw your consent at any time by clicking the Manage Preferences link in emails or emailing <a href="mailto:karen@ktechara.co.uk">karen@ktechara.co.uk</a>.</p>
                                         <label class="expert-form-checkbox expert-form-checkbox--consent">
                                             <input type="checkbox" name="marketing_consent">
-                                            I agree to receive marketing updates about Advania from the Advania UK group.
+                                            I agree to receive marketing updates about K Techara from K Techara Limited.
                                         </label>
                                         <p class="expert-form-legal-text">For more information, please see our <a href="/terms-of-use/index.html" data-wpel-link="internal">Terms of Use</a> and <a href="/privacy-policy/index.html" data-wpel-link="internal">Privacy Policy</a>.<br>
-                                        By clicking submit below, you consent to allow Advania to store and process the personal information submitted above to provide you the content requested.</p>
+                                        By clicking submit below, you consent to allow K Techara to store and process the personal information submitted above to provide you the content requested.</p>
                                         <button type="submit" class="expert-form-submit">Connect now</button>
                                     </form>
                                     <div id="expert-form-success" class="expert-form-success" hidden>
@@ -6876,6 +6879,46 @@ img { max-width: 100%; height: auto; }
         window.searchAndFilterPage.body = document.body.outerHTML;
     </script>
 
+    <script id="expert-form-static-js">
+        (function () {
+            var form = document.getElementById('expert-form');
+            if (!form) return;
+
+            var productServiceGroup = document.getElementById('ef-product-service');
+            var productServiceError = document.getElementById('ef-product-service-error');
+            var successMessage = document.getElementById('expert-form-success');
+
+            function hasProductServiceSelected() {
+                return productServiceGroup.querySelectorAll('input[type="checkbox"]:checked').length > 0;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var nativeValid = form.checkValidity();
+                var groupValid = hasProductServiceSelected();
+
+                productServiceError.hidden = groupValid;
+
+                if (!nativeValid) {
+                    form.reportValidity();
+                    return;
+                }
+                if (!groupValid) {
+                    return;
+                }
+
+                form.hidden = true;
+                successMessage.hidden = false;
+            });
+
+            productServiceGroup.addEventListener('change', function () {
+                if (hasProductServiceSelected()) {
+                    productServiceError.hidden = true;
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
