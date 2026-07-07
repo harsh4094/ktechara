@@ -619,6 +619,72 @@
     <link rel="preload" href="wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="alternate" hreflang="en-gb" href="/" />
     <link rel="alternate" hreflang="x-default" href="https://ktechara.co.uk/" />
+    <style id="expert-form-static-css">
+        .expert-form { max-width: 700px; margin: 0 auto; text-align: left; }
+        .expert-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 1.5em;
+        }
+        .expert-form-field { margin-bottom: 1.25em; display: flex; flex-direction: column; }
+        .expert-form-field--full { grid-column: 1 / -1; }
+        .expert-form-field label,
+        .expert-form-group-label {
+            font-weight: 700;
+            margin-bottom: 0.4em;
+            color: var(--e-global-color-text, #2B2B2B);
+        }
+        .expert-form-field input[type="text"],
+        .expert-form-field input[type="email"],
+        .expert-form-field select,
+        .expert-form-field textarea {
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 0.65em 0.75em;
+            font-family: inherit;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+        .expert-form-field textarea { min-height: 3em; resize: vertical; }
+        .expert-form-checkboxes { display: flex; flex-direction: column; gap: 0.75em; margin-top: 0.5em; }
+        .expert-form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6em;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .expert-form-checkbox input[type="checkbox"] { margin-top: 0.2em; flex-shrink: 0; }
+        .expert-form-checkbox--consent { margin: 1em 0; }
+        .expert-form-error {
+            display: block;
+            color: #c0392b;
+            font-size: 14px;
+            margin-top: 0.5em;
+        }
+        .expert-form-consent-text,
+        .expert-form-legal-text {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+        .expert-form-submit {
+            margin-top: 0.5em;
+            border: none;
+            cursor: pointer;
+        }
+        .expert-form-success {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2em 0;
+        }
+        @media (max-width: 767px) {
+            .expert-form-row { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body class="wp-singular page-template-default page page-id-32750 page-parent wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-theme-child-master hello-elementor-default elementor-default elementor-template-full-width elementor-kit-7 elementor-page elementor-page-32750">
