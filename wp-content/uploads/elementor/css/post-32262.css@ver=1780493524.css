@@ -98,3 +98,15 @@
 /* Start custom CSS */.cards-btn .elementor-button:focus {
     color: #D76AB3;
 }/* End custom CSS */
+/* Start custom responsive fix: tablet stacking for .how-we-support cards (e915f49) */
+@media (max-width: 992px) {
+  .elementor-element-e915f49 {
+    --flex-wrap: wrap;
+  }
+  .elementor-element-faf8bbd,
+  .elementor-element-072856b,
+  .elementor-element-4f6c2d8 {
+    --width: 100%;
+  }
+}
+/* End custom responsive fix */

@@ -18,7 +18,7 @@
       name="description"
       content="Unlock efficiency with tailored IT solutions, streamlined sourcing, and expert end‑to‑end support that strengthens security and drives business growth."
     />
-    <link rel="canonical" href="../technology-sourcing.1.html" />
+    <link rel="canonical" href="../technology-sourcing/" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="article" />
     <meta
@@ -998,7 +998,7 @@
   >
     <a
       class="skip-link screen-reader-text"
-      href="../technology-sourcing.1.html#content"
+      href="../technology-sourcing/#content"
       >Skip to content</a
     >
     <style id="responsive-global">
@@ -1118,73 +1118,54 @@
         }
       }
     </style>
+    <style id="responsive-global">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
+    <style id="responsive-global">
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .elementor-element-6aa92ab4 {
+          --n-menu-title-space-between: 14px;
+          --n-menu-title-font-size: 12px;
+        }
+        .elementor-element-6aa92ab4 .e-con-inner {
+          gap: 0 8px;
+        }
+        .elementor-element-502e94aa .elementor-button {
+          font-size: 11px !important;
+          padding: 12px 18px !important;
+        }
+      }
+    </style>
     <header
       data-elementor-type="header"
       data-elementor-id="31649"
       class="elementor elementor-31649 elementor-location-header"
       data-elementor-post-type="elementor_library"
     >
-      <style id="nav-links-disabled">
-        /* TEMPORARY: all nav links disabled except Partners section */
-        header a,
-        footer a,
-        .elementor-31866 a,
-        .ktm-p a {
-          pointer-events: none !important;
-          cursor: default !important;
-        }
-        /* Re-enable: logos, mobile bar controls, and all Partners links */
-        header .header a,
-        header .mobile-nav a,
-        footer .elementor-widget-theme-site-logo a,
-        .ktm-p .ktm-hd__logo,
-        header a[href^="/partners/"],
-        header a[href="/about-us/microsoft-partnership.1.html"],
-        footer a[href^="/partners/"],
-        footer a[href="/about-us/microsoft-partnership.1.html"],
-        .ktm-p a[href^="/partners/"],
-        .ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
-          pointer-events: auto !important;
-          cursor: pointer !important;
-        }
-      </style>
-      <script id="nav-links-disabled-js">
-        (function () {
-          function isPartnersLink(a) {
-            var href = a.getAttribute("href") || "";
-            return (
-              href.indexOf("/partners/") === 0 ||
-              href === "/about-us/microsoft-partnership.1.html"
-            );
-          }
-          function shouldDisable(a) {
-            var inHeader = !!a.closest('[data-elementor-type="header"]');
-            var inFooter = !!a.closest('[data-elementor-type="footer"]');
-            var inPopup = !!a.closest(".elementor-31866");
-            var inPanel = !!a.closest(".ktm-p");
-            if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-            if (isPartnersLink(a)) return false;
-            if (inHeader && a.closest(".header")) return false;
-            if (inHeader && a.closest(".mobile-nav")) return false;
-            if (inFooter && a.closest(".elementor-widget-theme-site-logo"))
-              return false;
-            if (inPanel && a.classList.contains("ktm-hd__logo")) return false;
-            return true;
-          }
-          function prevent(e) {
-            var a = e.target.closest ? e.target.closest("a") : null;
-            if (a && shouldDisable(a)) {
-              e.preventDefault();
-              e.stopImmediatePropagation();
-            }
-          }
-          document.addEventListener("click", prevent, true);
-          document.addEventListener("touchend", prevent, {
-            capture: true,
-            passive: false,
-          });
-        })();
-      </script>
       <header
         class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent"
         data-id="6aa92ab4"
@@ -1355,7 +1336,7 @@
                                       class="elementor-heading-title elementor-size-default"
                                     >
                                       <a
-                                        href="/technology-sourcing.1.html"
+                                        href="/technology-sourcing/"
                                         data-wpel-link="internal"
                                         >Technology sourcing</a
                                       >
@@ -1540,7 +1521,7 @@
                                     >
                                       <a
                                         class="elementor-button elementor-button-link elementor-size-sm"
-                                        href="/technology-sourcing.1.html"
+                                        href="/technology-sourcing/"
                                         data-wpel-link="internal"
                                       >
                                         <span
@@ -1585,7 +1566,7 @@
                                       class="elementor-heading-title elementor-size-default"
                                     >
                                       <a
-                                        href="/our-solutions.html"
+                                        href="/our-solutions/"
                                         data-wpel-link="internal"
                                         >Solutions</a
                                       >
@@ -1833,7 +1814,7 @@
                                     >
                                       <a
                                         class="elementor-button elementor-button-link elementor-size-sm"
-                                        href="/our-solutions.html"
+                                        href="/our-solutions/"
                                         data-wpel-link="internal"
                                       >
                                         <span
@@ -1878,7 +1859,7 @@
                                       class="elementor-heading-title elementor-size-default"
                                     >
                                       <a
-                                        href="/our-services.html"
+                                        href="/our-services/"
                                         data-wpel-link="internal"
                                         >Services</a
                                       >
@@ -1922,7 +1903,7 @@
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                           >
                                             <a
-                                              href="/our-services/managed-services/index.html"
+                                              href="/our-services/managed-it-services/index.html"
                                               class="elementor-item"
                                               data-wpel-link="internal"
                                               >Managed IT Services</a
@@ -1962,7 +1943,7 @@
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                           >
                                             <a
-                                              href="/our-services/managed-services/index.html"
+                                              href="/our-services/managed-it-services/index.html"
                                               class="elementor-item"
                                               tabindex="-1"
                                               data-wpel-link="internal"
@@ -2010,7 +1991,7 @@
                                     >
                                       <a
                                         class="elementor-button elementor-button-link elementor-size-sm"
-                                        href="/our-services.html"
+                                        href="/our-services/"
                                         data-wpel-link="internal"
                                       >
                                         <span
@@ -2217,7 +2198,7 @@
                                         class="elementor-heading-title elementor-size-default"
                                       >
                                         <a
-                                          href="/solutions-by-sector.html"
+                                          href="/solutions-by-sector/"
                                           data-wpel-link="internal"
                                           >Sectors</a
                                         >
@@ -2279,7 +2260,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                                               >
                                                 <a
-                                                  href="/solutions-by-industry/insurance/index.html"
+                                                  href="/solutions-by-sector/insurance/index.html"
                                                   class="elementor-item"
                                                   data-wpel-link="internal"
                                                   >Insurance</a
@@ -2330,7 +2311,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                                               >
                                                 <a
-                                                  href="/solutions-by-industry/insurance/index.html"
+                                                  href="/solutions-by-sector/insurance/index.html"
                                                   class="elementor-item"
                                                   tabindex="-1"
                                                   data-wpel-link="internal"
@@ -2869,7 +2850,7 @@
                                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32970"
                                                 >
                                                   <a
-                                                    href="/about-us/microsoft-partnership.1.html"
+                                                    href="/partners/microsoft/index.html"
                                                     class="elementor-item"
                                                     data-wpel-link="internal"
                                                     >Microsoft</a
@@ -2921,7 +2902,7 @@
                                                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32970"
                                                 >
                                                   <a
-                                                    href="/about-us/microsoft-partnership.1.html"
+                                                    href="/partners/microsoft/index.html"
                                                     class="elementor-item"
                                                     tabindex="-1"
                                                     data-wpel-link="internal"
@@ -3162,7 +3143,7 @@
                                         class="elementor-heading-title elementor-size-default"
                                       >
                                         <a
-                                          href="/about-us.1.html"
+                                          href="/about-us/"
                                           data-wpel-link="internal"
                                           >About Us</a
                                         >
@@ -3214,7 +3195,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                                               >
                                                 <a
-                                                  href="/about-us.1.html"
+                                                  href="/about-us/"
                                                   class="elementor-item"
                                                   data-wpel-link="internal"
                                                   >About K Techara</a
@@ -3235,7 +3216,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                                               >
                                                 <a
-                                                  href="/sustainability/index.html"
+                                                  href="/about-us/sustainability-and-social-value/index.html"
                                                   class="elementor-item"
                                                   data-wpel-link="internal"
                                                   >Sustainability &#038; Social
@@ -3256,7 +3237,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                                               >
                                                 <a
-                                                  href="/about-us.1.html"
+                                                  href="/about-us/"
                                                   class="elementor-item"
                                                   tabindex="-1"
                                                   data-wpel-link="internal"
@@ -3279,7 +3260,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                                               >
                                                 <a
-                                                  href="/sustainability/index.html"
+                                                  href="/about-us/sustainability-and-social-value/index.html"
                                                   class="elementor-item"
                                                   tabindex="-1"
                                                   data-wpel-link="internal"
@@ -3434,7 +3415,7 @@
                                                     data-widget_type="image.default"
                                                   >
                                                     <a
-                                                      href="/about-us.1.html"
+                                                      href="/about-us/"
                                                       data-wpel-link="internal"
                                                     >
                                                       <img
@@ -3484,7 +3465,7 @@
                                                           class="elementor-heading-title elementor-size-default"
                                                         >
                                                           <a
-                                                            href="/about-us.1.html"
+                                                            href="/about-us/"
                                                             data-wpel-link="internal"
                                                             >The tech company
                                                             with people at
@@ -3793,39 +3774,34 @@
             >
               <ul class="elementor-icon-list-items elementor-inline-items">
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#our-solutions">
+                  <a href="../technology-sourcing/#our-solutions">
                     <span class="elementor-icon-list-text">Our solutions</span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#case-studies">
-                    <span class="elementor-icon-list-text">Case studies</span>
-                  </a>
-                </li>
-                <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#why-advania">
+                  <a href="../technology-sourcing/#why-advania">
                     <span class="elementor-icon-list-text">Why K Techara</span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#partnerships">
+                  <a href="../technology-sourcing/#partnerships">
                     <span class="elementor-icon-list-text">Partnerships</span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#how-we-can-help">
+                  <a href="../technology-sourcing/#how-we-can-help">
                     <span class="elementor-icon-list-text"
                       >How we can help</span
                     >
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#faqs">
+                  <a href="../technology-sourcing/#faqs">
                     <span class="elementor-icon-list-text">FAQs</span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="../technology-sourcing.1.html#insights">
+                  <a href="../technology-sourcing/#insights">
                     <span class="elementor-icon-list-text">Insights</span>
                   </a>
                 </li>
@@ -4601,496 +4577,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div
-        class="elementor-element elementor-element-e4f49c0 e-con-full animated-fast e-flex elementor-invisible e-con e-parent"
-        data-id="e4f49c0"
-        data-element_type="container"
-        data-e-type="container"
-        id="case-studies"
-        data-settings='{"background_background":"classic","animation":"fadeInUp"}'
-      >
-        <div
-          class="elementor-element elementor-element-2eefc56 e-con-full e-flex e-con e-child"
-          data-id="2eefc56"
-          data-element_type="container"
-          data-e-type="container"
-        >
-          <div
-            class="elementor-element elementor-element-f8898a6 elementor-widget elementor-widget-n-carousel"
-            data-id="f8898a6"
-            data-element_type="widget"
-            data-e-type="widget"
-            id="carousel-follow"
-            data-settings='{"carousel_items":[{"slide_title":"Slide #1","_id":"1926f94"},{"slide_title":"Slide #2","_id":"315f4f1"}],"slides_to_show":"1","image_spacing_custom":{"unit":"px","size":0,"sizes":[]},"slides_to_show_tablet":"1","slides_to_show_mobile":"1","infinite":"yes","speed":500,"offset_sides":"none","image_spacing_custom_widescreen":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_laptop":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_tablet":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_mobile":{"unit":"px","size":"","sizes":[]}}'
-            data-widget_type="nested-carousel.default"
-          >
-            <div
-              class="e-n-carousel swiper"
-              role="region"
-              aria-roledescription="carousel"
-              aria-label="Carousel"
-              dir="ltr"
-            >
-              <div class="swiper-wrapper" aria-live="polite">
-                <div
-                  class="swiper-slide"
-                  data-slide="1"
-                  role="group"
-                  aria-roledescription="slide"
-                  aria-label="1 of 2"
-                >
-                  <div
-                    class="elementor-element elementor-element-9975ea9 e-flex e-con-boxed e-con e-child"
-                    data-id="9975ea9"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div class="e-con-inner">
-                      <div
-                        class="elementor-element elementor-element-fbde5d3 elementor-widget elementor-widget-image"
-                        data-id="fbde5d3"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="image.default"
-                      >
-                        <img
-                          loading="lazy"
-                          decoding="async"
-                          width="2560"
-                          height="1709"
-                          src="../wp-content/uploads/2025/12/compressed-Case-study-DG-scaled.jpg"
-                          class="attachment-full size-full wp-image-32600"
-                          alt=""
-                          srcset="
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-scaled.jpg    2560w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-300x200.jpg    300w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-1024x683.jpg  1024w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-768x513.jpg    768w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-1536x1025.jpg 1536w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-DG-2048x1367.jpg 2048w
-                          "
-                          sizes="(max-width: 2560px) 100vw, 2560px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-slide="2"
-                  role="group"
-                  aria-roledescription="slide"
-                  aria-label="2 of 2"
-                >
-                  <div
-                    class="elementor-element elementor-element-3f32beb e-flex e-con-boxed e-con e-child"
-                    data-id="3f32beb"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div class="e-con-inner">
-                      <div
-                        class="elementor-element elementor-element-bdce1ef elementor-widget elementor-widget-image"
-                        data-id="bdce1ef"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="image.default"
-                      >
-                        <img
-                          loading="lazy"
-                          decoding="async"
-                          width="2560"
-                          height="1707"
-                          src="../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-scaled.jpg"
-                          class="attachment-full size-full wp-image-32601"
-                          alt=""
-                          srcset="
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-scaled.jpg    2560w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-300x200.jpg    300w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-1024x683.jpg  1024w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-768x512.jpg    768w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-1536x1024.jpg 1536w,
-                            ../wp-content/uploads/2025/12/compressed-Case-study-Brent-Council-1-2048x1365.jpg 2048w
-                          "
-                          sizes="(max-width: 2560px) 100vw, 2560px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="elementor-element elementor-element-500703a e-con-full e-flex e-con e-child"
-          data-id="500703a"
-          data-element_type="container"
-          data-e-type="container"
-        >
-          <div
-            class="elementor-element elementor-element-38561fa elementor-arrows-position-inside elementor-widget elementor-widget-n-carousel"
-            data-id="38561fa"
-            data-element_type="widget"
-            data-e-type="widget"
-            id="carousel-main"
-            data-settings='{"carousel_items":[{"slide_title":"Slide #1","_id":"03346c4"},{"slide_title":"Slide #1","_id":"403843a"}],"slides_to_show":"1","image_spacing_custom":{"unit":"px","size":0,"sizes":[]},"slides_to_show_tablet":"1","slides_to_show_mobile":"1","autoplay":"yes","autoplay_speed":5000,"infinite":"yes","speed":500,"offset_sides":"none","arrows":"yes","image_spacing_custom_widescreen":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_laptop":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_tablet":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_mobile":{"unit":"px","size":"","sizes":[]}}'
-            data-widget_type="nested-carousel.default"
-          >
-            <div
-              class="e-n-carousel swiper"
-              role="region"
-              aria-roledescription="carousel"
-              aria-label="Carousel"
-              dir="ltr"
-            >
-              <div class="swiper-wrapper" aria-live="off">
-                <div
-                  class="swiper-slide"
-                  data-slide="1"
-                  role="group"
-                  aria-roledescription="slide"
-                  aria-label="1 of 2"
-                >
-                  <div
-                    class="elementor-element elementor-element-d70cb77 e-flex e-con-boxed e-con e-child"
-                    data-id="d70cb77"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div class="e-con-inner">
-                      <div
-                        class="elementor-element elementor-element-366bb1b e-con-full e-flex e-con e-child"
-                        data-id="366bb1b"
-                        data-element_type="container"
-                        data-e-type="container"
-                      >
-                        <div
-                          class="elementor-element elementor-element-48e7ad5 elementor-widget elementor-widget-text-editor"
-                          data-id="48e7ad5"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          <p>Case Study</p>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-372bce9 elementor-widget elementor-widget-heading"
-                          data-id="372bce9"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="heading.default"
-                        >
-                          <h3
-                            class="elementor-heading-title elementor-size-default"
-                          >
-                            Powering productivity for 2,000 users in 5 countries
-                          </h3>
-                        </div>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-f582191 elementor-widget elementor-widget-heading"
-                        data-id="f582191"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="heading.default"
-                      >
-                        <h4
-                          class="elementor-heading-title elementor-size-default"
-                        >
-                          Domestic &amp; General saves 25% on global device
-                          refresh
-                        </h4>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-e559664 elementor-widget elementor-widget-text-editor"
-                        data-id="e559664"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="text-editor.default"
-                      >
-                        <p>
-                          K Techara solved compatibility issues and reduced
-                          costs across five countries, with an AMD-based
-                          refresh.
-                        </p>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-ceac0db elementor-align-center elementor-widget elementor-widget-button"
-                        data-id="ceac0db"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="button.default"
-                      >
-                        <a
-                          class="elementor-button elementor-button-link elementor-size-sm"
-                          href="../case-studies/domestic-general/index.html"
-                          data-wpel-link="internal"
-                        >
-                          <span class="elementor-button-content-wrapper">
-                            <span class="elementor-button-text"
-                              >View case study</span
-                            >
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-slide="2"
-                  role="group"
-                  aria-roledescription="slide"
-                  aria-label="2 of 2"
-                >
-                  <div
-                    class="elementor-element elementor-element-a724db1 e-flex e-con-boxed e-con e-child"
-                    data-id="a724db1"
-                    data-element_type="container"
-                    data-e-type="container"
-                  >
-                    <div class="e-con-inner">
-                      <div
-                        class="elementor-element elementor-element-2abeb48 e-con-full e-flex e-con e-child"
-                        data-id="2abeb48"
-                        data-element_type="container"
-                        data-e-type="container"
-                      >
-                        <div
-                          class="elementor-element elementor-element-91cada3 elementor-widget elementor-widget-text-editor"
-                          data-id="91cada3"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="text-editor.default"
-                        >
-                          <p>Case Study</p>
-                        </div>
-                        <div
-                          class="elementor-element elementor-element-4b4685e elementor-widget elementor-widget-heading"
-                          data-id="4b4685e"
-                          data-element_type="widget"
-                          data-e-type="widget"
-                          data-widget_type="heading.default"
-                        >
-                          <h3
-                            class="elementor-heading-title elementor-size-default"
-                          >
-                            Brent Council enhances learning with interactive AV
-                            solutions
-                          </h3>
-                        </div>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-930ac49 elementor-widget elementor-widget-heading"
-                        data-id="930ac49"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="heading.default"
-                      >
-                        <h4
-                          class="elementor-heading-title elementor-size-default"
-                        >
-                          Custom AV solutions for 60+ schools
-                        </h4>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-71d2e95 elementor-widget elementor-widget-text-editor"
-                        data-id="71d2e95"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        data-widget_type="text-editor.default"
-                      >
-                        <p>
-                          <span
-                            class="TextRun SCXW1556945 BCX8"
-                            lang="EN-GB"
-                            xml:lang="EN-GB"
-                            data-contrast="auto"
-                            ><span
-                              class="NormalTextRun SpellingErrorV2Themed SCXW1556945 BCX8"
-                              >K Techara</span
-                            ><span class="NormalTextRun SCXW1556945 BCX8">
-                              delivered AV solutions that were tailored to meet
-                              the diverse needs and budgets of schools,
-                              enhancing learning experiences while ensuring cost
-                              effective deployment</span
-                            ></span
-                          ><span
-                            class="EOP SCXW1556945 BCX8"
-                            data-ccp-props="{}"
-                            > </span
-                          >
-                        </p>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-b855dff elementor-align-center elementor-widget elementor-widget-button"
-                        data-id="b855dff"
-                        data-element_type="widget"
-                        data-e-type="widget"
-                        id="case-studies"
-                        data-widget_type="button.default"
-                      >
-                        <a
-                          class="elementor-button elementor-button-link elementor-size-sm"
-                          href="../case-studies/brent-council/index.html"
-                          data-wpel-link="internal"
-                        >
-                          <span class="elementor-button-content-wrapper">
-                            <span class="elementor-button-text"
-                              >View case study</span
-                            >
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="elementor-swiper-button elementor-swiper-button-prev"
-              role="button"
-              tabindex="0"
-              aria-label="Previous"
-            >
-              <i aria-hidden="true" class="eicon-chevron-left"></i>
-            </div>
-            <div
-              class="elementor-swiper-button elementor-swiper-button-next"
-              role="button"
-              tabindex="0"
-              aria-label="Next"
-            >
-              <i aria-hidden="true" class="eicon-chevron-right"></i>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div
-        class="elementor-element elementor-element-38adc91 e-flex e-con-boxed e-con e-parent"
-        data-id="38adc91"
-        data-element_type="container"
-        data-e-type="container"
-      >
-        <div class="e-con-inner">
-          <div
-            class="elementor-element elementor-element-ca1c630 elementor-widget elementor-widget-html"
-            data-id="ca1c630"
-            data-element_type="widget"
-            data-e-type="widget"
-            data-widget_type="html.default"
-          >
-            <script>
-              (function () {
-                // Run after Elementor frontend is ready
-                if (window.elementorFrontend) {
-                  elementorFrontend.hooks.addAction(
-                    "frontend/element_ready/global",
-                    function () {
-                      initSyncedCarousels();
-                    },
-                  );
-                } else {
-                  // fallback
-                  document.addEventListener(
-                    "DOMContentLoaded",
-                    initSyncedCarousels,
-                  );
-                }
-
-                function initSyncedCarousels() {
-                  // selectors: change to the CSS IDs you set in Elementor
-                  var mainWrap = document.querySelector(
-                    "#carousel-main .swiper",
-                  );
-                  var followWrap = document.querySelector(
-                    "#carousel-follow .swiper",
-                  );
-
-                  if (!mainWrap || !followWrap) return;
-
-                  // Try to get the Swiper instances created by Elementor
-                  var mainSwiper = mainWrap.swiper;
-                  var followSwiper = followWrap.swiper;
-
-                  // If not ready yet, wait a short time (Elementor initializes after hooks sometimes)
-                  if (!mainSwiper || !followSwiper) {
-                    // try again shortly, max attempts
-                    var attempts = 0;
-                    var retry = setInterval(function () {
-                      attempts++;
-                      mainSwiper = mainWrap && mainWrap.swiper;
-                      followSwiper = followWrap && followWrap.swiper;
-                      if (mainSwiper && followSwiper) {
-                        clearInterval(retry);
-                        bindSwipers(mainSwiper, followSwiper);
-                      } else if (attempts > 20) {
-                        clearInterval(retry);
-                        console.warn(
-                          "Could not find Swiper instances for synced carousels.",
-                        );
-                      }
-                    }, 150);
-                    return;
-                  }
-
-                  bindSwipers(mainSwiper, followSwiper);
-                }
-
-                function bindSwipers(a, b) {
-                  try {
-                    // If Swiper controller module is available, use it:
-                    if (a.controller && b) {
-                      a.controller.control = b;
-                      b.controller.control = a;
-                    } else {
-                      // fallback: listen to slideChange and force the other slider to the same index
-                      a.on("slideChange", function () {
-                        var idx =
-                          a.realIndex !== undefined
-                            ? a.realIndex
-                            : a.activeIndex;
-                        // if sliders are looped, use slideToLoop for correct mapping
-                        if (typeof b.slideToLoop === "function")
-                          b.slideToLoop(idx);
-                        else b.slideTo(idx);
-                      });
-                      b.on("slideChange", function () {
-                        var idx =
-                          b.realIndex !== undefined
-                            ? b.realIndex
-                            : b.activeIndex;
-                        if (typeof a.slideToLoop === "function")
-                          a.slideToLoop(idx);
-                        else a.slideTo(idx);
-                      });
-                    }
-
-                    // Optional: sync autoplay state (if you want autoplay on one to start/pause the other)
-                    if (a.autoplay && b.autoplay) {
-                      a.on("autoplayStart", function () {
-                        try {
-                          b.autoplay.start();
-                        } catch (e) {}
-                      });
-                      a.on("autoplayStop", function () {
-                        try {
-                          b.autoplay.stop();
-                        } catch (e) {}
-                      });
-                    }
-
-                    console.log("Synced carousels:", a.el, b.el);
-                  } catch (err) {
-                    console.error("Error binding swipers:", err);
-                  }
-                }
-              })();
-            </script>
           </div>
         </div>
       </div>
@@ -7343,7 +6829,7 @@
                     data-id="3293d300"
                     data-element_type="widget"
                     data-e-type="widget"
-                    aria="Advania: the tech company with people at heart"
+                    aria="K Techara: the tech company with people at heart"
                     data-widget_type="image.default"
                   >
                     <img
@@ -7506,9 +6992,7 @@
                   data-widget_type="heading.default"
                 >
                   <h6 class="elementor-heading-title elementor-size-default">
-                    <a
-                      href="/technology-sourcing.1.html"
-                      data-wpel-link="internal"
+                    <a href="/technology-sourcing/" data-wpel-link="internal"
                       >Technology Sourcing</a
                     >
                   </h6>
@@ -7777,7 +7261,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                           >
                             <a
-                              href="/about-us/microsoft-partnership.1.html"
+                              href="/partners/microsoft/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Microsoft</a
@@ -7873,7 +7357,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                           >
                             <a
-                              href="/about-us/microsoft-partnership.1.html"
+                              href="/partners/microsoft/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -7917,7 +7401,7 @@
                     data-widget_type="heading.default"
                   >
                     <h6 class="elementor-heading-title elementor-size-default">
-                      <a href="/our-solutions.html" data-wpel-link="internal"
+                      <a href="/our-solutions/" data-wpel-link="internal"
                         >Solutions</a
                       >
                     </h6>
@@ -8185,7 +7669,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                           >
                             <a
-                              href="/about-us.1.html"
+                              href="/about-us/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >About K Techara</a
@@ -8205,7 +7689,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                           >
                             <a
-                              href="/sustainability/index.html"
+                              href="/about-us/sustainability-and-social-value/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Sustainability &#038; Social Value</a
@@ -8225,7 +7709,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                           >
                             <a
-                              href="/about-us.1.html"
+                              href="/about-us/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -8247,7 +7731,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                           >
                             <a
-                              href="/sustainability/index.html"
+                              href="/about-us/sustainability-and-social-value/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -8372,7 +7856,7 @@
                     data-widget_type="heading.default"
                   >
                     <h6 class="elementor-heading-title elementor-size-default">
-                      <a href="/our-services.html" data-wpel-link="internal"
+                      <a href="/our-services/" data-wpel-link="internal"
                         >Services</a
                       >
                     </h6>
@@ -8409,7 +7893,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                             >
                               <a
-                                href="/our-services/managed-services/index.html"
+                                href="/our-services/managed-it-services/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Managed IT Services</a
@@ -8449,7 +7933,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                             >
                               <a
-                                href="/our-services/managed-services/index.html"
+                                href="/our-services/managed-it-services/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -8511,7 +7995,7 @@
                         class="elementor-heading-title elementor-size-default"
                       >
                         <a
-                          href="/solutions-by-sector.html"
+                          href="/solutions-by-sector/"
                           data-wpel-link="internal"
                           >Sectors</a
                         >
@@ -8547,7 +8031,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                           >
                             <a
-                              href="/solutions-by-industry/insurance/index.html"
+                              href="/solutions-by-sector/insurance/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Insurance</a
@@ -8598,7 +8082,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                           >
                             <a
-                              href="/solutions-by-industry/insurance/index.html"
+                              href="/solutions-by-sector/insurance/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -9306,7 +8790,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="/our-services/managed-services/index.html"
+                              href="/our-services/managed-it-services/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Managed IT Services</a
@@ -9346,7 +8830,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="/our-services/managed-services/index.html"
+                              href="/our-services/managed-it-services/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -9451,7 +8935,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30643"
                           >
                             <a
-                              href="/solutions-by-industry/insurance/index.html"
+                              href="/solutions-by-sector/insurance/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Insurance</a
@@ -9531,7 +9015,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30643"
                           >
                             <a
-                              href="/solutions-by-industry/insurance/index.html"
+                              href="/solutions-by-sector/insurance/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -9756,7 +9240,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                           >
                             <a
-                              href="/about-us/microsoft-partnership.1.html"
+                              href="/partners/microsoft/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Microsoft</a
@@ -9852,7 +9336,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                           >
                             <a
-                              href="/about-us/microsoft-partnership.1.html"
+                              href="/partners/microsoft/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -9948,7 +9432,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                           >
                             <a
-                              href="/about-us.1.html"
+                              href="/about-us/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >About K Techara</a
@@ -9968,7 +9452,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                           >
                             <a
-                              href="/sustainability/index.html"
+                              href="/about-us/sustainability-and-social-value/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Sustainability &#038; Social Value</a
@@ -9988,7 +9472,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                           >
                             <a
-                              href="/about-us.1.html"
+                              href="/about-us/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10010,7 +9494,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                           >
                             <a
-                              href="/sustainability/index.html"
+                              href="/about-us/sustainability-and-social-value/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10320,7 +9804,7 @@
                 data-id="3293d300"
                 data-element_type="widget"
                 data-e-type="widget"
-                aria="Advania: the tech company with people at heart"
+                aria="K Techara: the tech company with people at heart"
                 data-widget_type="image.default"
                 style="margin: 0; align-self: center"
               >
@@ -10575,7 +10059,11 @@
               data-e-type="widget"
               data-widget_type="image.default"
             >
-              <a href="/" aria="Advania UK logo" data-wpel-link="internal">
+              <a
+                href="/"
+                aria="K Techara Limited logo"
+                data-wpel-link="internal"
+              >
                 <img
                   width="192"
                   height="43"
@@ -10653,7 +10141,7 @@
                     >
                       <p class="elementor-heading-title elementor-size-default">
                         <a
-                          href="../technology-sourcing.1.html"
+                          href="../technology-sourcing/"
                           data-wpel-link="internal"
                           >Technology sourcing</a
                         >
@@ -10802,7 +10290,7 @@
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="../technology-sourcing.1.html"
+                        href="../technology-sourcing/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -10845,9 +10333,7 @@
                       data-widget_type="heading.default"
                     >
                       <p class="elementor-heading-title elementor-size-default">
-                        <a
-                          href="../our-solutions.html"
-                          data-wpel-link="internal"
+                        <a href="../our-solutions/" data-wpel-link="internal"
                           >Solutions</a
                         >
                       </p>
@@ -11060,7 +10546,7 @@
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="../our-solutions.html"
+                        href="../our-solutions/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -11103,7 +10589,7 @@
                       data-widget_type="heading.default"
                     >
                       <p class="elementor-heading-title elementor-size-default">
-                        <a href="../our-services.html" data-wpel-link="internal"
+                        <a href="../our-services/" data-wpel-link="internal"
                           >Services</a
                         >
                       </p>
@@ -11128,7 +10614,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="../our-services/managed-services/index.html"
+                              href="../our-services/managed-it-services/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Managed IT Services</a
@@ -11168,7 +10654,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="../our-services/managed-services/index.html"
+                              href="../our-services/managed-it-services/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11209,7 +10695,7 @@
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="../our-services.html"
+                        href="../our-services/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -11278,7 +10764,7 @@
                           class="elementor-heading-title elementor-size-default"
                         >
                           <a
-                            href="../solutions-by-sector.html"
+                            href="../solutions-by-sector/"
                             data-wpel-link="internal"
                             >Sectors</a
                           >
@@ -11314,7 +10800,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                             >
                               <a
-                                href="../solutions-by-industry/insurance/index.html"
+                                href="../solutions-by-sector/insurance/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Insurance</a
@@ -11365,7 +10851,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                             >
                               <a
-                                href="../solutions-by-industry/insurance/index.html"
+                                href="../solutions-by-sector/insurance/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11621,7 +11107,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                             >
                               <a
-                                href="../about-us/microsoft-partnership.1.html"
+                                href="/partners/microsoft/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Microsoft</a
@@ -11717,7 +11203,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                             >
                               <a
-                                href="../about-us/microsoft-partnership.1.html"
+                                href="/partners/microsoft/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11816,7 +11302,7 @@
                         <p
                           class="elementor-heading-title elementor-size-default"
                         >
-                          <a href="../about-us.1.html" data-wpel-link="internal"
+                          <a href="../about-us/" data-wpel-link="internal"
                             >About Us</a
                           >
                         </p>
@@ -11841,7 +11327,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                             >
                               <a
-                                href="../about-us.1.html"
+                                href="../about-us/"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >About K Techara</a
@@ -11851,7 +11337,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923"
                             >
                               <a
-                                href="../about-us/case-studies/index.html"
+                                href="/insights/"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Case Studies</a
@@ -11871,7 +11357,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                             >
                               <a
-                                href="../sustainability/index.html"
+                                href="../about-us/sustainability-and-social-value/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Sustainability &#038; Social Value</a
@@ -11891,7 +11377,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                             >
                               <a
-                                href="../about-us.1.html"
+                                href="../about-us/"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11902,7 +11388,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923"
                             >
                               <a
-                                href="../about-us/case-studies/index.html"
+                                href="/insights/"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11924,7 +11410,7 @@
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                             >
                               <a
-                                href="../sustainability/index.html"
+                                href="../about-us/sustainability-and-social-value/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -12086,7 +11572,11 @@
               data-e-type="widget"
               data-widget_type="image.default"
             >
-              <a href="/" aria="Advania UK logo" data-wpel-link="internal">
+              <a
+                href="/"
+                aria="K Techara Limited logo"
+                data-wpel-link="internal"
+              >
                 <img
                   width="192"
                   height="43"
@@ -12261,7 +11751,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12301,7 +11791,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12343,9 +11833,7 @@
                               <p
                                 class="elementor-heading-title elementor-size-default"
                               >
-                                <a
-                                  href="../solutions-by-need/index.html"
-                                  data-wpel-link="internal"
+                                <a data-wpel-link="internal"
                                   >View all Solutions by Need</a
                                 >
                               </p>
@@ -12411,7 +11899,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12451,7 +11939,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12493,9 +11981,7 @@
                               <p
                                 class="elementor-heading-title elementor-size-default"
                               >
-                                <a
-                                  href="../solutions-by-industry/index.html"
-                                  data-wpel-link="internal"
+                                <a data-wpel-link="internal"
                                   >View all Solutions by Industry</a
                                 >
                               </p>
@@ -12536,11 +12022,7 @@
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a
-                              href="../insights/workshops/art-of-the-possible/index.html"
-                              data-wpel-link="internal"
-                              >WORKSHOP</a
-                            >
+                            <a data-wpel-link="internal">WORKSHOP</a>
                           </p>
                         </div>
                         <div
@@ -12553,9 +12035,7 @@
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a
-                              href="../insights/workshops/art-of-the-possible/index.html"
-                              data-wpel-link="internal"
+                            <a data-wpel-link="internal"
                               >Are you ready to join the Digital Revolution?</a
                             >
                           </p>
@@ -12677,7 +12157,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12717,7 +12197,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12810,7 +12290,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12850,7 +12330,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12943,7 +12423,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12983,7 +12463,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13076,7 +12556,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13116,7 +12596,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13209,7 +12689,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13249,7 +12729,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13342,7 +12822,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13382,7 +12862,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13475,7 +12955,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13515,7 +12995,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13608,7 +13088,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13648,7 +13128,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13716,9 +13196,7 @@
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a
-                              href="../insights/workshops/art-of-the-possible/index.html"
-                              data-wpel-link="internal"
+                            <a data-wpel-link="internal"
                               >IT services that create sustainable success for
                               your people</a
                             >
@@ -13733,7 +13211,7 @@
                         >
                           <a
                             class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                            href="../our-services.html"
+                            href="../our-services/"
                             data-wpel-link="internal"
                           >
                             <div class="premium-button-text-icon-wrapper">
@@ -13834,7 +13312,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13874,7 +13352,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13916,9 +13394,7 @@
                               <p
                                 class="elementor-heading-title elementor-size-default"
                               >
-                                <a
-                                  href="../insights.1.html"
-                                  data-wpel-link="internal"
+                                <a href="../insights/" data-wpel-link="internal"
                                   >View all Insights</a
                                 >
                               </p>
@@ -14002,7 +13478,6 @@
                                       >
                                         <a
                                           class="elementor-icon"
-                                          href="../news/various/what-advanias-growing-recognition-really-tells-us/index.html"
                                           target="_blank"
                                           data-wpel-link="internal"
                                         ></a>
@@ -14012,7 +13487,6 @@
                                       <div class="premium-blog-inner-container">
                                         <p class="premium-blog-entry-title">
                                           <a
-                                            href="../news/various/what-advanias-growing-recognition-really-tells-us/index.html"
                                             target="_blank"
                                             data-wpel-link="internal"
                                           >
@@ -14066,9 +13540,7 @@
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a
-                              href="../insights.1.html"
-                              data-wpel-link="internal"
+                            <a href="../insights/" data-wpel-link="internal"
                               >VIEW ALL INSIGHTS</a
                             >
                           </p>
@@ -14083,9 +13555,7 @@
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a
-                              href="../insights.1.html"
-                              data-wpel-link="internal"
+                            <a href="../insights/" data-wpel-link="internal"
                               >Helping you achieve and inspire with Microsoft
                               solutions every day</a
                             >
@@ -14208,7 +13678,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -14248,7 +13718,7 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="../our-services/managed-services/index.html"
+                                      href="../our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -14359,7 +13829,7 @@
                                       >
                                         <a
                                           class="elementor-icon"
-                                          href="../case-studies/domestic-general/index.html"
+                                          href="/insights/"
                                           target="_blank"
                                           data-wpel-link="internal"
                                         ></a>
@@ -14369,7 +13839,7 @@
                                       <div class="premium-blog-inner-container">
                                         <p class="premium-blog-entry-title">
                                           <a
-                                            href="../case-studies/domestic-general/index.html"
+                                            href="/insights/"
                                             target="_blank"
                                             data-wpel-link="internal"
                                           >
@@ -14410,7 +13880,7 @@
                                       >
                                         <a
                                           class="elementor-icon"
-                                          href="../case-studies/farrer-and-co/index.html"
+                                          href="/insights/"
                                           target="_blank"
                                           data-wpel-link="internal"
                                         ></a>
@@ -14420,7 +13890,7 @@
                                       <div class="premium-blog-inner-container">
                                         <p class="premium-blog-entry-title">
                                           <a
-                                            href="../case-studies/farrer-and-co/index.html"
+                                            href="/insights/"
                                             target="_blank"
                                             data-wpel-link="internal"
                                           >
@@ -14461,7 +13931,7 @@
                                       >
                                         <a
                                           class="elementor-icon"
-                                          href="../case-studies/fusion-group/index.html"
+                                          href="/insights/"
                                           target="_blank"
                                           data-wpel-link="internal"
                                         ></a>
@@ -14471,7 +13941,7 @@
                                       <div class="premium-blog-inner-container">
                                         <p class="premium-blog-entry-title">
                                           <a
-                                            href="../case-studies/fusion-group/index.html"
+                                            href="/insights/"
                                             target="_blank"
                                             data-wpel-link="internal"
                                           >

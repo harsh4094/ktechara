@@ -262,7 +262,7 @@
         {
           heading: 'Services',
           items: [
-            { text: 'Managed IT Services',    url: '/our-services/managed-services/index.html' },
+            { text: 'Managed IT Services',    url: '/our-services/managed-it-services/index.html' },
             { text: 'IT Consulting Services', url: '/our-services/professional-services/' },
             { text: 'IT Services for SMBs',   url: '/our-services/it-services-for-smb/index.html' }
           ],
@@ -627,19 +627,6 @@
 
     initAccordion();
     wireHamburger();
-
-    /* TEMPORARY: disable mobile panel links except Partners and logo */
-    function disablePanelLink(e) {
-      var a = e.target.closest ? e.target.closest('a') : null;
-      if (!a) return;
-      if (a.classList.contains('ktm-hd__logo')) return;
-      var href = a.getAttribute('href') || '';
-      if (href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html') return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-    panel.addEventListener('click', disablePanelLink, true);
-    panel.addEventListener('touchend', disablePanelLink, { capture: true, passive: false });
   }
 
   if (document.readyState === 'loading') {

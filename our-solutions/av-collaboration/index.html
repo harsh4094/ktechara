@@ -719,61 +719,43 @@ img { max-width: 100%; height: auto; }
   }
 }
 </style>
-<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
-<style id="nav-links-disabled">
-/* TEMPORARY: all nav links disabled except Partners section */
-header a,
-footer a,
-.elementor-31866 a,
-.ktm-p a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-/* Re-enable: logos, mobile bar controls, and all Partners links */
-header .header a,
-header .mobile-nav a,
-footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo,
-header a[href^="/partners/"],
-header a[href="/about-us/microsoft-partnership.1.html"],
-footer a[href^="/partners/"],
-footer a[href="/about-us/microsoft-partnership.1.html"],
-.ktm-p a[href^="/partners/"],
-.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
-    pointer-events: auto !important;
-    cursor: pointer !important;
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
 }
 </style>
-<script id="nav-links-disabled-js">
-(function () {
-    function isPartnersLink(a) {
-        var href = a.getAttribute('href') || '';
-        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
-    }
-    function shouldDisable(a) {
-        var inHeader = !!a.closest('[data-elementor-type="header"]');
-        var inFooter = !!a.closest('[data-elementor-type="footer"]');
-        var inPopup = !!a.closest('.elementor-31866');
-        var inPanel = !!a.closest('.ktm-p');
-        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-        if (isPartnersLink(a)) return false;
-        if (inHeader && a.closest('.header')) return false;
-        if (inHeader && a.closest('.mobile-nav')) return false;
-        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
-        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
-        return true;
-    }
-    function prevent(e) {
-        var a = e.target.closest ? e.target.closest('a') : null;
-        if (a && shouldDisable(a)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-    }
-    document.addEventListener('click', prevent, true);
-    document.addEventListener('touchend', prevent, { capture: true, passive: false });
-})();
-</script>
+<style id="responsive-global">
+img { max-width: 100%; height: auto; }
+
+/* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .elementor-element-6aa92ab4 {
+    --n-menu-title-space-between: 14px;
+    --n-menu-title-font-size: 12px;
+  }
+  .elementor-element-6aa92ab4 .e-con-inner {
+    gap: 0 8px;
+  }
+  .elementor-element-502e94aa .elementor-button {
+    font-size: 11px !important;
+    padding: 12px 18px !important;
+  }
+}
+</style>
+<header data-elementor-type="header" data-elementor-id="31649" class="elementor elementor-31649 elementor-location-header" data-elementor-post-type="elementor_library">
         <header class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent" data-id="6aa92ab4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;],&quot;sticky_effects_offset&quot;:110,&quot;sticky_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
             <div class="e-con-inner"><div class="elementor-element elementor-element-bb4f5f9 e-con-full e-flex e-con e-child" data-id="bb4f5f9" data-element_type="container" data-e-type="container">
                     <div class="elementor-element elementor-element-398d9867 e-con-full e-flex e-con e-child" data-id="398d9867" data-element_type="container" data-e-type="container">
@@ -820,7 +802,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                             <div class="elementor-element elementor-element-78c8d561 e-con-full e-flex e-con e-child" data-id="78c8d561" data-element_type="container" data-e-type="container">
                                                                 <div class="elementor-element elementor-element-33a76a09 elementor-widget elementor-widget-heading" data-id="33a76a09" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                     <p class="elementor-heading-title elementor-size-default">
-                                                                        <a href="/technology-sourcing.1.html" data-wpel-link="internal">Technology
+                                                                        <a href="/technology-sourcing/" data-wpel-link="internal">Technology
                                                                             sourcing</a>
                                                                     </p>
                                                                 </div>
@@ -886,7 +868,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-3ff148c1 e-con-full e-flex e-con e-child" data-id="3ff148c1" data-element_type="container" data-e-type="container">
                                                                     <div class="elementor-element elementor-element-2249511 cards-btn elementor-widget elementor-widget-button" data-id="2249511" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/technology-sourcing.1.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/technology-sourcing/" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -902,7 +884,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                             <div class="elementor-element elementor-element-46a98ff e-con-full e-flex e-con e-child" data-id="46a98ff" data-element_type="container" data-e-type="container">
                                                                 <div class="elementor-element elementor-element-a78d2de elementor-widget elementor-widget-heading" data-id="a78d2de" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                     <p class="elementor-heading-title elementor-size-default">
-                                                                        <a href="/our-solutions.html" data-wpel-link="internal">Solutions</a>
+                                                                        <a href="/our-solutions/" data-wpel-link="internal">Solutions</a>
                                                                     </p>
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-135a53e elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="135a53e" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -991,7 +973,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-0a10b2f e-con-full e-flex e-con e-child" data-id="0a10b2f" data-element_type="container" data-e-type="container">
                                                                     <div class="elementor-element elementor-element-1dc07bb cards-btn elementor-widget elementor-widget-button" data-id="1dc07bb" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/our-solutions.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/our-solutions/" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -1007,7 +989,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                             <div class="elementor-element elementor-element-728bc8bd e-con-full e-flex e-con e-child" data-id="728bc8bd" data-element_type="container" data-e-type="container">
                                                                 <div class="elementor-element elementor-element-24a500b5 elementor-widget elementor-widget-heading" data-id="24a500b5" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                     <p class="elementor-heading-title elementor-size-default">
-                                                                        <a href="/our-services.html" data-wpel-link="internal">Services</a>
+                                                                        <a href="/our-services/" data-wpel-link="internal">Services</a>
                                                                     </p>
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-31b7d5f7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="31b7d5f7" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1021,7 +1003,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                                             <ul id="menu-1-45e16c08" class="elementor-nav-menu sm-vertical">
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                                    <a href="/our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed
+                                                                                    <a href="/our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed
                                                                                         IT Services</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -1037,7 +1019,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                                             <ul id="menu-2-45e16c08" class="elementor-nav-menu sm-vertical">
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                                    <a href="/our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed
+                                                                                    <a href="/our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed
                                                                                         IT Services</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -1054,7 +1036,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-1f59a873 e-con-full e-flex e-con e-child" data-id="1f59a873" data-element_type="container" data-e-type="container">
                                                                     <div class="elementor-element elementor-element-1a80f9c8 cards-btn elementor-widget elementor-widget-button" data-id="1a80f9c8" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/our-services.html" data-wpel-link="internal">
+                                                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/our-services/" data-wpel-link="internal">
                                                                             <span class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-icon">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -1093,7 +1075,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                 <div class="elementor-element elementor-element-ce9901b e-con-full e-flex e-con e-child" data-id="ce9901b" data-element_type="container" data-e-type="container">
                                                                     <div class="elementor-element elementor-element-e6a2428 elementor-widget elementor-widget-heading" data-id="e6a2428" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                         <p class="elementor-heading-title elementor-size-default">
-                                                                            <a href="/solutions-by-sector.html" data-wpel-link="internal">Sectors</a>
+                                                                            <a href="/solutions-by-sector/" data-wpel-link="internal">Sectors</a>
                                                                         </p>
                                                                     </div>
                                                                     <div class="elementor-element elementor-element-d72241f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d72241f" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1111,7 +1093,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                             <a href="/solutions-by-sector/finance/index.html" class="elementor-item" data-wpel-link="internal">Finance</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914">
-                                                                                            <a href="/solutions-by-industry/insurance/index.html" class="elementor-item" data-wpel-link="internal">Insurance</a>
+                                                                                            <a href="/solutions-by-sector/insurance/index.html" class="elementor-item" data-wpel-link="internal">Insurance</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915">
                                                                                             <a href="/solutions-by-sector/legal-and-professional/index.html" class="elementor-item" data-wpel-link="internal">Legal
@@ -1129,7 +1111,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                             <a href="/solutions-by-sector/finance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Finance</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914">
-                                                                                            <a href="/solutions-by-industry/insurance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Insurance</a>
+                                                                                            <a href="/solutions-by-sector/insurance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Insurance</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915">
                                                                                             <a href="/solutions-by-sector/legal-and-professional/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Legal
@@ -1313,7 +1295,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                                 <a href="/partners/lenovo/index.html" class="elementor-item" data-wpel-link="internal">Lenovo</a>
                                                                                             </li>
                                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32970">
-                                                                                                <a href="/about-us/microsoft-partnership.1.html" class="elementor-item" data-wpel-link="internal">Microsoft</a>
+                                                                                                <a href="/partners/microsoft/index.html" class="elementor-item" data-wpel-link="internal">Microsoft</a>
                                                                                             </li>
                                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32973">
                                                                                                 <a href="/partners/microsoft-surface/index.html" class="elementor-item" data-wpel-link="internal">Microsoft
@@ -1330,7 +1312,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                                 <a href="/partners/lenovo/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Lenovo</a>
                                                                                             </li>
                                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32970">
-                                                                                                <a href="/about-us/microsoft-partnership.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft</a>
+                                                                                                <a href="/partners/microsoft/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft</a>
                                                                                             </li>
                                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32973">
                                                                                                 <a href="/partners/microsoft-surface/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft
@@ -1382,7 +1364,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                 <div class="elementor-element elementor-element-7366b827 e-con-full e-flex e-con e-child" data-id="7366b827" data-element_type="container" data-e-type="container">
                                                                     <div class="elementor-element elementor-element-64233105 elementor-widget elementor-widget-heading" data-id="64233105" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                         <p class="elementor-heading-title elementor-size-default">
-                                                                            <a href="/about-us.1.html" data-wpel-link="internal">About Us</a>
+                                                                            <a href="/about-us/" data-wpel-link="internal">About Us</a>
                                                                         </p>
                                                                     </div>
                                                                     <div class="elementor-element elementor-element-59310c7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="59310c7" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
@@ -1397,7 +1379,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                 <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                                                     <ul id="menu-1-4389eb2d" class="elementor-nav-menu sm-vertical">
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857">
-                                                                                            <a href="/about-us.1.html" class="elementor-item" data-wpel-link="internal">About
+                                                                                            <a href="/about-us/" class="elementor-item" data-wpel-link="internal">About
                                                                                                 K Techara</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842">
@@ -1406,7 +1388,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                                 Careers</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841">
-                                                                                            <a href="/sustainability/index.html" class="elementor-item" data-wpel-link="internal">Sustainability
+                                                                                            <a href="/about-us/sustainability-and-social-value/index.html" class="elementor-item" data-wpel-link="internal">Sustainability
                                                                                                 &#038; Social Value</a>
                                                                                         </li>
                                                                                     </ul>
@@ -1414,7 +1396,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                 <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                                                     <ul id="menu-2-4389eb2d" class="elementor-nav-menu sm-vertical">
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857">
-                                                                                            <a href="/about-us.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">About
+                                                                                            <a href="/about-us/" class="elementor-item" tabindex="-1" data-wpel-link="internal">About
                                                                                                 K Techara</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842">
@@ -1423,7 +1405,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                                 Careers</a>
                                                                                         </li>
                                                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841">
-                                                                                            <a href="/sustainability/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Sustainability
+                                                                                            <a href="/about-us/sustainability-and-social-value/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Sustainability
                                                                                                 &#038; Social Value</a>
                                                                                         </li>
                                                                                     </ul>
@@ -1473,7 +1455,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                         <div class="elementor-element elementor-element-37eaf5a e-flex e-con-boxed e-con e-child" data-id="37eaf5a" data-element_type="container" data-e-type="container">
                                                                                             <div class="e-con-inner">
                                                                                                 <div class="elementor-element elementor-element-13f3d2b8 elementor-widget elementor-widget-image" data-id="13f3d2b8" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                                                                                                    <a href="/about-us.1.html" data-wpel-link="internal">
+                                                                                                    <a href="/about-us/" data-wpel-link="internal">
                                                                                                         <img loading="lazy" width="377" height="308" src="/wp-content/uploads/2025/08/advania-adv-mega.png" class="elementor-animation-grow attachment-full size-full wp-image-31635" alt="" srcset="/wp-content/uploads/2025/08/advania-adv-mega.png 377w, /wp-content/uploads/2025/08/advania-adv-mega-300x245.png 300w" sizes="(max-width: 377px) 100vw, 377px" />
                                                                                                     </a>
                                                                                                 </div>
@@ -1486,7 +1468,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                                                         </div>
                                                                                                         <div class="elementor-element elementor-element-6dd53a7 elementor-widget elementor-widget-heading" data-id="6dd53a7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                                                                                                             <p class="elementor-heading-title elementor-size-default">
-                                                                                                                <a href="/about-us.1.html" data-wpel-link="internal">The
+                                                                                                                <a href="/about-us/" data-wpel-link="internal">The
                                                                                                                     tech
                                                                                                                     company
                                                                                                                     with
@@ -1774,7 +1756,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                     solutions that enable your people to perform at their best in any location. </p>
                             </div>
                             <div class="elementor-element elementor-element-25be7d0 elementor-widget elementor-widget-button" data-id="25be7d0" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                <a class="elementor-button elementor-button-link elementor-size-sm" href="../../about-us/microsoft-partnership.1.html" data-wpel-link="internal">
+                                <a class="elementor-button elementor-button-link elementor-size-sm" href="/partners/microsoft/index.html" data-wpel-link="internal">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-text">MICROSOFT PARTNER</span>
                                     </span>
@@ -2063,7 +2045,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                 data-id="3293d300"
                 data-element_type="widget"
                 data-e-type="widget"
-                aria="Advania: the tech company with people at heart"
+                aria="K Techara: the tech company with people at heart"
                 data-widget_type="image.default"
               >
                 <img
@@ -2226,7 +2208,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
               data-widget_type="heading.default"
             >
               <h6 class="elementor-heading-title elementor-size-default">
-                <a href="/technology-sourcing.1.html" data-wpel-link="internal"
+                <a href="/technology-sourcing/" data-wpel-link="internal"
                   >Technology Sourcing</a
                 >
               </h6>
@@ -2497,7 +2479,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                       >
                         <a
-                          href="/about-us/microsoft-partnership.1.html"
+                          href="/partners/microsoft/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Microsoft</a
@@ -2593,7 +2575,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                       >
                         <a
-                          href="/about-us/microsoft-partnership.1.html"
+                          href="/partners/microsoft/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -2637,7 +2619,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                 data-widget_type="heading.default"
               >
                 <h6 class="elementor-heading-title elementor-size-default">
-                  <a href="/our-solutions.html" data-wpel-link="internal"
+                  <a href="/our-solutions/" data-wpel-link="internal"
                     >Solutions</a
                   >
                 </h6>
@@ -2903,7 +2885,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                       >
                         <a
-                          href="/about-us.1.html"
+                          href="/about-us/"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >About K Techara</a
@@ -2923,7 +2905,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                       >
                         <a
-                          href="/sustainability/index.html"
+                          href="/about-us/sustainability-and-social-value/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Sustainability &#038; Social Value</a
@@ -2943,7 +2925,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                       >
                         <a
-                          href="/about-us.1.html"
+                          href="/about-us/"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -2965,7 +2947,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                       >
                         <a
-                          href="/sustainability/index.html"
+                          href="/about-us/sustainability-and-social-value/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -3090,7 +3072,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                 data-widget_type="heading.default"
               >
                 <h6 class="elementor-heading-title elementor-size-default">
-                  <a href="/our-services.html" data-wpel-link="internal"
+                  <a href="/our-services/" data-wpel-link="internal"
                     >Services</a
                   >
                 </h6>
@@ -3127,7 +3109,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                         >
                           <a
-                            href="/our-services/managed-services/index.html"
+                            href="/our-services/managed-it-services/index.html"
                             class="elementor-item"
                             data-wpel-link="internal"
                             >Managed IT Services</a
@@ -3167,7 +3149,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                         >
                           <a
-                            href="/our-services/managed-services/index.html"
+                            href="/our-services/managed-it-services/index.html"
                             class="elementor-item"
                             tabindex="-1"
                             data-wpel-link="internal"
@@ -3227,7 +3209,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                 >
                   <h6 class="elementor-heading-title elementor-size-default">
                     <a
-                      href="/solutions-by-sector.html"
+                      href="/solutions-by-sector/"
                       data-wpel-link="internal"
                       >Sectors</a
                     >
@@ -3263,7 +3245,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                       >
                         <a
-                          href="/solutions-by-industry/insurance/index.html"
+                          href="/solutions-by-sector/insurance/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Insurance</a
@@ -3314,7 +3296,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                       >
                         <a
-                          href="/solutions-by-industry/insurance/index.html"
+                          href="/solutions-by-sector/insurance/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -4016,7 +3998,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                       >
                         <a
-                          href="/our-services/managed-services/index.html"
+                          href="/our-services/managed-it-services/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Managed IT Services</a
@@ -4056,7 +4038,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                       >
                         <a
-                          href="/our-services/managed-services/index.html"
+                          href="/our-services/managed-it-services/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -4158,7 +4140,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30643"
                       >
                         <a
-                          href="/solutions-by-industry/insurance/index.html"
+                          href="/solutions-by-sector/insurance/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Insurance</a
@@ -4238,7 +4220,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30643"
                       >
                         <a
-                          href="/solutions-by-industry/insurance/index.html"
+                          href="/solutions-by-sector/insurance/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -4460,7 +4442,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                       >
                         <a
-                          href="/about-us/microsoft-partnership.1.html"
+                          href="/partners/microsoft/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Microsoft</a
@@ -4556,7 +4538,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                       >
                         <a
-                          href="/about-us/microsoft-partnership.1.html"
+                          href="/partners/microsoft/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -4649,7 +4631,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                       >
                         <a
-                          href="/about-us.1.html"
+                          href="/about-us/"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >About K Techara</a
@@ -4669,7 +4651,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                       >
                         <a
-                          href="/sustainability/index.html"
+                          href="/about-us/sustainability-and-social-value/index.html"
                           class="elementor-item"
                           data-wpel-link="internal"
                           >Sustainability &#038; Social Value</a
@@ -4689,7 +4671,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                       >
                         <a
-                          href="/about-us.1.html"
+                          href="/about-us/"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -4711,7 +4693,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                       >
                         <a
-                          href="/sustainability/index.html"
+                          href="/about-us/sustainability-and-social-value/index.html"
                           class="elementor-item"
                           tabindex="-1"
                           data-wpel-link="internal"
@@ -5010,7 +4992,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
             data-id="3293d300"
             data-element_type="widget"
             data-e-type="widget"
-            aria="Advania: the tech company with people at heart"
+            aria="K Techara: the tech company with people at heart"
             data-widget_type="image.default"
             style="margin:0;align-self:center;"
           >
@@ -5233,6 +5215,8 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
 
 
 
+
+
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script type="speculationrules">
         {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hello-theme-child-master/*","/wp-content/themes/hello-elementor/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch,
@@ -5243,7 +5227,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
             <div class="elementor-element elementor-element-5e253d3e e-flex e-con-boxed e-con e-child" data-id="5e253d3e" data-element_type="container" data-e-type="container" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
                 <div class="e-con-inner">
                     <div class="elementor-element elementor-element-cc25544 elementor-widget elementor-widget-image" data-id="cc25544" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                        <a href="/" aria="Advania UK logo" data-wpel-link="internal">
+                        <a href="/" aria="K Techara Limited logo" data-wpel-link="internal">
                             <img width="192" height="43" src="../../wp-content/uploads/2025/08/main-logo.png" class="attachment-large size-large wp-image-31865" alt="" /> </a>
                     </div>
                 </div>
@@ -5265,7 +5249,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                 </summary>
                                 <div role="region" aria-labelledby="e-n-accordion-item-1730" class="elementor-element elementor-element-5382e137 e-con-full e-flex e-con e-child" data-id="5382e137" data-element_type="container" data-e-type="container">
                                     <div class="elementor-element elementor-element-750a6909 elementor-widget elementor-widget-heading" data-id="750a6909" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                        <p class="elementor-heading-title elementor-size-default"><a href="../../technology-sourcing.1.html" data-wpel-link="internal">Technology sourcing</a></p>
+                                        <p class="elementor-heading-title elementor-size-default"><a href="../../technology-sourcing/" data-wpel-link="internal">Technology sourcing</a></p>
                                     </div>
                                     <div class="elementor-element elementor-element-1ce73e94 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="1ce73e94" data-element_type="widget" data-e-type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
@@ -5312,7 +5296,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </nav>
                                     </div>
                                     <div class="elementor-element elementor-element-bfadb85 elementor-widget elementor-widget-button" data-id="bfadb85" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../technology-sourcing.1.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../technology-sourcing/" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -5329,7 +5313,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-dbab955 elementor-widget elementor-widget-heading" data-id="dbab955" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                        <p class="elementor-heading-title elementor-size-default"><a href="../../our-solutions.html" data-wpel-link="internal">Solutions</a>
+                                        <p class="elementor-heading-title elementor-size-default"><a href="../../our-solutions/" data-wpel-link="internal">Solutions</a>
                                         </p>
                                     </div>
                                     <div class="elementor-element elementor-element-bf8cd28 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="bf8cd28" data-element_type="widget" data-e-type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
@@ -5340,14 +5324,14 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         Transformation</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32903">
-                                                    <a href="../cloud-platform-network.1.html" class="elementor-item" data-wpel-link="internal">Cloud, Platform &#038; Network</a>
+                                                    <a href="../cloud-platform-network/" class="elementor-item" data-wpel-link="internal">Cloud, Platform &#038; Network</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904">
                                                     <a href="../../our-services/cyber-security-and-compliance-services/index.html" class="elementor-item" data-wpel-link="internal">Cyber
                                                         Resilience</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32909">
-                                                    <a href="../data.1.html" class="elementor-item" data-wpel-link="internal">Data</a>
+                                                    <a href="../data/" class="elementor-item" data-wpel-link="internal">Data</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905">
                                                     <a href="../../our-services/modern-work/index.html" class="elementor-item" data-wpel-link="internal">Digital
@@ -5357,7 +5341,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                     <a href="../../our-solutions/high-performance-compute/index.html" class="elementor-item" data-wpel-link="internal">High-Performance Computing</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32907">
-                                                    <a href="../dynamics-365-and-business-applications.1.html" class="elementor-item" data-wpel-link="internal">Microsoft
+                                                    <a href="../dynamics-365-and-business-applications/" class="elementor-item" data-wpel-link="internal">Microsoft
                                                         Dynamics 365 &#038; Business Applications</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906">
@@ -5372,14 +5356,14 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                     <a href="../../our-services/data-and-ai-transformation/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">AI Transformation</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32903">
-                                                    <a href="../cloud-platform-network.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Cloud, Platform &#038;
+                                                    <a href="../cloud-platform-network/" class="elementor-item" tabindex="-1" data-wpel-link="internal">Cloud, Platform &#038;
                                                         Network</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904">
                                                     <a href="../../our-services/cyber-security-and-compliance-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Cyber Resilience</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32909">
-                                                    <a href="../data.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Data</a>
+                                                    <a href="../data/" class="elementor-item" tabindex="-1" data-wpel-link="internal">Data</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905">
                                                     <a href="../../our-services/modern-work/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Digital Employee Experience</a>
@@ -5388,7 +5372,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                     <a href="../../our-solutions/high-performance-compute/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">High-Performance Computing</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32907">
-                                                    <a href="../dynamics-365-and-business-applications.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft Dynamics 365 &#038; Business
+                                                    <a href="../dynamics-365-and-business-applications/" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft Dynamics 365 &#038; Business
                                                         Applications</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906">
@@ -5398,7 +5382,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </nav>
                                     </div>
                                     <div class="elementor-element elementor-element-414e9e86 elementor-widget elementor-widget-button" data-id="414e9e86" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../our-solutions.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../our-solutions/" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -5415,14 +5399,14 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-6987b686 elementor-widget elementor-widget-heading" data-id="6987b686" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                        <p class="elementor-heading-title elementor-size-default"><a href="../../our-services.html" data-wpel-link="internal">Services</a>
+                                        <p class="elementor-heading-title elementor-size-default"><a href="../../our-services/" data-wpel-link="internal">Services</a>
                                         </p>
                                     </div>
                                     <div class="elementor-element elementor-element-7e52ffc0 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="7e52ffc0" data-element_type="widget" data-e-type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                             <ul id="menu-1-7e52ffc0" class="elementor-nav-menu sm-vertical">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                         Services</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5438,7 +5422,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                             <ul id="menu-2-7e52ffc0" class="elementor-nav-menu sm-vertical">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT Services</a>
+                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT Services</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
                                                     <a href="../../our-services/professional-services/" class="elementor-item" tabindex="-1" data-wpel-link="internal">IT Consulting Services</a>
@@ -5450,7 +5434,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </nav>
                                     </div>
                                     <div class="elementor-element elementor-element-f14f394 elementor-widget elementor-widget-button" data-id="f14f394" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../our-services.html" data-wpel-link="internal">
+                                        <a class="elementor-button elementor-button-link elementor-size-sm" href="../../our-services/" data-wpel-link="internal">
                                             <span class="elementor-button-content-wrapper">
                                                 <span class="elementor-button-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
@@ -5476,7 +5460,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                 <div role="region" aria-labelledby="e-n-accordion-item-1731" class="elementor-element elementor-element-1384da4 e-flex e-con-boxed e-con e-child" data-id="1384da4" data-element_type="container" data-e-type="container">
                                     <div class="e-con-inner">
                                         <div class="elementor-element elementor-element-a96998a elementor-widget elementor-widget-heading" data-id="a96998a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                            <p class="elementor-heading-title elementor-size-default"><a href="../../solutions-by-sector.html" data-wpel-link="internal">Sectors</a></p>
+                                            <p class="elementor-heading-title elementor-size-default"><a href="../../solutions-by-sector/" data-wpel-link="internal">Sectors</a></p>
                                         </div>
                                         <div class="elementor-element elementor-element-0448077 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="0448077" data-element_type="widget" data-e-type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
                                             <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
@@ -5485,7 +5469,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <a href="../../solutions-by-sector/finance/index.html" class="elementor-item" data-wpel-link="internal">Finance</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914">
-                                                        <a href="../../solutions-by-industry/insurance/index.html" class="elementor-item" data-wpel-link="internal">Insurance</a>
+                                                        <a href="../../solutions-by-sector/insurance/index.html" class="elementor-item" data-wpel-link="internal">Insurance</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915">
                                                         <a href="../../solutions-by-sector/legal-and-professional/index.html" class="elementor-item" data-wpel-link="internal">Legal
@@ -5503,7 +5487,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <a href="../../solutions-by-sector/finance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Finance</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914">
-                                                        <a href="../../solutions-by-industry/insurance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Insurance</a>
+                                                        <a href="../../solutions-by-sector/insurance/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Insurance</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915">
                                                         <a href="../../solutions-by-sector/legal-and-professional/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Legal &#038; Professional</a>
@@ -5585,7 +5569,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <a href="../../partners/lenovo/index.html" class="elementor-item" data-wpel-link="internal">Lenovo</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934">
-                                                        <a href="../../about-us/microsoft-partnership.1.html" class="elementor-item" data-wpel-link="internal">Microsoft</a>
+                                                        <a href="/partners/microsoft/index.html" class="elementor-item" data-wpel-link="internal">Microsoft</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32927">
                                                         <a href="../../partners/microsoft-surface/index.html" class="elementor-item" data-wpel-link="internal">Microsoft
@@ -5614,7 +5598,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <a href="../../partners/lenovo/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Lenovo</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934">
-                                                        <a href="../../about-us/microsoft-partnership.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft</a>
+                                                        <a href="/partners/microsoft/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32927">
                                                         <a href="../../partners/microsoft-surface/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Microsoft Surface</a>
@@ -5650,17 +5634,17 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                 <div role="region" aria-labelledby="e-n-accordion-item-1734" class="elementor-element elementor-element-2a9279ce e-flex e-con-boxed e-con e-child" data-id="2a9279ce" data-element_type="container" data-e-type="container">
                                     <div class="e-con-inner">
                                         <div class="elementor-element elementor-element-4795fe54 elementor-widget elementor-widget-heading" data-id="4795fe54" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                            <p class="elementor-heading-title elementor-size-default"><a href="../../about-us.1.html" data-wpel-link="internal">About Us</a>
+                                            <p class="elementor-heading-title elementor-size-default"><a href="../../about-us/" data-wpel-link="internal">About Us</a>
                                             </p>
                                         </div>
                                         <div class="elementor-element elementor-element-75095ba2 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="75095ba2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
                                             <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-75095ba2" class="elementor-nav-menu sm-vertical">
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857">
-                                                        <a href="../../about-us.1.html" class="elementor-item" data-wpel-link="internal">About K Techara</a>
+                                                        <a href="../../about-us/" class="elementor-item" data-wpel-link="internal">About K Techara</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923">
-                                                        <a href="../../about-us/case-studies/index.html" class="elementor-item" data-wpel-link="internal">Case
+                                                        <a class="elementor-item" data-wpel-link="internal">Case
                                                             Studies</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842">
@@ -5668,7 +5652,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                             Culture &#038; Careers</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841">
-                                                        <a href="../../sustainability/index.html" class="elementor-item" data-wpel-link="internal">Sustainability &#038; Social
+                                                        <a href="../../about-us/sustainability-and-social-value/index.html" class="elementor-item" data-wpel-link="internal">Sustainability &#038; Social
                                                             Value</a>
                                                     </li>
                                                 </ul>
@@ -5676,16 +5660,16 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                             <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                 <ul id="menu-2-75095ba2" class="elementor-nav-menu sm-vertical">
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857">
-                                                        <a href="../../about-us.1.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">About K Techara</a>
+                                                        <a href="../../about-us/" class="elementor-item" tabindex="-1" data-wpel-link="internal">About K Techara</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923">
-                                                        <a href="../../about-us/case-studies/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Case Studies</a>
+                                                        <a class="elementor-item" tabindex="-1" data-wpel-link="internal">Case Studies</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842">
                                                         <a href="../../about-us/people-culture-and-careers/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">People, Culture &#038; Careers</a>
                                                     </li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841">
-                                                        <a href="../../sustainability/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Sustainability
+                                                        <a href="../../about-us/sustainability-and-social-value/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Sustainability
                                                             &#038; Social Value</a>
                                                     </li>
                                                 </ul>
@@ -5743,7 +5727,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
             <div class="elementor-element elementor-element-23af759 e-flex e-con-boxed e-con e-child" data-id="23af759" data-element_type="container" data-e-type="container">
                 <div class="e-con-inner">
                     <div class="elementor-element elementor-element-e755431 elementor-widget elementor-widget-image" data-id="e755431" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                        <a href="/" aria="Advania UK logo" data-wpel-link="internal">
+                        <a href="/" aria="K Techara Limited logo" data-wpel-link="internal">
                             <img width="192" height="43" src="/wp-content/uploads/2023/09/main-logo.png" class="attachment-large size-large wp-image-27516" alt="K Techara logo scroll" /> </a>
                     </div>
                 </div>
@@ -5790,7 +5774,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-b827a80" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5806,7 +5790,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-b827a80" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5821,7 +5805,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         </nav>
                                                     </div>
                                                     <div class="elementor-element elementor-element-12e47ff pink-hover elementor-widget elementor-widget-heading" data-id="12e47ff" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                        <p class="elementor-heading-title elementor-size-default"><a href="../../solutions-by-need/index.html" data-wpel-link="internal">View all Solutions by Need</a>
+                                                        <p class="elementor-heading-title elementor-size-default"><a data-wpel-link="internal">View all Solutions by Need</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -5842,7 +5826,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-6912c71" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5858,7 +5842,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-6912c71" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5873,7 +5857,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         </nav>
                                                     </div>
                                                     <div class="elementor-element elementor-element-98c50cd pink-hover elementor-widget elementor-widget-heading" data-id="98c50cd" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                        <p class="elementor-heading-title elementor-size-default"><a href="../../solutions-by-industry/index.html" data-wpel-link="internal">View all Solutions by
+                                                        <p class="elementor-heading-title elementor-size-default"><a data-wpel-link="internal">View all Solutions by
                                                                 Industry</a></p>
                                                     </div>
                                                 </div>
@@ -5887,10 +5871,10 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </div>
                                         <div class="elementor-element elementor-element-859fd94 e-con-full e-flex e-con e-child" data-id="859fd94" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-element elementor-element-34176e8 elementor-widget elementor-widget-heading" data-id="34176e8" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights/workshops/art-of-the-possible/index.html" data-wpel-link="internal">WORKSHOP</a></p>
+                                                <p class="elementor-heading-title elementor-size-default"><a data-wpel-link="internal">WORKSHOP</a></p>
                                             </div>
                                             <div class="elementor-element elementor-element-2a65353 elementor-widget elementor-widget-heading" data-id="2a65353" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights/workshops/art-of-the-possible/index.html" data-wpel-link="internal">Are you ready to join the Digital
+                                                <p class="elementor-heading-title elementor-size-default"><a data-wpel-link="internal">Are you ready to join the Digital
                                                         Revolution?</a></p>
                                             </div>
                                         </div>
@@ -5932,7 +5916,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-aaaea4c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5948,7 +5932,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-aaaea4c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5981,7 +5965,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-348f02c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -5997,7 +5981,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-348f02c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6029,7 +6013,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-9ce74c3" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6045,7 +6029,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-9ce74c3" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6078,7 +6062,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-cc7447d" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6094,7 +6078,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-cc7447d" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6127,7 +6111,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-7eef561" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6143,7 +6127,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-7eef561" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6176,7 +6160,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-2f331e2" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6192,7 +6176,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-2f331e2" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6225,7 +6209,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-cb8194e" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6241,7 +6225,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-cb8194e" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6274,7 +6258,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-d922cc0" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6290,7 +6274,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-d922cc0" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6315,12 +6299,12 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </div>
                                         <div class="elementor-element elementor-element-4770270 e-con-full e-flex e-con e-child" data-id="4770270" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-element elementor-element-8a99de2 elementor-widget elementor-widget-heading" data-id="8a99de2" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights/workshops/art-of-the-possible/index.html" data-wpel-link="internal">IT services that create sustainable
+                                                <p class="elementor-heading-title elementor-size-default"><a data-wpel-link="internal">IT services that create sustainable
                                                         success for your people</a></p>
                                             </div>
                                             <div class="elementor-element elementor-element-40836e7 premium-lq__none elementor-widget elementor-widget-premium-addon-button" data-id="40836e7" data-element_type="widget" data-e-type="widget" data-widget_type="premium-addon-button.default">
 
-                                                <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../our-services.html" data-wpel-link="internal">
+                                                <a class="premium-button premium-button-none premium-btn-lg premium-button-none" href="../../our-services/" data-wpel-link="internal">
                                                     <div class="premium-button-text-icon-wrapper">
 
                                                         <span>
@@ -6354,7 +6338,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-1d51acd" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6370,7 +6354,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-1d51acd" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6385,7 +6369,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         </nav>
                                                     </div>
                                                     <div class="elementor-element elementor-element-67adf16 pink-hover elementor-widget elementor-widget-heading" data-id="67adf16" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                        <p class="elementor-heading-title elementor-size-default"><a href="../../insights.1.html" data-wpel-link="internal">View all Insights</a></p>
+                                                        <p class="elementor-heading-title elementor-size-default"><a href="../../insights/" data-wpel-link="internal">View all Insights</a></p>
                                                     </div>
                                                 </div>
                                             </details>
@@ -6411,7 +6395,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                             <img width="700" height="467" src="../../wp-content/uploads/2026/06/hegeonstage-e1780565797131.webp" class="attachment-full size-full wp-image-33691" alt="" />
                                                                         </div>
                                                                         <div class="premium-blog-thumbnail-overlay">
-                                                                            <a class="elementor-icon" href="../../news/various/what-advanias-growing-recognition-really-tells-us/index.html" target="_blank" data-wpel-link="internal"></a>
+                                                                            <a class="elementor-icon" target="_blank" data-wpel-link="internal"></a>
                                                                         </div>
 
                                                                     </div>
@@ -6420,7 +6404,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <div class="premium-blog-inner-container">
 
                                                                             <p class="premium-blog-entry-title">
-                                                                                <a href="../../news/various/what-advanias-growing-recognition-really-tells-us/index.html" target="_blank" data-wpel-link="internal">
+                                                                                <a target="_blank" data-wpel-link="internal">
                                                                                     What K Techara&#8217;s 130 awards and
                                                                                     growing recognition really tells us
                                                                                 </a>
@@ -6453,11 +6437,11 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                         </div>
                                         <div class="elementor-element elementor-element-4398043 e-con-full e-flex e-con e-child" data-id="4398043" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-element elementor-element-1febc54 elementor-widget elementor-widget-heading" data-id="1febc54" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights.1.html" data-wpel-link="internal">VIEW ALL
+                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights/" data-wpel-link="internal">VIEW ALL
                                                         INSIGHTS</a></p>
                                             </div>
                                             <div class="elementor-element elementor-element-f5f2535 elementor-widget elementor-widget-heading" data-id="f5f2535" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights.1.html" data-wpel-link="internal">Helping
+                                                <p class="elementor-heading-title elementor-size-default"><a href="../../insights/" data-wpel-link="internal">Helping
                                                         you achieve and inspire with Microsoft solutions every day</a>
                                                 </p>
                                             </div>
@@ -6499,7 +6483,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                             <ul id="menu-1-d673e4c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6515,7 +6499,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
                                                             <ul id="menu-2-d673e4c" class="elementor-nav-menu sm-vertical">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910">
-                                                                    <a href="../../our-services/managed-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
+                                                                    <a href="../../our-services/managed-it-services/index.html" class="elementor-item" tabindex="-1" data-wpel-link="internal">Managed IT
                                                                         Services</a>
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284">
@@ -6553,7 +6537,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                             <img width="1920" height="1282" src="../../wp-content/uploads/2025/07/Case-study-Domestic-General-1-scaled-1.jpeg" class="attachment-full size-full wp-image-31354" alt="" />
                                                                         </div>
                                                                         <div class="premium-blog-thumbnail-overlay">
-                                                                            <a class="elementor-icon" href="../../case-studies/domestic-general/index.html" target="_blank" data-wpel-link="internal"></a>
+                                                                            <a class="elementor-icon" target="_blank" data-wpel-link="internal"></a>
                                                                         </div>
 
                                                                     </div>
@@ -6562,7 +6546,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <div class="premium-blog-inner-container">
 
                                                                             <p class="premium-blog-entry-title">
-                                                                                <a href="../../case-studies/domestic-general/index.html" target="_blank" data-wpel-link="internal">
+                                                                                <a target="_blank" data-wpel-link="internal">
                                                                                     Domestic &#038; General </a>
                                                                             </p>
                                                                             <div class="premium-blog-entry-meta">
@@ -6582,7 +6566,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                             <img width="1920" height="1280" src="../../wp-content/uploads/2025/07/Case-study-Farrar-Co-1.jpg" class="attachment-full size-full wp-image-31305" alt="" />
                                                                         </div>
                                                                         <div class="premium-blog-thumbnail-overlay">
-                                                                            <a class="elementor-icon" href="../../case-studies/farrer-and-co/index.html" target="_blank" data-wpel-link="internal"></a>
+                                                                            <a class="elementor-icon" target="_blank" data-wpel-link="internal"></a>
                                                                         </div>
 
                                                                     </div>
@@ -6591,7 +6575,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <div class="premium-blog-inner-container">
 
                                                                             <p class="premium-blog-entry-title">
-                                                                                <a href="../../case-studies/farrer-and-co/index.html" target="_blank" data-wpel-link="internal">
+                                                                                <a target="_blank" data-wpel-link="internal">
                                                                                     Farrer &#038; Co </a>
                                                                             </p>
                                                                             <div class="premium-blog-entry-meta">
@@ -6611,7 +6595,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                             <img width="1920" height="1280" src="../../wp-content/uploads/2025/07/Case-study-The-Fusion-Group-1.jpg" class="attachment-full size-full wp-image-31342" alt="" />
                                                                         </div>
                                                                         <div class="premium-blog-thumbnail-overlay">
-                                                                            <a class="elementor-icon" href="../../case-studies/fusion-group/index.html" target="_blank" data-wpel-link="internal"></a>
+                                                                            <a class="elementor-icon" target="_blank" data-wpel-link="internal"></a>
                                                                         </div>
 
                                                                     </div>
@@ -6620,7 +6604,7 @@ footer a[href="/about-us/microsoft-partnership.1.html"],
                                                                         <div class="premium-blog-inner-container">
 
                                                                             <p class="premium-blog-entry-title">
-                                                                                <a href="../../case-studies/fusion-group/index.html" target="_blank" data-wpel-link="internal">
+                                                                                <a target="_blank" data-wpel-link="internal">
                                                                                     Fusion Group </a>
                                                                             </p>
                                                                             <div class="premium-blog-entry-meta">

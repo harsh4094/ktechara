@@ -1696,6 +1696,16 @@ body.rtl .e-con {
     width: 100%;
   }
 }
+/* Start custom CSS: tablet stacking for 3+ column rows (768-992px gap) */
+@media (max-width: 992px) {
+  .e-con.e-flex:has(> .e-con:nth-child(3)) {
+    --flex-wrap: var(--flex-wrap-mobile, wrap);
+  }
+  .e-con.e-flex:has(> .e-con:nth-child(3)) > .e-con {
+    --width: 100%;
+  }
+}
+/* End custom CSS */
 .elementor-form-fields-wrapper {
   display: flex;
   flex-wrap: wrap;
