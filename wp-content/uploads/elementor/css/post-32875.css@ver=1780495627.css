@@ -10,3 +10,19 @@
     align-items: flex-start!important;
     margin-top:2.4px!important;
 }/* End custom CSS */
+/* Start custom CSS: stack "Driving smarter business outcomes" full-width on tablet, like mobile (768-992px) */
+@media (min-width:768px) and (max-width:992px){
+.elementor-32875 .elementor-element.elementor-element-be9603f{--flex-wrap:wrap;}
+.elementor-32875 .elementor-element.elementor-element-2aaa59e{--width:100%;--padding-right:0em;}
+.elementor-32875 .elementor-element.elementor-element-30bda03{--width:100%;--order:99999;margin-top:3em;}
+}
+/* End custom CSS */
+/* Start custom CSS: stop "Explore our services" card buttons wrapping into an off-screen column on mobile.
+   Root cause: c5f7199/6dc7107 are column-direction containers whose 3rd child is a nested-accordion widget;
+   Elementor's default mobile flex-wrap:wrap on these containers causes the browser to overflow the button
+   and accordion into an invisible second flex column instead of stacking them below the text. */
+@media (max-width:767px){
+.elementor-32875 .elementor-element.elementor-element-c5f7199,
+.elementor-32875 .elementor-element.elementor-element-6dc7107{--flex-wrap:nowrap;}
+}
+/* End custom CSS */
