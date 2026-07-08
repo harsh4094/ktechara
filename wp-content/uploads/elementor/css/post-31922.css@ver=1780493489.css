@@ -10,3 +10,41 @@
     align-items: flex-start!important;
     margin-top:2.4px!important;
 }/* End custom CSS */
+/* Start custom CSS for hover animation, class: .cards-btn, .sol-link */.cards-btn .elementor-button {
+background-color: transparent!important;
+color: #2B2B2B;
+padding: 0;
+}
+
+.cards-btn .elementor-button:hover,
+.sol-link .elementor-button:hover {
+    color: #D76AB3;
+}
+
+.cards-btn span.elementor-button-icon svg {
+    color: #D76AB3 !important;
+    font-size: 20px;
+    margin-top: -4px;
+    transition: transform 0.3s ease;
+}
+
+.sol-link .elementor-button-icon svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cards-btn:hover span.elementor-button-icon svg {
+    transform: translateX(4px);
+}
+
+.sol-link .elementor-button:hover .elementor-button-icon svg {
+    transform: translateX(4px);
+    color: #D76AB3;
+}
+
+.sol-link a.elementor-button.elementor-button-link.elementor-size-sm {
+    height: auto !important;
+    min-height: 44px;
+    border-radius: 10px;
+    padding: 6px 10px !important;
+    margin: -6px -10px;
+}/* End custom CSS */
