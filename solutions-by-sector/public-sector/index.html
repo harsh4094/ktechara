@@ -956,6 +956,32 @@
       hreflang="x-default"
       href="https://ktechara.co.uk/"
     />
+    <style class="tablet-responsive-card-style">
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .tablet-responsive-card {
+          flex-direction: column !important;
+        }
+        .tablet-responsive-card.reverse-on-tablet {
+          flex-direction: column-reverse !important;
+        }
+        .tablet-responsive-card > .e-con-child,
+        .tablet-responsive-card > .e-con {
+          width: 100% !important;
+        }
+        .tablet-responsive-card .elementor-widget-image img {
+          width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+      }
+      @media (max-width: 767px) {
+        .tablet-responsive-card .elementor-widget-image img {
+          width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+      }
+    </style>
   </head>
 
   <body
@@ -2546,7 +2572,7 @@ img { max-width: 100%; height: auto; }
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-8c0134f e-con-full e-flex elementor-invisible e-con e-child"
+            class="elementor-element elementor-element-8c0134f tablet-responsive-card e-con-full e-flex elementor-invisible e-con e-child"
             data-id="8c0134f"
             data-element_type="container"
             data-e-type="container"
@@ -2627,7 +2653,7 @@ img { max-width: 100%; height: auto; }
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-9af7582 e-con-full e-flex e-con e-child"
+            class="elementor-element elementor-element-9af7582 tablet-responsive-card reverse-on-tablet e-con-full e-flex e-con e-child"
             data-id="9af7582"
             data-element_type="container"
             data-e-type="container"
@@ -2708,7 +2734,7 @@ img { max-width: 100%; height: auto; }
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-ab81848 e-con-full e-flex e-con e-child"
+            class="elementor-element elementor-element-ab81848 tablet-responsive-card e-con-full e-flex e-con e-child"
             data-id="ab81848"
             data-element_type="container"
             data-e-type="container"
