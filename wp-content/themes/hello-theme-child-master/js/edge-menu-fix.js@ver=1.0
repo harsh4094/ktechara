@@ -262,7 +262,7 @@
         {
           heading: 'Services',
           items: [
-            { text: 'Managed IT Services',    url: '/our-services/managed-services/index.html' },
+            { text: 'Managed IT Services',    url: '/our-services/managed-it-services/index.html' },
             { text: 'IT Consulting Services', url: '/our-services/professional-services/' },
             { text: 'IT Services for SMBs',   url: '/our-services/it-services-for-smb/index.html' }
           ],
