@@ -1,0 +1,142 @@
+/* Page-specific responsive fix for microsoft-365-pace (post-27672).
+   Scoped to .elementor-27672 so no other page is affected.
+   Fix: the "Managed-IT-services-image" (8f1f962) inside the hexagon
+   collage keeps its desktop negative margins (-44%/-35%) as the layout
+   narrows below 1024px, pulling the image off its left edge with no
+   space against the viewport/column edge. Widening the image slightly
+   and pulling the margins in (matching the fix already applied on the
+   av-collaboration page's equivalent image) keeps it clear of the edge. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin: -47% -4% calc(var(--kit-widget-spacing, 0px) + 0%) -4%;
+    width: 104% !important;
+    max-width: 104% !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin: -29% 9% calc(var(--kit-widget-spacing, 0px) + 0%) 7%;
+    padding: 0px 0px 0px 0px;
+    width: 104% !important;
+    max-width: 91% !important;
+  }
+}
+
+/* Desktop up to ~1600px: the hexagon collage image (8f1f962) keeps its
+   -35% left margin while the viewport isn't wide enough to absorb the
+   bleed, cutting ~80px off its left side. Pull the margin in like the
+   tablet fix does. */
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin-left: -6%;
+    margin-top: -40%;
+  }
+}
+
+/* The purple hexagon accent (599e144) under the collage uses a -30% left
+   margin meant for very wide screens where the content is inset; below
+   ~1600px it pokes ~50px past the viewport's left edge and gets clipped.
+   Keep it just inside the edge instead. */
+@media (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-599e144 {
+    margin-left: -2%;
+  }
+}
+
+/* "What does PACE stand for?" carousel (Premium Addons / slick).
+   The exported post CSS puts BOTH `--width:100%` and `--width:300px` for
+   the carousel wrapper (56d7b33) in the same `min-width:768px` block, so
+   the 300px wins at every width >=768px. The slider shows 4 slides above
+   its 1025px break, and squeezing 4 slides into 300px makes the slide
+   headings/text overlap illegibly. Restore full width where 4 slides show;
+   the 300px single-slide layout is correct below 1025px. */
+@media (min-width: 1025px) {
+  .elementor-27672 .elementor-element.elementor-element-56d7b33 {
+    --width: 100%;
+  }
+  .elementor-27672 .elementor-element.elementor-element-03032e9 {
+    width: 100%;
+    max-width: 100%;
+    --container-widget-width: 100%;
+  }
+}
+
+/* The slick list keeps its pre-init height (~580px) while the tallest
+   slide is ~250px, leaving a large empty band inside the pink section on
+   tablet/mobile. Let it collapse to its content. */
+.elementor-27672 .carousel-wrapper-03032e9 .slick-list {
+  height: auto !important;
+}
+
+/* Laptop and below: the origami images (697ad26 beside "Struggling to keep
+   up", dc81386 further down) use a -7% right margin that pushes them ~30px
+   past the viewport once the content column meets the screen edge,
+   creating a horizontal scrollbar. */
+@media (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-697ad26,
+  .elementor-27672 .elementor-element.elementor-element-dc81386 {
+    margin-right: 0%;
+  }
+}
+
+/* Mobile: decorative hexagon images bleed past the viewport edges.
+   631f9d3 (left accent above the hero collage) overflows left by ~25px;
+   697ad26 (origami image beside "Struggling to keep up") overflows right
+   by ~120px because of its -37% right margin. Keep both inside the edge. */
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-631f9d3 {
+    margin-left: 0%;
+  }
+  .elementor-27672 .elementor-element.elementor-element-697ad26 {
+    margin-right: 0%;
+  }
+}
+
+/* Hero section (dd5f53e) spacing fixes.
+   Desktop/tablet: hero has --padding-bottom:0, so the intro text sits flush
+   against the section's bottom edge — add breathing room below the text
+   column (39ea261) instead of stretching the purple background.
+   Mobile: the text column and the image/content block (803216c) touch the
+   hero's side edges — add horizontal padding. */
+@media (min-width: 1367px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 5em;
+  }
+}
+/* Laptop range: the next section (6c2592a) overlaps the hero by -18em,
+   its white background covering the intro paragraph. Reduce the overlap
+   to the desktop value while keeping its content in place
+   (margin-top + padding-top stays -6em). */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 6em;
+  }
+  .elementor-27672 .elementor-element.elementor-element-6c2592a {
+    --margin-top: -9em;
+    --padding-top: 3em;
+  }
+}
+/* Tablet: next section overlaps -6em (96px); give the hero enough bottom
+   padding that the paragraph stays clear of the white overlap. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 8em;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-39ea261 {
+    --padding-left: 1.25em;
+    --padding-right: 1.25em;
+  }
+  .elementor-27672 .elementor-element.elementor-element-803216c {
+    --padding-right: 1.25em;
+  }
+  /* The ebook card keeps its fixed 390px width + % left margin on mobile,
+     pushing it past the viewport's right edge. Cap it inside the column
+     and keep a small gap on its left. */
+  .elementor-27672 .elementor-element.elementor-element-4466d74 {
+    max-width: calc(100% - 1.25em);
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
