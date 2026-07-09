@@ -1296,6 +1296,147 @@
           padding: 12px 18px !important;
         }
       }
+
+      /* Fix: Features section image column responsive overflow (≤ 1024px) */
+      /* The e53dcea container has a background image (woman with laptop).   */
+      /* At small viewports the flex layout stacks columns and the bg bleeds. */
+      @media (max-width: 1024px) {
+        /* Contain the background image within its column */
+        .elementor-element-e53dcea {
+          overflow: hidden !important;
+          background-size: cover !important;
+          background-position: center center !important;
+          min-height: 600px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        /* Ensure the inner boxed wrapper doesn't overflow */
+        .elementor-element-e53dcea > .e-con-inner {
+          max-width: 100% !important;
+          width: 100% !important;
+        }
+
+        /* Badge image inside the column: centre and cap width */
+        .elementor-element-3510c5c {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+
+        .elementor-element-3510c5c img {
+          max-width: 220px !important;
+          width: auto !important;
+          height: auto !important;
+        }
+
+        /* Parent container: stack columns cleanly */
+        .elementor-element-1c44731 {
+          flex-direction: column !important;
+          overflow: hidden !important;
+        }
+      }
+
+      /* Tighten further on mobile (≤ 767px) */
+      @media (max-width: 767px) {
+        .elementor-element-e53dcea {
+          min-height: 300px !important;
+        }
+
+        .elementor-element-3510c5c img {
+          max-width: 160px !important;
+        }
+      }
+
+      /* =====================================================================
+         Fix: "Managed Azure service cloud operations baselines" section
+         Container ca25017 — two-column layout (text + image) at tablet/mobile
+         At ≤ 1024px the columns stack; put image first, then text, centred.
+         ===================================================================== */
+
+      /* Outer wrapper: allow full width and remove any clipping */
+      @media (max-width: 1024px) {
+        .elementor-element-ca25017 {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: visible !important;
+        }
+
+        /* Inner flex row → column, image first */
+        .elementor-element-ca25017 > .e-con-inner {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 24px !important;
+        }
+
+        /* Image column (2965be1): render first, fill width, centre image */
+        .elementor-element-2965be1 {
+          order: -1 !important;          /* image above text */
+          width: 100% !important;
+          max-width: 100% !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+
+        .elementor-element-2965be1 > .e-con-inner {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: flex !important;
+          justify-content: center !important;
+        }
+
+        .elementor-element-2965be1 img {
+          max-width: 320px !important;
+          width: 100% !important;
+          height: auto !important;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+
+        /* Text column (b995dbc): full width, proper inner padding */
+        .elementor-element-b995dbc {
+          order: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        .elementor-element-b995dbc > .e-con-inner {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        /* Inner animated content box (b1f143f) */
+        .elementor-element-b1f143f {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        .elementor-element-b1f143f > .e-con-inner {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+      }
+
+      /* Tighten image further on phone (≤ 767px) */
+      @media (max-width: 767px) {
+        .elementor-element-2965be1 img {
+          max-width: 240px !important;
+        }
+
+        .elementor-element-b995dbc > .e-con-inner {
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+        }
+      }
     </style>
     <header
       data-elementor-type="header"

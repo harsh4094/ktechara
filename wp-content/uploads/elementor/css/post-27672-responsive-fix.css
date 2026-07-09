@@ -22,6 +22,76 @@
   }
 }
 
+/* Desktop up to ~1600px: the hexagon collage image (8f1f962) keeps its
+   -35% left margin while the viewport isn't wide enough to absorb the
+   bleed, cutting ~80px off its left side. Pull the margin in like the
+   tablet fix does. */
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin-left: -6%;
+    margin-top: -40%;
+  }
+}
+
+/* The purple hexagon accent (599e144) under the collage uses a -30% left
+   margin meant for very wide screens where the content is inset; below
+   ~1600px it pokes ~50px past the viewport's left edge and gets clipped.
+   Keep it just inside the edge instead. */
+@media (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-599e144 {
+    margin-left: -2%;
+  }
+}
+
+/* "What does PACE stand for?" carousel (Premium Addons / slick).
+   The exported post CSS puts BOTH `--width:100%` and `--width:300px` for
+   the carousel wrapper (56d7b33) in the same `min-width:768px` block, so
+   the 300px wins at every width >=768px. The slider shows 4 slides above
+   its 1025px break, and squeezing 4 slides into 300px makes the slide
+   headings/text overlap illegibly. Restore full width where 4 slides show;
+   the 300px single-slide layout is correct below 1025px. */
+@media (min-width: 1025px) {
+  .elementor-27672 .elementor-element.elementor-element-56d7b33 {
+    --width: 100%;
+  }
+  .elementor-27672 .elementor-element.elementor-element-03032e9 {
+    width: 100%;
+    max-width: 100%;
+    --container-widget-width: 100%;
+  }
+}
+
+/* The slick list keeps its pre-init height (~580px) while the tallest
+   slide is ~250px, leaving a large empty band inside the pink section on
+   tablet/mobile. Let it collapse to its content. */
+.elementor-27672 .carousel-wrapper-03032e9 .slick-list {
+  height: auto !important;
+}
+
+/* Laptop and below: the origami images (697ad26 beside "Struggling to keep
+   up", dc81386 further down) use a -7% right margin that pushes them ~30px
+   past the viewport once the content column meets the screen edge,
+   creating a horizontal scrollbar. */
+@media (max-width: 1599px) {
+  .elementor-27672 .elementor-element.elementor-element-697ad26,
+  .elementor-27672 .elementor-element.elementor-element-dc81386 {
+    margin-right: 0%;
+  }
+}
+
+/* Mobile: decorative hexagon images bleed past the viewport edges.
+   631f9d3 (left accent above the hero collage) overflows left by ~25px;
+   697ad26 (origami image beside "Struggling to keep up") overflows right
+   by ~120px because of its -37% right margin. Keep both inside the edge. */
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-631f9d3 {
+    margin-left: 0%;
+  }
+  .elementor-27672 .elementor-element.elementor-element-697ad26 {
+    margin-right: 0%;
+  }
+}
+
 /* Hero section (dd5f53e) spacing fixes.
    Desktop/tablet: hero has --padding-bottom:0, so the intro text sits flush
    against the section's bottom edge — add breathing room below the text
