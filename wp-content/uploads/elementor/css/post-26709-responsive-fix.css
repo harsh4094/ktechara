@@ -1,0 +1,77 @@
+/* Page-specific responsive fixes for strategy-and-advisory (post-26709).
+   Scoped to .elementor-26709 so no other page is affected.
+   Fixes:
+   1) Hero (dd5f53e/edb5176) has 0 side padding below 1024px, so the
+      heading/intro text touches the viewport edges on tablet/mobile.
+   2) Main photo in the "Ensure success with business change" section
+      (8f1f962) is pulled left with margin-left:-35% (and -4% on mobile),
+      making it touch/bleed past the left viewport edge at every width. */
+
+/* Hero: purple background must extend past the VIEW SOLUTIONS button.
+   The next section overlays the hero bottom with margin-top:-18em at
+   <=1366px, which swallowed the 12% bottom padding and clipped the button. */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  .elementor-26709 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 20em;
+  }
+  .elementor-26709 .elementor-element.elementor-element-edb5176 {
+    --padding-left: 2em;
+    --padding-right: 2em;
+  }
+}
+
+/* Ebook card (4466d74): stale side margins pull it over the hero text on
+   tablet (-17%) and past the right viewport edge on mobile (+16%) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .elementor-26709 .elementor-element.elementor-element-4466d74 {
+    --margin-left: 0%;
+    --width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-26709 .elementor-element.elementor-element-4466d74 {
+    --margin-left: 0%;
+  }
+}
+
+/* Hero: side breathing room on tablet + mobile */
+@media (max-width: 1023px) {
+  .elementor-26709 .elementor-element.elementor-element-edb5176 {
+    --padding-left: 1.5em;
+    --padding-right: 1.5em;
+  }
+  /* next section pulls itself up with a negative margin; without bottom
+     padding it clips the hero intro text and the VIEW SOLUTIONS button */
+  .elementor-26709 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 8em;
+  }
+  .elementor-26709 .elementor-element.elementor-element-39ea261 {
+    --padding-right: 2em;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-26709 .elementor-element.elementor-element-dd5f53e {
+    --padding-top: 90px;
+    --padding-bottom: 2em;
+  }
+}
+
+/* "Ensure success" section: keep the photo inside the viewport */
+.elementor-26709 .elementor-element.elementor-element-8f1f962 {
+  margin: -44% 0% calc(var(--kit-widget-spacing, 0px) + 0%) -15%;
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .elementor-26709 .elementor-element.elementor-element-8f1f962 {
+    margin: -30% 0% calc(var(--kit-widget-spacing, 0px) + 0%) 0%;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-26709 .elementor-element.elementor-element-8f1f962 {
+    margin: -40% 0% calc(var(--kit-widget-spacing, 0px) + 0%) 0%;
+    padding: 0 1.25em;
+  }
+  .elementor-26709 .elementor-element.elementor-element-f1c8cbb {
+    --padding-left: 1.25em;
+    --padding-right: 1.25em;
+  }
+}

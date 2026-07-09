@@ -6076,6 +6076,71 @@
                     }
                   }
                 </style>
+                <style id="smb-related-blogs-fix">
+                  /* Page-specific fixes for the Related blogs cards on
+                     /our-services/it-services-for-smb/ only (scoped to
+                     this page's #insights section). */
+
+                  /* Equal-height cards: let each loop item fill its grid
+                     cell and push the image block to the bottom. */
+                  #insights .elementor-loop-container {
+                    align-items: stretch;
+                  }
+                  #insights .e-loop-item.elementor-31654 {
+                    display: flex;
+                    width: 100%;
+                  }
+                  #insights
+                    .e-loop-item.elementor-31654
+                    > .elementor-element-393ea075 {
+                    width: 100%;
+                  }
+                  #insights .elementor-31654 .elementor-element-2f1ecd58 {
+                    height: 100%;
+                    --flex-grow: 1;
+                  }
+                  #insights .elementor-31654 .elementor-element-30810b99 {
+                    --flex-grow: 1;
+                    --min-height: 180px;
+                  }
+                  #insights .elementor-31654 .elementor-element-54bf3100 {
+                    margin-top: auto;
+                    --min-height: 220px;
+                  }
+
+                  /* Uniform media box: fixed height, cropped, never
+                     overflowing its column. */
+                  #insights .elementor-31654 .elementor-element-5ee84178 img {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 220px;
+                    object-fit: cover;
+                    object-position: top center;
+                  }
+
+                  /* Tablet: cancel the template's -26px negative margin
+                     that makes rows overlap. */
+                  @media (max-width: 1023px) {
+                    #insights .elementor-31654 .elementor-element-30810b99 {
+                      --margin-top: 0px;
+                      --margin-bottom: 0px;
+                    }
+                  }
+
+                  /* Mobile: single column, slightly shorter media box. */
+                  @media (max-width: 767px) {
+                    #insights .elementor-31654 .elementor-element-30810b99 {
+                      --min-height: 0px;
+                    }
+                    #insights
+                      .elementor-31654
+                      .elementor-element-5ee84178
+                      img {
+                      height: 200px;
+                    }
+                  }
+                </style>
                 <div
                   data-elementor-type="loop-item"
                   data-elementor-id="31654"
@@ -6255,8 +6320,10 @@
                             class="elementor-heading-title elementor-size-default"
                           >
                             <a
-                              >Value in Azure with an Expert Managed Services
-                              Provider</a
+                              href="../../blog/azure-and-cloud/the-advania-guide-to-azure-part-1-optimising-your-environment/index.html"
+                              data-wpel-link="internal"
+                              >The K Techara guide to Azure (part 1):
+                              Optimising your environment</a
                             >
                           </h4>
                         </div>
@@ -6276,13 +6343,16 @@
                             data-e-type="widget"
                             data-widget_type="theme-post-featured-image.default"
                           >
-                            <a>
+                            <a
+                              href="../../blog/azure-and-cloud/the-advania-guide-to-azure-part-1-optimising-your-environment/index.html"
+                              data-wpel-link="internal"
+                            >
                               <img
                                 loading="lazy"
                                 decoding="async"
-                                width="1200"
-                                height="600"
-                                src="../../wp-content/uploads/2025/04/Azure-blog.png"
+                                width="1024"
+                                height="648"
+                                src="../../wp-content/uploads/2026/05/iStock-1473164518B-1024x648.png"
                                 class="elementor-animation-grow attachment-full size-full"
                                 alt=""
                               />
@@ -6390,9 +6460,9 @@
                               <img
                                 loading="lazy"
                                 decoding="async"
-                                width="1200"
-                                height="600"
-                                src="../../wp-content/uploads/2023/11/Advania_blog_cloud-security-social.png"
+                                width="1024"
+                                height="512"
+                                src="../../wp-content/uploads/2023/12/advania_blog_AI-1-1024x512.png"
                                 class="elementor-animation-grow attachment-full size-full"
                                 alt=""
                               />

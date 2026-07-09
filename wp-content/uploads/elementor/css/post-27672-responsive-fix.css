@@ -1,0 +1,72 @@
+/* Page-specific responsive fix for microsoft-365-pace (post-27672).
+   Scoped to .elementor-27672 so no other page is affected.
+   Fix: the "Managed-IT-services-image" (8f1f962) inside the hexagon
+   collage keeps its desktop negative margins (-44%/-35%) as the layout
+   narrows below 1024px, pulling the image off its left edge with no
+   space against the viewport/column edge. Widening the image slightly
+   and pulling the margins in (matching the fix already applied on the
+   av-collaboration page's equivalent image) keeps it clear of the edge. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin: -47% -4% calc(var(--kit-widget-spacing, 0px) + 0%) -4%;
+    width: 104% !important;
+    max-width: 104% !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-8f1f962 {
+    margin: -29% 9% calc(var(--kit-widget-spacing, 0px) + 0%) 7%;
+    padding: 0px 0px 0px 0px;
+    width: 104% !important;
+    max-width: 91% !important;
+  }
+}
+
+/* Hero section (dd5f53e) spacing fixes.
+   Desktop/tablet: hero has --padding-bottom:0, so the intro text sits flush
+   against the section's bottom edge — add breathing room below the text
+   column (39ea261) instead of stretching the purple background.
+   Mobile: the text column and the image/content block (803216c) touch the
+   hero's side edges — add horizontal padding. */
+@media (min-width: 1367px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 5em;
+  }
+}
+/* Laptop range: the next section (6c2592a) overlaps the hero by -18em,
+   its white background covering the intro paragraph. Reduce the overlap
+   to the desktop value while keeping its content in place
+   (margin-top + padding-top stays -6em). */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 6em;
+  }
+  .elementor-27672 .elementor-element.elementor-element-6c2592a {
+    --margin-top: -9em;
+    --padding-top: 3em;
+  }
+}
+/* Tablet: next section overlaps -6em (96px); give the hero enough bottom
+   padding that the paragraph stays clear of the white overlap. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .elementor-27672 .elementor-element.elementor-element-dd5f53e {
+    --padding-bottom: 8em;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-27672 .elementor-element.elementor-element-39ea261 {
+    --padding-left: 1.25em;
+    --padding-right: 1.25em;
+  }
+  .elementor-27672 .elementor-element.elementor-element-803216c {
+    --padding-right: 1.25em;
+  }
+  /* The ebook card keeps its fixed 390px width + % left margin on mobile,
+     pushing it past the viewport's right edge. Cap it inside the column
+     and keep a small gap on its left. */
+  .elementor-27672 .elementor-element.elementor-element-4466d74 {
+    max-width: calc(100% - 1.25em);
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

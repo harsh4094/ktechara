@@ -1,0 +1,41 @@
+/* Page-specific responsive fixes for business-change-management-consultancy (post-29248).
+   Scoped to .elementor-29248 so no other page is affected.
+   Fixes:
+   1) Purple sidebar (8dea20f) staying at 25% width + stale 3em left padding
+      between 768-1023px, causing the benefits heading to wrap into a
+      cramped narrow column.
+   2) Content column (61a0224) staying at 66.6666% width + stale 5em left
+      padding in the same range, creating a large empty gap next to the
+      sidebar instead of stretching full width once the layout has
+      already stacked to a single column. */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .elementor-29248 .elementor-element.elementor-element-ce7953e > .e-con-inner {
+    flex-wrap: wrap;
+  }
+  .elementor-29248 .elementor-element.elementor-element-8dea20f {
+    --width: 100%;
+    --padding-left: 2em;
+    --padding-right: 2em;
+    --padding-top: 2em;
+    --padding-bottom: 2em;
+  }
+  .elementor-29248 .elementor-element.elementor-element-61a0224 {
+    --width: 100%;
+    --padding-left: 2em;
+    --padding-right: 2em;
+    --padding-top: 2em;
+    --padding-bottom: 2em;
+  }
+}
+@media (max-width: 768px) {
+  .elementor-29248 .elementor-element.elementor-element-ce7953e > .e-con-inner {
+    flex-wrap: wrap;
+  }
+  .elementor-29248 .elementor-element.elementor-element-8dea20f {
+    --width: 100%;
+    --padding-left: 2em;
+    --padding-right: 2em;
+    --padding-top: 2em;
+    --padding-bottom: 2em;
+  }
+}
