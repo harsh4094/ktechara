@@ -201,8 +201,8 @@ async function main() {
       [/https?:\/\/(?:www\.)?advania\.co\.uk\/privacy-policy\/?/g, '/privacy-policy/'],
       // terms-of-use
       [/https?:\/\/(?:www\.)?advania\.co\.uk\/terms-of-use\/?/g, '/terms-of-use/'],
-      // cookie-notice
-      [/https?:\/\/(?:www\.)?advania\.co\.uk\/cookie-notice\/?/g, '/cookie-notice/'],
+      // cookie-notice page removed — redirect old links to privacy-policy
+      [/https?:\/\/(?:www\.)?advania\.co\.uk\/cookie-notice\/?/g, '/privacy-policy/'],
       // anti-slavery-statement
       [/https?:\/\/(?:www\.)?advania\.co\.uk\/anti-slavery-statement\/?/g, '/anti-slavery-statement/'],
       // code-of-conduct → complaints-code (closest local equivalent)
