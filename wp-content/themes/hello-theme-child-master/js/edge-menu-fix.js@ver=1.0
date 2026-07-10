@@ -248,14 +248,14 @@
         {
           heading: 'Solutions',
           items: [
-            { text: 'AI Transformation',                              url: '/our-services/data-and-ai-transformation/index.html' },
+            { text: 'AI Transformation',                              url: '/our-solutions/ai-transformation/index.html' },
             { text: 'Cloud, Platform & Network',                      url: '/our-solutions/cloud-platform-network/' },
-            { text: 'Cyber Resilience',                               url: '/our-services/cyber-security-and-compliance-services/index.html' },
+            { text: 'Cyber Resilience',                               url: '/our-solutions/cyber-resilience/index.html' },
             { text: 'Data',                                           url: '/our-solutions/data/' },
-            { text: 'Digital Employee Experience',                    url: '/our-services/modern-work/index.html' },
+            { text: 'Digital Employee Experience',                    url: '/our-solutions/digital-employee-experience/index.html' },
             { text: 'High-Performance Computing',                     url: '/our-solutions/high-performance-compute/index.html' },
             { text: 'Microsoft Dynamics 365 & Business Applications', url: '/our-solutions/dynamics-365-and-business-applications/' },
-            { text: 'Unified Communications',                         url: '/our-services/unified-communications/unified-communications-and-collaboration/index.html' }
+            { text: 'Unified Communications',                         url: '/our-solutions/unified-communications/index.html' }
           ],
           viewAll: { text: 'VIEW ALL SOLUTIONS', url: '/our-solutions.html' }
         },
