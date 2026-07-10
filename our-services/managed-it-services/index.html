@@ -888,167 +888,8 @@
       content="Advance your business with Advania. The trusted technology partner that listens and understands your needs, in order to curate tailored solutions that deliver your critical business outcomes."
     />
 
-    <!-- Didomi SDK -->
-    <script type="text/javascript">
-      (function () {
-        function i(e) {
-          if (!window.frames[e]) {
-            if (document.body && document.body.firstChild) {
-              var t = document.body;
-              var n = document.createElement("iframe");
-              n.style.display = "none";
-              n.name = e;
-              n.title = e;
-              t.insertBefore(n, t.firstChild);
-            } else {
-              setTimeout(function () {
-                i(e);
-              }, 5);
-            }
-          }
-        }
-
-        function e(n, o, r, f, s) {
-          function e(e, t, n, i) {
-            if (typeof n !== "function") {
-              return;
-            }
-            if (!window[o]) {
-              window[o] = [];
-            }
-            var a = false;
-            if (s) {
-              a = s(e, i, n);
-            }
-            if (!a) {
-              window[o].push({
-                command: e,
-                version: t,
-                callback: n,
-                parameter: i,
-              });
-            }
-          }
-          e.stub = true;
-          e.stubVersion = 2;
-
-          function t(i) {
-            if (!window[n] || window[n].stub !== true) {
-              return;
-            }
-            if (!i.data) {
-              return;
-            }
-            var a = typeof i.data === "string";
-            var e;
-            try {
-              e = a ? JSON.parse(i.data) : i.data;
-            } catch (t) {
-              return;
-            }
-            if (e[r]) {
-              var o = e[r];
-              window[n](
-                o.command,
-                o.version,
-                function (e, t) {
-                  var n = {};
-                  n[f] = {
-                    returnValue: e,
-                    success: t,
-                    callId: o.callId,
-                  };
-                  if (i.source) {
-                    i.source.postMessage(a ? JSON.stringify(n) : n, "*");
-                  }
-                },
-                o.parameter,
-              );
-            }
-          }
-          if (typeof window[n] !== "function") {
-            window[n] = e;
-            if (window.addEventListener) {
-              window.addEventListener("message", t, false);
-            } else {
-              window.attachEvent("onmessage", t);
-            }
-          }
-        }
-        e("__tcfapi", "__tcfapiBuffer", "__tcfapiCall", "__tcfapiReturn");
-        i("__tcfapiLocator");
-      })();
-    </script>
-    <script type="text/javascript">
-      (function () {
-        (function (e, i, o) {
-          var n = document.createElement("link");
-          n.rel = "preconnect";
-          n.as = "script";
-          var t = document.createElement("link");
-          t.rel = "dns-prefetch";
-          t.as = "script";
-          var r = document.createElement("script");
-          r.id = "spcloader";
-          r.type = "text/javascript";
-          r["async"] = true;
-          r.charset = "utf-8";
-          window.didomiConfig = window.didomiConfig || {};
-          window.didomiConfig.sdkPath =
-            window.didomiConfig.sdkPath ||
-            o ||
-            "https://sdk.privacy-center.org/";
-          const d = window.didomiConfig.sdkPath;
-          var a = d + e + "/loader.js?target_type=notice&target=" + i;
-          if (window.didomiConfig && window.didomiConfig.user) {
-            var c = window.didomiConfig.user;
-            var s = c.country;
-            var f = c.region;
-            if (s) {
-              a = a + "&country=" + s;
-              if (f) {
-                a = a + "&region=" + f;
-              }
-            }
-          }
-          n.href = d;
-          t.href = d;
-          r.src = a;
-          var m = document.getElementsByTagName("script")[0];
-          m.parentNode.insertBefore(n, m);
-          m.parentNode.insertBefore(t, m);
-          m.parentNode.insertBefore(r, m);
-        })("97287281-0be1-45dc-8e19-527958909225", "WKDNURGZ");
-      })();
-    </script>
-    <!-- End Didomi SDK -->
-    <script type="text/javascript">
-      window.didomiConfig = window.didomiConfig || {};
-      window.didomiConfig.notice = window.didomiConfig.notice || {};
-      window.didomiConfig.notice.logo = {
-        src: "/wp-content/uploads/2023/09/main-logo.png",
-        alt: "K Techara",
-        width: "160",
-        height: "auto",
-      };
-      window.didomiConfig.theme = window.didomiConfig.theme || {};
-      window.didomiConfig.theme.color = "#D76AB3";
-      window.didomiConfig.theme.linkColor = "#D76AB3";
-      window.didomiConfig.theme.buttons = {
-        regularButtons: {
-          backgroundColor: "transparent",
-          textColor: "#D76AB3",
-          borderColor: "#D76AB3",
-          borderRadius: "50px",
-        },
-        highlightButtons: {
-          backgroundColor: "#D76AB3",
-          textColor: "#ffffff",
-          borderColor: "#D76AB3",
-          borderRadius: "50px",
-        },
-      };
-    </script>
+    
+    
 
     <style>
       .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload),
@@ -11400,16 +11241,7 @@
                         >Terms of Use</a
                       >
                     </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27555"
-                    >
-                      <a
-                        href="/cookie-notice/index.html"
-                        class="elementor-item"
-                        data-wpel-link="internal"
-                        >Cookie Notice</a
-                      >
-                    </li>
+                    
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27554"
                     >
@@ -11470,17 +11302,7 @@
                         >Terms of Use</a
                       >
                     </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27555"
-                    >
-                      <a
-                        href="/cookie-notice/index.html"
-                        class="elementor-item"
-                        tabindex="-1"
-                        data-wpel-link="internal"
-                        >Cookie Notice</a
-                      >
-                    </li>
+                    
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27554"
                     >
@@ -11517,20 +11339,7 @@
                   </ul>
                 </nav>
               </div>
-              <div
-                class="elementor-element elementor-element-31631383 elementor-widget elementor-widget-html"
-                data-id="31631383"
-                data-element_type="widget"
-                data-e-type="widget"
-                data-widget_type="html.default"
-              >
-                <a
-                  style="color: #f0dcf0; font-size: 11px; line-height: 11px"
-                  href="javascript:Didomi.preferences.show()"
-                  data-wpel-link="internal"
-                  >Manage Privacy</a
-                >
-              </div>
+              
             </div>
           </div>
         </div>
