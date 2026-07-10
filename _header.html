@@ -25,6 +25,60 @@
   class="elementor elementor-31649 elementor-location-header"
   data-elementor-post-type="elementor_library"
 >
+<style id="nav-links-disabled">
+/* TEMPORARY: all nav links disabled except Partners section */
+header a,
+footer a,
+.elementor-31866 a,
+.ktm-p a {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+/* Re-enable: logos, mobile bar controls, and all Partners links */
+header .header a,
+header .mobile-nav a,
+footer .elementor-widget-theme-site-logo a,
+.ktm-p .ktm-hd__logo,
+header a[href^="/partners/"],
+header a[href="/about-us/microsoft-partnership.1.html"],
+footer a[href^="/partners/"],
+footer a[href="/about-us/microsoft-partnership.1.html"],
+.ktm-p a[href^="/partners/"],
+.ktm-p a[href="/about-us/microsoft-partnership.1.html"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+</style>
+<script id="nav-links-disabled-js">
+(function () {
+    function isPartnersLink(a) {
+        var href = a.getAttribute('href') || '';
+        return href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html';
+    }
+    function shouldDisable(a) {
+        var inHeader = !!a.closest('[data-elementor-type="header"]');
+        var inFooter = !!a.closest('[data-elementor-type="footer"]');
+        var inPopup = !!a.closest('.elementor-31866');
+        var inPanel = !!a.closest('.ktm-p');
+        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
+        if (isPartnersLink(a)) return false;
+        if (inHeader && a.closest('.header')) return false;
+        if (inHeader && a.closest('.mobile-nav')) return false;
+        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
+        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
+        return true;
+    }
+    function prevent(e) {
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (a && shouldDisable(a)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+    }
+    document.addEventListener('click', prevent, true);
+    document.addEventListener('touchend', prevent, { capture: true, passive: false });
+})();
+</script>
   <header
     class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent"
     data-id="6aa92ab4"
@@ -459,7 +513,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32908"
                                         >
                                           <a
-                                            href="/our-services/data-and-ai-transformation/index.html"
+                                            href="/our-solutions/ai-transformation/index.html"
                                             class="elementor-item"
                                             data-wpel-link="internal"
                                             >AI Transformation</a
@@ -479,7 +533,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904"
                                         >
                                           <a
-                                            href="/our-services/cyber-security-and-compliance-services/index.html"
+                                            href="/our-solutions/cyber-resilience/index.html"
                                             class="elementor-item"
                                             data-wpel-link="internal"
                                             >Cyber Resilience</a
@@ -499,7 +553,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905"
                                         >
                                           <a
-                                            href="/our-services/modern-work/index.html"
+                                            href="/our-solutions/digital-employee-experience/index.html"
                                             class="elementor-item"
                                             data-wpel-link="internal"
                                             >Digital Employee Experience</a
@@ -530,7 +584,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906"
                                         >
                                           <a
-                                            href="/our-services/unified-communications/unified-communications-and-collaboration/index.html"
+                                            href="/our-solutions/unified-communications/index.html"
                                             class="elementor-item"
                                             data-wpel-link="internal"
                                             >Unified Communications</a
@@ -550,7 +604,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32908"
                                         >
                                           <a
-                                            href="/our-services/data-and-ai-transformation/index.html"
+                                            href="/our-solutions/ai-transformation/index.html"
                                             class="elementor-item"
                                             tabindex="-1"
                                             data-wpel-link="internal"
@@ -572,7 +626,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904"
                                         >
                                           <a
-                                            href="/our-services/cyber-security-and-compliance-services/index.html"
+                                            href="/our-solutions/cyber-resilience/index.html"
                                             class="elementor-item"
                                             tabindex="-1"
                                             data-wpel-link="internal"
@@ -594,7 +648,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905"
                                         >
                                           <a
-                                            href="/our-services/modern-work/index.html"
+                                            href="/our-solutions/digital-employee-experience/index.html"
                                             class="elementor-item"
                                             tabindex="-1"
                                             data-wpel-link="internal"
@@ -628,7 +682,7 @@
                                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906"
                                         >
                                           <a
-                                            href="/our-services/unified-communications/unified-communications-and-collaboration/index.html"
+                                            href="/our-solutions/unified-communications/index.html"
                                             class="elementor-item"
                                             tabindex="-1"
                                             data-wpel-link="internal"
@@ -2434,7 +2488,7 @@
         <div class="elementor-icon-wrapper">
           <a
             class="elementor-icon"
-            href="/insights/create-canvas-apps.html#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjMxODY2IiwidG9nZ2xlIjpmYWxzZX0%3D"
+            href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjMxODY2IiwidG9nZ2xlIjpmYWxzZX0%3D"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
