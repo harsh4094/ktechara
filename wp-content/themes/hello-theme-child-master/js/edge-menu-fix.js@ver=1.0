@@ -238,8 +238,8 @@
           heading: 'Technology sourcing',
           items: [
             { text: 'Data Centre & Networking',  url: '/technology-sourcing/data-centre-and-networking/' },
-            { text: 'AV & Collaboration',        url: '/our-solutions/av-collaboration/index.html' },
-            { text: 'Devices & Management',      url: '/our-solutions/devices-and-management/index.html' },
+            { text: 'AV & Collaboration',        url: '/technology-sourcing/av-collaboration/' },
+            { text: 'Devices & Management',      url: '/technology-sourcing/devices-and-management/' },
             { text: 'Print & Office Solutions',  url: '/technology-sourcing/print-and-office-solutions/' },
             { text: 'Software & Licensing',      url: '/technology-sourcing/licensing/' }
           ],
