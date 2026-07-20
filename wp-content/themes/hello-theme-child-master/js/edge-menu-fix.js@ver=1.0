@@ -634,7 +634,9 @@
       if (!a) return;
       if (a.classList.contains('ktm-hd__logo')) return;
       var href = a.getAttribute('href') || '';
-      if (href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html') return;
+      if (href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html' ||
+          href.indexOf('/technology-sourcing/') === 0 || href.indexOf('/solutions-by-sector/') === 0 ||
+          href.indexOf('/our-services/') === 0) return;
       e.preventDefault();
       e.stopImmediatePropagation();
     }
