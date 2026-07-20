@@ -636,7 +636,7 @@
       var href = a.getAttribute('href') || '';
       if (href.indexOf('/partners/') === 0 || href === '/about-us/microsoft-partnership.1.html' ||
           href.indexOf('/technology-sourcing/') === 0 || href.indexOf('/solutions-by-sector/') === 0 ||
-          href.indexOf('/our-services/') === 0) return;
+          href.indexOf('/our-services/') === 0 || href.indexOf('/our-solutions/') === 0) return;
       e.preventDefault();
       e.stopImmediatePropagation();
     }
