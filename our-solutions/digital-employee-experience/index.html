@@ -1264,83 +1264,75 @@
     }
   }
 </style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
 <header
   data-elementor-type="header"
   data-elementor-id="31649"
   class="elementor elementor-31649 elementor-location-header"
   data-elementor-post-type="elementor_library"
 >
-<style id="nav-links-disabled">
-/* TEMPORARY: all nav links disabled except allowed sections */
-header a,
-footer a,
-.elementor-31866 a,
-.ktm-p a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-/* Re-enable: logos, mobile bar controls, Partners, Technology Sourcing, Solutions-by-Sector, Our Services, Our Solutions */
-header .header a,
-header .mobile-nav a,
-footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo,
-header a[href^="/partners/"],
-header a[href="/about-us/microsoft-partnership.1.html"],
-header a[href^="/technology-sourcing/"],
-header a[href^="/solutions-by-sector/"],
-header a[href^="/our-services/"],
-header a[href^="/our-solutions/"],
-footer a[href^="/partners/"],
-footer a[href="/about-us/microsoft-partnership.1.html"],
-footer a[href^="/technology-sourcing/"],
-footer a[href^="/solutions-by-sector/"],
-footer a[href^="/our-services/"],
-footer a[href^="/our-solutions/"],
-.ktm-p a[href^="/partners/"],
-.ktm-p a[href="/about-us/microsoft-partnership.1.html"],
-.ktm-p a[href^="/technology-sourcing/"],
-.ktm-p a[href^="/solutions-by-sector/"],
-.ktm-p a[href^="/our-services/"],
-.ktm-p a[href^="/our-solutions/"] {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-}
-</style>
-<script id="nav-links-disabled-js">
-(function () {
-    function isAllowedLink(a) {
-        var href = a.getAttribute('href') || '';
-        return href.indexOf('/partners/') === 0 ||
-               href === '/about-us/microsoft-partnership.1.html' ||
-               href.indexOf('/technology-sourcing/') === 0 ||
-               href.indexOf('/solutions-by-sector/') === 0 ||
-               href.indexOf('/our-services/') === 0 ||
-               href.indexOf('/our-solutions/') === 0;
-    }
-    function shouldDisable(a) {
-        var inHeader = !!a.closest('[data-elementor-type="header"]');
-        var inFooter = !!a.closest('[data-elementor-type="footer"]');
-        var inPopup = !!a.closest('.elementor-31866');
-        var inPanel = !!a.closest('.ktm-p');
-        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-        if (isAllowedLink(a)) return false;
-        if (inHeader && a.closest('.header')) return false;
-        if (inHeader && a.closest('.mobile-nav')) return false;
-        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
-        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
-        return true;
-    }
-    function prevent(e) {
-        var a = e.target.closest ? e.target.closest('a') : null;
-        if (a && shouldDisable(a)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-    }
-    document.addEventListener('click', prevent, true);
-    document.addEventListener('touchend', prevent, { capture: true, passive: false });
-})();
-</script>
   <header
     class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent"
     data-id="6aa92ab4"
@@ -2635,12 +2627,7 @@ footer a[href^="/our-solutions/"],
                                                 data-e-type="widget"
                                                 data-widget_type="image.default"
                                               >
-                                                <a
-                                                  href="#"
-                                                  target="_blank"
-                                                  data-wpel-link="external"
-                                                  rel="nofollow external noopener noreferrer"
-                                                >
+                                                <a href="/" data-wpel-link="internal">
                                                   <img
                                                     width="1200"
                                                     height="627"
@@ -2676,7 +2663,6 @@ footer a[href^="/our-solutions/"],
                                                       class="elementor-heading-title elementor-size-default"
                                                     >
                                                       <a
-                                                        href="#"
                                                         target="_blank"
                                                         data-wpel-link="external"
                                                         rel="nofollow external noopener noreferrer"
@@ -2696,7 +2682,6 @@ footer a[href^="/our-solutions/"],
                                                       class="elementor-heading-title elementor-size-default"
                                                     >
                                                       <a
-                                                        href="#"
                                                         target="_blank"
                                                         data-wpel-link="external"
                                                         rel="nofollow external noopener noreferrer"
@@ -3770,6 +3755,9 @@ footer a[href^="/our-solutions/"],
     </div>
   </div>
 </header>
+
+
+
 
 
 
@@ -10981,6 +10969,9 @@ footer a[href^="/our-solutions/"],
     </div>
   </div>
 </footer>
+
+
+
 
 
 

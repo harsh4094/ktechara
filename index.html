@@ -1258,83 +1258,96 @@
     }
   }
 </style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
+<style id="responsive-global">
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent desktop nav overflow at narrow laptop widths (1024–1200px) */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .elementor-element-6aa92ab4 {
+      --n-menu-title-space-between: 14px;
+      --n-menu-title-font-size: 12px;
+    }
+    .elementor-element-6aa92ab4 .e-con-inner {
+      gap: 0 8px;
+    }
+    .elementor-element-502e94aa .elementor-button {
+      font-size: 11px !important;
+      padding: 12px 18px !important;
+    }
+  }
+</style>
 <header
   data-elementor-type="header"
   data-elementor-id="31649"
   class="elementor elementor-31649 elementor-location-header"
   data-elementor-post-type="elementor_library"
 >
-<style id="nav-links-disabled">
-/* TEMPORARY: all nav links disabled except allowed sections */
-header a,
-footer a,
-.elementor-31866 a,
-.ktm-p a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-/* Re-enable: logos, mobile bar controls, Partners, Technology Sourcing, Solutions-by-Sector, Our Services, Our Solutions */
-header .header a,
-header .mobile-nav a,
-footer .elementor-widget-theme-site-logo a,
-.ktm-p .ktm-hd__logo,
-header a[href^="/partners/"],
-header a[href="/about-us/microsoft-partnership.1.html"],
-header a[href^="/technology-sourcing/"],
-header a[href^="/solutions-by-sector/"],
-header a[href^="/our-services/"],
-header a[href^="/our-solutions/"],
-footer a[href^="/partners/"],
-footer a[href="/about-us/microsoft-partnership.1.html"],
-footer a[href^="/technology-sourcing/"],
-footer a[href^="/solutions-by-sector/"],
-footer a[href^="/our-services/"],
-footer a[href^="/our-solutions/"],
-.ktm-p a[href^="/partners/"],
-.ktm-p a[href="/about-us/microsoft-partnership.1.html"],
-.ktm-p a[href^="/technology-sourcing/"],
-.ktm-p a[href^="/solutions-by-sector/"],
-.ktm-p a[href^="/our-services/"],
-.ktm-p a[href^="/our-solutions/"] {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-}
-</style>
-<script id="nav-links-disabled-js">
-(function () {
-    function isAllowedLink(a) {
-        var href = a.getAttribute('href') || '';
-        return href.indexOf('/partners/') === 0 ||
-               href === '/about-us/microsoft-partnership.1.html' ||
-               href.indexOf('/technology-sourcing/') === 0 ||
-               href.indexOf('/solutions-by-sector/') === 0 ||
-               href.indexOf('/our-services/') === 0 ||
-               href.indexOf('/our-solutions/') === 0;
-    }
-    function shouldDisable(a) {
-        var inHeader = !!a.closest('[data-elementor-type="header"]');
-        var inFooter = !!a.closest('[data-elementor-type="footer"]');
-        var inPopup = !!a.closest('.elementor-31866');
-        var inPanel = !!a.closest('.ktm-p');
-        if (!inHeader && !inFooter && !inPopup && !inPanel) return false;
-        if (isAllowedLink(a)) return false;
-        if (inHeader && a.closest('.header')) return false;
-        if (inHeader && a.closest('.mobile-nav')) return false;
-        if (inFooter && a.closest('.elementor-widget-theme-site-logo')) return false;
-        if (inPanel && a.classList.contains('ktm-hd__logo')) return false;
-        return true;
-    }
-    function prevent(e) {
-        var a = e.target.closest ? e.target.closest('a') : null;
-        if (a && shouldDisable(a)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-    }
-    document.addEventListener('click', prevent, true);
-    document.addEventListener('touchend', prevent, { capture: true, passive: false });
-})();
-</script>
   <header
     class="elementor-element elementor-element-6aa92ab4 elementor-hidden-tablet elementor-hidden-mobile darknav e-flex e-con-boxed e-con e-parent"
     data-id="6aa92ab4"
@@ -2629,12 +2642,7 @@ footer a[href^="/our-solutions/"],
                                                 data-e-type="widget"
                                                 data-widget_type="image.default"
                                               >
-                                                <a
-                                                  href="#"
-                                                  target="_blank"
-                                                  data-wpel-link="external"
-                                                  rel="nofollow external noopener noreferrer"
-                                                >
+                                                <a href="/" data-wpel-link="internal">
                                                   <img
                                                     width="1200"
                                                     height="627"
@@ -2670,7 +2678,6 @@ footer a[href^="/our-solutions/"],
                                                       class="elementor-heading-title elementor-size-default"
                                                     >
                                                       <a
-                                                        href="#"
                                                         target="_blank"
                                                         data-wpel-link="external"
                                                         rel="nofollow external noopener noreferrer"
@@ -2690,7 +2697,6 @@ footer a[href^="/our-solutions/"],
                                                       class="elementor-heading-title elementor-size-default"
                                                     >
                                                       <a
-                                                        href="#"
                                                         target="_blank"
                                                         data-wpel-link="external"
                                                         rel="nofollow external noopener noreferrer"
@@ -3769,6 +3775,10 @@ footer a[href^="/our-solutions/"],
 
 
 
+
+
+
+
     <div
       data-elementor-type="wp-page"
       data-elementor-id="33367"
@@ -3833,7 +3843,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <a
                     class="elementor-button elementor-button-link elementor-size-sm"
-                    href="#"
+                    href="/contact-us/index.html"
                     data-wpel-link="internal"
                   >
                     <span class="elementor-button-content-wrapper">
@@ -3851,7 +3861,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <a
                     class="elementor-button elementor-button-link elementor-size-sm"
-                    href="#"
+                    href="/about-us/index.html"
                     data-wpel-link="internal"
                   >
                     <span class="elementor-button-content-wrapper">
@@ -3869,7 +3879,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <a
                     class="elementor-button elementor-button-link elementor-size-sm"
-                    href="#"
+                    href="/our-solutions/cyber-resilience/index.html"
                     data-wpel-link="internal"
                   >
                     <span class="elementor-button-content-wrapper">
@@ -5156,7 +5166,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <h2 class="elementor-heading-title elementor-size-default">
                     <a
-                      href="#"
+                      href="/our-solutions/"
                       data-wpel-link="external"
                       rel="nofollow external noopener noreferrer"
                       >Our <br />Solutions</a
@@ -5170,7 +5180,7 @@ footer a[href^="/our-solutions/"],
                   data-e-type="widget"
                   data-widget_type="image.default"
                 >
-                  <a href="#" data-wpel-link="internal">
+                  <a href="/our-solutions/" data-wpel-link="internal">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -5206,7 +5216,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <h2 class="elementor-heading-title elementor-size-default">
                     <a
-                      href="#"
+                      href="/technology-sourcing/"
                       data-wpel-link="external"
                       rel="nofollow external noopener noreferrer"
                       >Technology Sourcing</a
@@ -5220,7 +5230,7 @@ footer a[href^="/our-solutions/"],
                   data-e-type="widget"
                   data-widget_type="image.default"
                 >
-                  <a href="#" data-wpel-link="internal">
+                  <a href="/technology-sourcing/" data-wpel-link="internal">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -5256,7 +5266,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <h2 class="elementor-heading-title elementor-size-default">
                     <a
-                      href="#"
+                      href="/our-services/managed-it-services/index.html"
                       data-wpel-link="external"
                       rel="nofollow external noopener noreferrer"
                       >Managed IT Services</a
@@ -5270,7 +5280,7 @@ footer a[href^="/our-solutions/"],
                   data-e-type="widget"
                   data-widget_type="image.default"
                 >
-                  <a href="#" data-wpel-link="internal">
+                  <a href="/our-services/managed-it-services/index.html" data-wpel-link="internal">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -5306,7 +5316,7 @@ footer a[href^="/our-solutions/"],
                 >
                   <h2 class="elementor-heading-title elementor-size-default">
                     <a
-                      href="#"
+                      href="/our-services/it-consulting-services/"
                       data-wpel-link="external"
                       rel="nofollow external noopener noreferrer"
                       >IT Consulting Services</a
@@ -5320,7 +5330,7 @@ footer a[href^="/our-solutions/"],
                   data-e-type="widget"
                   data-widget_type="image.default"
                 >
-                  <a href="#" data-wpel-link="internal">
+                  <a href="/our-services/it-consulting-services/" data-wpel-link="internal">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -6845,7 +6855,7 @@ footer a[href^="/our-solutions/"],
                               >
                                 <span class="elementor-post-info__terms-list">
                                   <a
-                                    href="#"
+                                    href="/blog/"
                                     class="elementor-post-info__terms-list-item"
                                     data-wpel-link="internal"
                                     >Blog</a
@@ -6865,7 +6875,7 @@ footer a[href^="/our-solutions/"],
                           <h4
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a href="/blog/ai-and-automation/microsoft-365-e7-a-new-frontier-for-ai-at-scale/" data-wpel-link="internal"
                               >Microsoft 365 E7: A new frontier for AI at
                               scale</a
                             >
@@ -6887,7 +6897,7 @@ footer a[href^="/our-solutions/"],
                             data-e-type="widget"
                             data-widget_type="theme-post-featured-image.default"
                           >
-                            <a href="#" data-wpel-link="internal">
+                            <a href="/blog/ai-and-automation/microsoft-365-e7-a-new-frontier-for-ai-at-scale/" data-wpel-link="internal">
                               <img
                                 loading="lazy"
                                 decoding="async"
@@ -6959,7 +6969,7 @@ footer a[href^="/our-solutions/"],
                               >
                                 <span class="elementor-post-info__terms-list">
                                   <a
-                                    href="#"
+                                    href="/blog/"
                                     class="elementor-post-info__terms-list-item"
                                     data-wpel-link="internal"
                                     >Blog</a
@@ -6979,7 +6989,7 @@ footer a[href^="/our-solutions/"],
                           <h4
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a href="/blog/azure-and-cloud/the-advania-guide-to-azure-part-4-balancing-resilience-and-cost-in-azure/" data-wpel-link="internal"
                               >The K Techara guide to Azure (part 4): Balancing
                               resilience and cost in Azure</a
                             >
@@ -7001,7 +7011,7 @@ footer a[href^="/our-solutions/"],
                             data-e-type="widget"
                             data-widget_type="theme-post-featured-image.default"
                           >
-                            <a href="#" data-wpel-link="internal">
+                            <a href="/blog/azure-and-cloud/the-advania-guide-to-azure-part-4-balancing-resilience-and-cost-in-azure/" data-wpel-link="internal">
                               <img
                                 loading="lazy"
                                 decoding="async"
@@ -7073,7 +7083,7 @@ footer a[href^="/our-solutions/"],
                               >
                                 <span class="elementor-post-info__terms-list">
                                   <a
-                                    href="#"
+                                    href="/blog/"
                                     class="elementor-post-info__terms-list-item"
                                     data-wpel-link="internal"
                                     >Blog</a
@@ -7093,7 +7103,7 @@ footer a[href^="/our-solutions/"],
                           <h4
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a href="/blog/strategy/navigating-public-sector-it-why-the-right-partner-makes-all-the-difference/" data-wpel-link="internal"
                               >Navigating public sector IT: Why the right
                               partner makes all the difference</a
                             >
@@ -7115,7 +7125,7 @@ footer a[href^="/our-solutions/"],
                             data-e-type="widget"
                             data-widget_type="theme-post-featured-image.default"
                           >
-                            <a href="#" data-wpel-link="internal">
+                            <a href="/blog/strategy/navigating-public-sector-it-why-the-right-partner-makes-all-the-difference/" data-wpel-link="internal">
                               <img
                                 loading="lazy"
                                 decoding="async"
@@ -7230,7 +7240,7 @@ footer a[href^="/our-solutions/"],
           >
             <a
               class="elementor-button elementor-button-link elementor-size-sm"
-              href="#"
+              href="/talk-to-an-expert.html"
               data-wpel-link="internal"
             >
               <span class="elementor-button-content-wrapper">
@@ -10570,6 +10580,10 @@ footer a[href^="/our-solutions/"],
 
 
 
+
+
+
+
     <script
       data-cfasync="false"
       src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
@@ -10607,14 +10621,14 @@ footer a[href^="/our-solutions/"],
               data-widget_type="image.default"
             >
               <a
-                href="#"
+                href="/"
                 aria="K Techara Limited logo"
                 data-wpel-link="internal"
               >
                 <img
                   width="192"
                   height="43"
-                  src="wp-content/uploads/2025/08/main-logo.png"
+                  src="../../wp-content/uploads/2025/08/main-logo.png"
                   class="attachment-large size-large wp-image-31865"
                   alt=""
                 />
@@ -10687,7 +10701,9 @@ footer a[href^="/our-solutions/"],
                       data-widget_type="heading.default"
                     >
                       <p class="elementor-heading-title elementor-size-default">
-                        <a href="#" data-wpel-link="internal"
+                        <a
+                          href="../../technology-sourcing/"
+                          data-wpel-link="internal"
                           >Technology sourcing</a
                         >
                       </p>
@@ -10712,7 +10728,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32899"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/data-centre-and-networking/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Data Centre &#038; Networking</a
@@ -10722,7 +10738,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32898"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/av-collaboration/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >AV &#038; Collaboration</a
@@ -10732,7 +10748,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32900"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/devices-and-management/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Devices &#038; Management</a
@@ -10742,7 +10758,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32902"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/print-and-office-solutions/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Print &#038; Office Solutions</a
@@ -10752,7 +10768,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32901"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/licensing/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Software &#038; Licensing</a
@@ -10772,7 +10788,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32899"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/data-centre-and-networking/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10783,7 +10799,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32898"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/av-collaboration/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10794,7 +10810,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32900"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/devices-and-management/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10805,7 +10821,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32902"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/print-and-office-solutions/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10816,7 +10832,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32901"
                           >
                             <a
-                              href="#"
+                              href="../../technology-sourcing/licensing/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -10835,7 +10851,7 @@ footer a[href^="/our-solutions/"],
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="#"
+                        href="../../technology-sourcing/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -10878,7 +10894,9 @@ footer a[href^="/our-solutions/"],
                       data-widget_type="heading.default"
                     >
                       <p class="elementor-heading-title elementor-size-default">
-                        <a href="#" data-wpel-link="internal">Solutions</a>
+                        <a href="../../our-solutions/" data-wpel-link="internal"
+                          >Solutions</a
+                        >
                       </p>
                     </div>
                     <div
@@ -10901,7 +10919,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32908"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/ai-transformation/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >AI Transformation</a
@@ -10911,7 +10929,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32903"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/cloud-platform-network/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Cloud, Platform &#038; Network</a
@@ -10921,7 +10939,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/cyber-resilience/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Cyber Resilience</a
@@ -10931,7 +10949,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32909"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/data/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Data</a
@@ -10941,7 +10959,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/digital-employee-experience/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Digital Employee Experience</a
@@ -10951,7 +10969,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33301"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/high-performance-compute/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >High-Performance Computing</a
@@ -10961,7 +10979,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32907"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/dynamics-365-and-business-applications/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Microsoft Dynamics 365 &#038; Business
@@ -10972,7 +10990,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/unified-communications/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Unified Communications</a
@@ -10992,7 +11010,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32908"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/ai-transformation/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11003,7 +11021,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32903"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/cloud-platform-network/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11014,7 +11032,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32904"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/cyber-resilience/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11025,7 +11043,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32909"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/data/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11036,7 +11054,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32905"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/digital-employee-experience/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11047,7 +11065,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33301"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/high-performance-compute/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11058,7 +11076,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32907"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/dynamics-365-and-business-applications/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11070,7 +11088,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32906"
                           >
                             <a
-                              href="#"
+                              href="../../our-solutions/unified-communications/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11089,7 +11107,7 @@ footer a[href^="/our-solutions/"],
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="#"
+                        href="../../our-solutions/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -11132,7 +11150,9 @@ footer a[href^="/our-solutions/"],
                       data-widget_type="heading.default"
                     >
                       <p class="elementor-heading-title elementor-size-default">
-                        <a href="#" data-wpel-link="internal">Services</a>
+                        <a href="../../our-services/" data-wpel-link="internal"
+                          >Services</a
+                        >
                       </p>
                     </div>
                     <div
@@ -11155,7 +11175,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/managed-it-services/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >Managed IT Services</a
@@ -11165,7 +11185,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/it-consulting-services/"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >IT Consulting Services</a
@@ -11175,7 +11195,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/it-services-for-smb/index.html"
                               class="elementor-item"
                               data-wpel-link="internal"
                               >IT Services for SMBs</a
@@ -11195,7 +11215,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/managed-it-services/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11206,7 +11226,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/it-consulting-services/"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11217,7 +11237,7 @@ footer a[href^="/our-solutions/"],
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                           >
                             <a
-                              href="#"
+                              href="../../our-services/it-services-for-smb/index.html"
                               class="elementor-item"
                               tabindex="-1"
                               data-wpel-link="internal"
@@ -11236,7 +11256,7 @@ footer a[href^="/our-solutions/"],
                     >
                       <a
                         class="elementor-button elementor-button-link elementor-size-sm"
-                        href="#"
+                        href="../../our-services/"
                         data-wpel-link="internal"
                       >
                         <span class="elementor-button-content-wrapper">
@@ -11304,7 +11324,11 @@ footer a[href^="/our-solutions/"],
                         <p
                           class="elementor-heading-title elementor-size-default"
                         >
-                          <a href="#" data-wpel-link="internal">Sectors</a>
+                          <a
+                            href="../../solutions-by-sector/"
+                            data-wpel-link="internal"
+                            >Sectors</a
+                          >
                         </p>
                       </div>
                       <div
@@ -11327,7 +11351,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32916"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/finance/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Finance</a
@@ -11337,7 +11361,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/insurance/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Insurance</a
@@ -11347,7 +11371,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/legal-and-professional/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Legal &#038; Professional</a
@@ -11357,7 +11381,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32917"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/public-sector/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Public Sector</a
@@ -11377,7 +11401,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32916"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/finance/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11388,7 +11412,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32914"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/insurance/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11399,7 +11423,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32915"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/legal-and-professional/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11410,7 +11434,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32917"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/public-sector/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11440,7 +11464,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32918"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/leisure-and-hospitality/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Leisure &#038; Hospitality</a
@@ -11450,7 +11474,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32919"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/not-for-profit/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Not For Profit</a
@@ -11460,7 +11484,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32920"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/retail/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Retail</a
@@ -11480,7 +11504,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32918"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/leisure-and-hospitality/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11491,7 +11515,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32919"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/not-for-profit/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11502,7 +11526,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32920"
                             >
                               <a
-                                href="#"
+                                href="../../solutions-by-sector/retail/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11557,7 +11581,11 @@ footer a[href^="/our-solutions/"],
                         <p
                           class="elementor-heading-title elementor-size-default"
                         >
-                          <a href="#" data-wpel-link="internal">Partners</a>
+                          <a
+                            href="../../about-us/ecosystem-and-partners/index.html"
+                            data-wpel-link="internal"
+                            >Partners</a
+                          >
                         </p>
                       </div>
                       <div
@@ -11577,11 +11605,12 @@ footer a[href^="/our-solutions/"],
                             class="elementor-nav-menu sm-vertical"
                           >
                             <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32933"
+                              class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32479 current_page_item menu-item-32933"
                             >
                               <a
-                                href="#"
-                                class="elementor-item"
+                                href="index.html"
+                                aria-current="page"
+                                class="elementor-item elementor-item-active"
                                 data-wpel-link="internal"
                                 >Apple</a
                               >
@@ -11590,7 +11619,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32931"
                             >
                               <a
-                                href="#"
+                                href="../cisco/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Cisco</a
@@ -11600,7 +11629,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32932"
                             >
                               <a
-                                href="#"
+                                href="../dell/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Dell</a
@@ -11610,7 +11639,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32929"
                             >
                               <a
-                                href="#"
+                                href="../hp/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >HP</a
@@ -11620,7 +11649,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32930"
                             >
                               <a
-                                href="#"
+                                href="../hpe/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >HPE</a
@@ -11630,7 +11659,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32928"
                             >
                               <a
-                                href="#"
+                                href="../lenovo/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Lenovo</a
@@ -11640,7 +11669,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                             >
                               <a
-                                href="#"
+                                href="/partners/microsoft/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Microsoft</a
@@ -11650,7 +11679,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32927"
                             >
                               <a
-                                href="#"
+                                href="../microsoft-surface/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Microsoft Surface</a
@@ -11667,11 +11696,12 @@ footer a[href^="/our-solutions/"],
                             class="elementor-nav-menu sm-vertical"
                           >
                             <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32933"
+                              class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32479 current_page_item menu-item-32933"
                             >
                               <a
-                                href="#"
-                                class="elementor-item"
+                                href="index.html"
+                                aria-current="page"
+                                class="elementor-item elementor-item-active"
                                 tabindex="-1"
                                 data-wpel-link="internal"
                                 >Apple</a
@@ -11681,7 +11711,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32931"
                             >
                               <a
-                                href="#"
+                                href="../cisco/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11692,7 +11722,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32932"
                             >
                               <a
-                                href="#"
+                                href="../dell/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11703,7 +11733,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32929"
                             >
                               <a
-                                href="#"
+                                href="../hp/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11714,7 +11744,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32930"
                             >
                               <a
-                                href="#"
+                                href="../hpe/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11725,7 +11755,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32928"
                             >
                               <a
-                                href="#"
+                                href="../lenovo/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11736,7 +11766,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32934"
                             >
                               <a
-                                href="#"
+                                href="/partners/microsoft/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11747,7 +11777,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32927"
                             >
                               <a
-                                href="#"
+                                href="../microsoft-surface/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11766,7 +11796,7 @@ footer a[href^="/our-solutions/"],
                       >
                         <a
                           class="elementor-button elementor-button-link elementor-size-sm"
-                          href="#"
+                          href="../../about-us/ecosystem-and-partners/index.html"
                           data-wpel-link="internal"
                         >
                           <span class="elementor-button-content-wrapper">
@@ -11835,7 +11865,9 @@ footer a[href^="/our-solutions/"],
                         <p
                           class="elementor-heading-title elementor-size-default"
                         >
-                          <a href="#" data-wpel-link="internal">About Us</a>
+                          <a href="../../about-us/" data-wpel-link="internal"
+                            >About Us</a
+                          >
                         </p>
                       </div>
                       <div
@@ -11858,7 +11890,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >About K Techara</a
@@ -11868,7 +11900,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923"
                             >
                               <a
-                                href="#"
+                                href="/insights/"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Case Studies</a
@@ -11878,7 +11910,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/people-culture-and-careers/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >People, Culture &#038; Careers</a
@@ -11888,7 +11920,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/sustainability-and-social-value/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Sustainability &#038; Social Value</a
@@ -11908,7 +11940,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31857"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11919,7 +11951,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32923"
                             >
                               <a
-                                href="#"
+                                href="/insights/"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11930,7 +11962,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31842"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/people-culture-and-careers/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11941,7 +11973,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31841"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/sustainability-and-social-value/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -11971,7 +12003,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31844"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/frameworks/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Frameworks</a
@@ -11981,7 +12013,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31846"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/leadership/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Leadership</a
@@ -11991,7 +12023,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31845"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/financing/index.html"
                                 class="elementor-item"
                                 data-wpel-link="internal"
                                 >Financing Options</a
@@ -12011,7 +12043,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31844"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/frameworks/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -12022,7 +12054,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31846"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/leadership/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -12033,7 +12065,7 @@ footer a[href^="/our-solutions/"],
                               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31845"
                             >
                               <a
-                                href="#"
+                                href="../../about-us/financing/index.html"
                                 class="elementor-item"
                                 tabindex="-1"
                                 data-wpel-link="internal"
@@ -12065,7 +12097,7 @@ footer a[href^="/our-solutions/"],
           >
             <a
               class="elementor-button elementor-button-link elementor-size-sm"
-              href="#"
+              href="../../talk-to-an-expert.html"
               data-wpel-link="internal"
             >
               <span class="elementor-button-content-wrapper">
@@ -12104,7 +12136,7 @@ footer a[href^="/our-solutions/"],
               data-widget_type="image.default"
             >
               <a
-                href="#"
+                href="/"
                 aria="K Techara Limited logo"
                 data-wpel-link="internal"
               >
@@ -12282,7 +12314,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12292,7 +12324,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -12302,7 +12334,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -12322,7 +12354,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12333,7 +12365,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12344,7 +12376,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12364,7 +12396,7 @@ footer a[href^="/our-solutions/"],
                               <p
                                 class="elementor-heading-title elementor-size-default"
                               >
-                                <a href="#" data-wpel-link="internal"
+                                <a data-wpel-link="internal"
                                   >View all Solutions by Need</a
                                 >
                               </p>
@@ -12430,7 +12462,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12440,7 +12472,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -12450,7 +12482,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -12470,7 +12502,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12481,7 +12513,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12492,7 +12524,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12512,7 +12544,7 @@ footer a[href^="/our-solutions/"],
                               <p
                                 class="elementor-heading-title elementor-size-default"
                               >
-                                <a href="#" data-wpel-link="internal"
+                                <a data-wpel-link="internal"
                                   >View all Solutions by Industry</a
                                 >
                               </p>
@@ -12553,7 +12585,7 @@ footer a[href^="/our-solutions/"],
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal">WORKSHOP</a>
+                            <a data-wpel-link="internal">WORKSHOP</a>
                           </p>
                         </div>
                         <div
@@ -12566,7 +12598,7 @@ footer a[href^="/our-solutions/"],
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a data-wpel-link="internal"
                               >Are you ready to join the Digital Revolution?</a
                             >
                           </p>
@@ -12588,7 +12620,7 @@ footer a[href^="/our-solutions/"],
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="#"
+                          href="/talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">
@@ -12688,7 +12720,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12698,7 +12730,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -12708,7 +12740,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -12728,7 +12760,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12739,7 +12771,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12750,7 +12782,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12821,7 +12853,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12831,7 +12863,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -12841,7 +12873,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -12861,7 +12893,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12872,7 +12904,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12883,7 +12915,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -12954,7 +12986,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -12964,7 +12996,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -12974,7 +13006,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -12994,7 +13026,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13005,7 +13037,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13016,7 +13048,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13087,7 +13119,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13097,7 +13129,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13107,7 +13139,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13127,7 +13159,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13138,7 +13170,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13149,7 +13181,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13220,7 +13252,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13230,7 +13262,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13240,7 +13272,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13260,7 +13292,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13271,7 +13303,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13282,7 +13314,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13353,7 +13385,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13363,7 +13395,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13373,7 +13405,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13393,7 +13425,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13404,7 +13436,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13415,7 +13447,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13486,7 +13518,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13496,7 +13528,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13506,7 +13538,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13526,7 +13558,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13537,7 +13569,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13548,7 +13580,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13619,7 +13651,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13629,7 +13661,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13639,7 +13671,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13659,7 +13691,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13670,7 +13702,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13681,7 +13713,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13727,7 +13759,7 @@ footer a[href^="/our-solutions/"],
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a data-wpel-link="internal"
                               >IT services that create sustainable success for
                               your people</a
                             >
@@ -13742,7 +13774,7 @@ footer a[href^="/our-solutions/"],
                         >
                           <a
                             class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                            href="#"
+                            href="/our-services/"
                             data-wpel-link="internal"
                           >
                             <div class="premium-button-text-icon-wrapper">
@@ -13843,7 +13875,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -13853,7 +13885,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -13863,7 +13895,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -13883,7 +13915,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13894,7 +13926,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -13905,7 +13937,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -14215,7 +14247,7 @@ footer a[href^="/our-solutions/"],
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="#"
+                          href="/talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">
@@ -14315,7 +14347,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >Managed IT Services</a
@@ -14325,7 +14357,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Consulting Services</a
@@ -14335,7 +14367,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       data-wpel-link="internal"
                                       >IT Services for SMBs</a
@@ -14355,7 +14387,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32910"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/managed-it-services/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -14366,7 +14398,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33284"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-consulting-services/"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -14377,7 +14409,7 @@ footer a[href^="/our-solutions/"],
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33554"
                                   >
                                     <a
-                                      href="#"
+                                      href="/our-services/it-services-for-smb/index.html"
                                       class="elementor-item"
                                       tabindex="-1"
                                       data-wpel-link="internal"
@@ -14610,7 +14642,7 @@ footer a[href^="/our-solutions/"],
                         data-element_type="container"
                         data-e-type="container"
                         data-settings='{"background_background":"classic"}'
-                        href="#"
+                        href="/contact-us/index.html"
                         data-wpel-link="internal"
                       >
                         <div class="e-con-inner"></div>
@@ -14632,7 +14664,7 @@ footer a[href^="/our-solutions/"],
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal">CONTACT US</a>
+                            <a href="/contact-us/index.html" data-wpel-link="internal">CONTACT US</a>
                           </p>
                         </div>
                         <div
@@ -14645,7 +14677,7 @@ footer a[href^="/our-solutions/"],
                           <p
                             class="elementor-heading-title elementor-size-default"
                           >
-                            <a href="#" data-wpel-link="internal"
+                            <a href="/contact-us/index.html" data-wpel-link="internal"
                               >K Techara is the partner that can make digital
                               transformations happen.</a
                             >
@@ -14668,7 +14700,7 @@ footer a[href^="/our-solutions/"],
                       >
                         <a
                           class="premium-button premium-button-none premium-btn-lg premium-button-none"
-                          href="#"
+                          href="/talk-to-an-expert.html"
                           data-wpel-link="internal"
                         >
                           <div class="premium-button-text-icon-wrapper">

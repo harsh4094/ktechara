@@ -13,3 +13,4 @@ Thumbs.db
 cdn-cgi/
 readme-new.md
 ruffwork.txt
+__pycache__/
