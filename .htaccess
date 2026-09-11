@@ -9,3 +9,10 @@ ErrorDocument 500 /404/index.html?code=500
 ErrorDocument 502 /404/index.html?code=502
 ErrorDocument 503 /404/index.html?code=503
 ErrorDocument 504 /404/index.html?code=504
+
+# Webfonts. Some Apache builds have no woff2 mapping and fall back to
+# application/octet-stream, which browsers reject for @font-face.
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/woff  .woff
+</IfModule>

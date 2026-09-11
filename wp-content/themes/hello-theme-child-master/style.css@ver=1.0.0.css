@@ -85,8 +85,8 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
   --shadow-glow: 0 0 0 3px rgba(200, 154, 232, 0.3);
 
   /* Typography */
-  --font-body: "adelle", Georgia, serif;
-  --font-display: "adelle", Georgia, serif;
+  --font-body: "Zilla Slab", Georgia, serif;
+  --font-display: "Zilla Slab", Georgia, serif;
 
   /* Spacing */
   --radius-sm: 4px;
@@ -1738,7 +1738,7 @@ li.premium-tabs-nav-list-item.elementor-repeater-item-086a40e {
   font-size: 14px !important;
 }
 .search-filter-label {
-  font-family: "adelle" !important;
+  font-family: "Zilla Slab" !important;
   font-size: 16px !important;
   line-height: 16px !important;
   font-weight: 500;

@@ -1,199 +1,34 @@
-/* Adobe Typekit fonts - locally hosted */
+/* Self-hosted open-source webfonts (SIL OFL 1.1).
+ *
+ * Source Sans 3  (c) Adobe   - https://github.com/adobe-fonts/source-sans
+ * Zilla Slab     (c) Mozilla - https://github.com/mozilla/zilla-slab
+ *
+ * Free for commercial use, self-hosting and redistribution; no attribution
+ * required in-page. These replaced the Adobe Fonts (Typekit) faces that were
+ * previously self-hosted here without a licence covering redistribution.
+ */
 
-
-@font-face {
-font-family:"adelle";
-src:url("e0617b_000000000000000077359943_30_l.woff2") format("woff2"),url("e0617b_000000000000000077359943_30_d.woff") format("woff"),url("e0617b_000000000000000077359943_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("ce0c16_000000000000000077359962_30_l.woff2") format("woff2"),url("ce0c16_000000000000000077359962_30_d.woff") format("woff"),url("ce0c16_000000000000000077359962_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("6e4ffe_00000000000000003b9b47b3_27_l.woff2") format("woff2"),url("6e4ffe_00000000000000003b9b47b3_27_d.woff") format("woff"),url("6e4ffe_00000000000000003b9b47b3_27_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("7cc37e_00000000000000003b9b47b4_27_l.woff2") format("woff2"),url("7cc37e_00000000000000003b9b47b4_27_d.woff") format("woff"),url("7cc37e_00000000000000003b9b47b4_27_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:800;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("33f939_00000000000000003b9b47ad_27_l.woff2") format("woff2"),url("33f939_00000000000000003b9b47ad_27_d.woff") format("woff"),url("33f939_00000000000000003b9b47ad_27_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("982b02_00000000000000007735994f_30_l.woff2") format("woff2"),url("982b02_00000000000000007735994f_30_d.woff") format("woff"),url("982b02_00000000000000007735994f_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("8f25da_00000000000000007735994e_30_l.woff2") format("woff2"),url("8f25da_00000000000000007735994e_30_d.woff") format("woff"),url("8f25da_00000000000000007735994e_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("b0859f_000000000000000077359963_30_l.woff2") format("woff2"),url("b0859f_000000000000000077359963_30_d.woff") format("woff"),url("b0859f_000000000000000077359963_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:600;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("56fb98_00000000000000003b9b47ab_27_l.woff2") format("woff2"),url("56fb98_00000000000000003b9b47ab_27_d.woff") format("woff"),url("56fb98_00000000000000003b9b47ab_27_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("583251_000000000000000077359980_30_l.woff2") format("woff2"),url("583251_000000000000000077359980_30_d.woff") format("woff"),url("583251_000000000000000077359980_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:300;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("63ec41_00000000000000003b9b47b5_27_l.woff2") format("woff2"),url("63ec41_00000000000000003b9b47b5_27_d.woff") format("woff"),url("63ec41_00000000000000003b9b47b5_27_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("76fa90_00000000000000003b9b47b6_27_l.woff2") format("woff2"),url("76fa90_00000000000000003b9b47b6_27_d.woff") format("woff"),url("76fa90_00000000000000003b9b47b6_27_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:900;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("9348b9_00000000000000007735998b_30_l.woff2") format("woff2"),url("9348b9_00000000000000007735998b_30_d.woff") format("woff"),url("9348b9_00000000000000007735998b_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle";
-src:url("99e2e3_00000000000000007735998d_30_l.woff2") format("woff2"),url("99e2e3_00000000000000007735998d_30_d.woff") format("woff"),url("99e2e3_00000000000000007735998d_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:100;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("aa897e_00000000000000007735a1c8_30_l.woff2") format("woff2"),url("aa897e_00000000000000007735a1c8_30_d.woff") format("woff"),url("aa897e_00000000000000007735a1c8_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("2eeb33_00000000000000007735a1c5_30_l.woff2") format("woff2"),url("2eeb33_00000000000000007735a1c5_30_d.woff") format("woff"),url("2eeb33_00000000000000007735a1c5_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("42ad97_00000000000000007735a1c7_30_l.woff2") format("woff2"),url("42ad97_00000000000000007735a1c7_30_d.woff") format("woff"),url("42ad97_00000000000000007735a1c7_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("bc3180_00000000000000007735a1c9_30_l.woff2") format("woff2"),url("bc3180_00000000000000007735a1c9_30_d.woff") format("woff"),url("bc3180_00000000000000007735a1c9_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:800;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("3d90c7_00000000000000007735a1cb_30_l.woff2") format("woff2"),url("3d90c7_00000000000000007735a1cb_30_d.woff") format("woff"),url("3d90c7_00000000000000007735a1cb_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("193b4f_00000000000000007735a1d7_30_l.woff2") format("woff2"),url("193b4f_00000000000000007735a1d7_30_d.woff") format("woff"),url("193b4f_00000000000000007735a1d7_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:900;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("5d0e28_00000000000000007735a1d1_30_l.woff2") format("woff2"),url("5d0e28_00000000000000007735a1d1_30_d.woff") format("woff"),url("5d0e28_00000000000000007735a1d1_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("f7d2b8_00000000000000007735a1d6_30_l.woff2") format("woff2"),url("f7d2b8_00000000000000007735a1d6_30_d.woff") format("woff"),url("f7d2b8_00000000000000007735a1d6_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("207724_00000000000000007735a1db_30_l.woff2") format("woff2"),url("207724_00000000000000007735a1db_30_d.woff") format("woff"),url("207724_00000000000000007735a1db_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:300;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("a96fc4_00000000000000007735a1de_30_l.woff2") format("woff2"),url("a96fc4_00000000000000007735a1de_30_d.woff") format("woff"),url("a96fc4_00000000000000007735a1de_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("853f4c_00000000000000007735a1e1_30_l.woff2") format("woff2"),url("853f4c_00000000000000007735a1e1_30_d.woff") format("woff"),url("853f4c_00000000000000007735a1e1_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("2f38f7_00000000000000007735a1e4_30_l.woff2") format("woff2"),url("2f38f7_00000000000000007735a1e4_30_d.woff") format("woff"),url("2f38f7_00000000000000007735a1e4_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:600;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("6f86f9_00000000000000007735a1e6_30_l.woff2") format("woff2"),url("6f86f9_00000000000000007735a1e6_30_d.woff") format("woff"),url("6f86f9_00000000000000007735a1e6_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans";
-src:url("5e5196_00000000000000007735a1e8_30_l.woff2") format("woff2"),url("5e5196_00000000000000007735a1e8_30_d.woff") format("woff"),url("5e5196_00000000000000007735a1e8_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:100;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans-ultra-thin";
-src:url("5b44d0_00000000000000007735a1c4_30_l.woff2") format("woff2"),url("5b44d0_00000000000000007735a1c4_30_d.woff") format("woff"),url("5b44d0_00000000000000007735a1c4_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:200;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-sans-ultra-thin";
-src:url("916615_00000000000000007735a1c6_30_l.woff2") format("woff2"),url("916615_00000000000000007735a1c6_30_d.woff") format("woff"),url("916615_00000000000000007735a1c6_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:200;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-ultrathin";
-src:url("95852c_00000000000000007735994c_30_l.woff2") format("woff2"),url("95852c_00000000000000007735994c_30_d.woff") format("woff"),url("95852c_00000000000000007735994c_30_a.otf") format("opentype");
-font-display:auto;font-style:italic;font-weight:100;font-stretch:normal;
-}
-
-@font-face {
-font-family:"adelle-ultrathin";
-src:url("f56822_000000000000000077359950_30_l.woff2") format("woff2"),url("f56822_000000000000000077359950_30_d.woff") format("woff"),url("f56822_000000000000000077359950_30_a.otf") format("opentype");
-font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
-}
-
-.tk-adelle { font-family: "adelle",serif; }
-.tk-adelle-sans { font-family: "adelle-sans",sans-serif; }
-.tk-adelle-sans-ultra-thin { font-family: "adelle-sans-ultra-thin",sans-serif; }
-.tk-adelle-ultrathin { font-family: "adelle-ultrathin",serif; }
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:400;font-display:swap;src:url("sourcesans3-400-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:400;font-display:swap;src:url("sourcesans3-400-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:600;font-display:swap;src:url("sourcesans3-600-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:600;font-display:swap;src:url("sourcesans3-600-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:700;font-display:swap;src:url("sourcesans3-700-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:italic;font-weight:700;font-display:swap;src:url("sourcesans3-700-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url("sourcesans3-400-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url("sourcesans3-400-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:500;font-display:swap;src:url("sourcesans3-500-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:500;font-display:swap;src:url("sourcesans3-500-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url("sourcesans3-600-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url("sourcesans3-600-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url("sourcesans3-700-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url("sourcesans3-700-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Zilla Slab";font-style:italic;font-weight:400;font-display:swap;src:url("zillaslab-400-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Zilla Slab";font-style:italic;font-weight:400;font-display:swap;src:url("zillaslab-400-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:400;font-display:swap;src:url("zillaslab-400-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:400;font-display:swap;src:url("zillaslab-400-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:500;font-display:swap;src:url("zillaslab-500-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:500;font-display:swap;src:url("zillaslab-500-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:600;font-display:swap;src:url("zillaslab-600-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:600;font-display:swap;src:url("zillaslab-600-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:700;font-display:swap;src:url("zillaslab-700-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:"Zilla Slab";font-style:normal;font-weight:700;font-display:swap;src:url("zillaslab-700-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}

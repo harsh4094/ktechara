@@ -125,7 +125,7 @@
 .elementor-32564
   .elementor-element.elementor-element-cf51be9
   .elementor-heading-title {
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -134,7 +134,7 @@
 .elementor-32564
   .elementor-element.elementor-element-7d8d9ac
   .elementor-heading-title {
-  font-family: "Adelle", Sans-serif;
+  font-family: "Zilla Slab", Sans-serif;
   font-size: 53px;
   font-weight: 400;
   line-height: 1.1em;
@@ -270,7 +270,7 @@
   margin: 0em 0em calc(var(--kit-widget-spacing, 0px) + 0em) 0em;
 }
 .elementor-32564 .elementor-element.elementor-element-7999674 {
-  font-family: "adelle-sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
 }
 .elementor-32564 .elementor-element.elementor-element-9077553 {
   --display: flex;
@@ -349,7 +349,7 @@
   .elementor-element.elementor-element-c1375d0
   .elementor-image-box-title {
   margin-bottom: 10px;
-  font-family: "Adelle", Sans-serif;
+  font-family: "Zilla Slab", Sans-serif;
   font-size: 25px;
   font-weight: 500;
   line-height: 30px;
@@ -412,7 +412,7 @@
   .elementor-element.elementor-element-4195307
   .elementor-image-box-title {
   margin-bottom: 10px;
-  font-family: "Adelle", Sans-serif;
+  font-family: "Zilla Slab", Sans-serif;
   font-size: 25px;
   font-weight: 500;
   line-height: 30px;
@@ -475,7 +475,7 @@
   .elementor-element.elementor-element-88b51f7
   .elementor-image-box-title {
   margin-bottom: 10px;
-  font-family: "Adelle", Sans-serif;
+  font-family: "Zilla Slab", Sans-serif;
   font-size: 25px;
   font-weight: 500;
   line-height: 30px;
@@ -605,7 +605,7 @@
   .elementor-element.elementor-element-298f659
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -643,7 +643,7 @@
   .elementor-element.elementor-element-09b2e60
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -682,7 +682,7 @@
   .elementor-element.elementor-element-7304d87
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -720,7 +720,7 @@
   .elementor-element.elementor-element-5ad5bb9
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -758,7 +758,7 @@
   .elementor-element.elementor-element-d8f241a
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -796,7 +796,7 @@
   .elementor-element.elementor-element-57da87e
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -834,7 +834,7 @@
   .elementor-element.elementor-element-ecbd5c2
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -872,7 +872,7 @@
   .elementor-element.elementor-element-560a47f
   .elementor-button {
   background-color: #75757500;
-  font-family: "Adelle Sans", Sans-serif;
+  font-family: "Source Sans 3", Sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -2442,7 +2442,7 @@ body.rtl .elementor-32564 .elementor-element.elementor-element-89fb4da {
       > .e-n-accordion-item-title-header
   )
   > .e-n-accordion-item-title-text {
-  font-family: "adelle", Sans-serif;
+  font-family: "Zilla Slab", Sans-serif;
   font-weight: 600;
 }
 @media (max-width: 1366px) {
